@@ -27,7 +27,3 @@ DROP TABLE inventory;
 DROP TABLE menu;
 
 DROP TABLE employees;
-
-
-
-
