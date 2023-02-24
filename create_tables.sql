@@ -1,3 +1,9 @@
+/*
+CREATE TABLES SCRIPT
+    - automatically creates all tables needed for our database
+    - tables created in order to maintain foreign key relationships
+*/
+
 CREATE TABLE employees (
     employee_id BIGSERIAL NOT NULL PRIMARY KEY,
     first_name VARCHAR(20) NOT NULL,
