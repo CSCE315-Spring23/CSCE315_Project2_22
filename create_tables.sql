@@ -35,8 +35,7 @@ CREATE TABLE orders_summary (
 CREATE TABLE inventory (
     product_id BIGSERIAL NOT NULL PRIMARY KEY,
     product_name VARCHAR(30),
-    quantity NUMERIC NOT NULL,
-    fill_level NUMERIC NOT NULL
+    quantity NUMERIC NOT NULL
 );
 
 CREATE TABLE shipment_products (
