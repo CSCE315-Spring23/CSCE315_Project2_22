@@ -59,6 +59,7 @@ CREATE TABLE inventory_snapshot (
 
 CREATE TABLE menu (
     menu_item VARCHAR(60) NOT NULL PRIMARY KEY,
+    category VARCHAR(60) NOT NULL,
     price NUMERIC NOT NULL
 );
 
