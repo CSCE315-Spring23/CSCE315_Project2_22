@@ -19,7 +19,7 @@ CREATE TABLE employees (
 CREATE TABLE shipments (
     shipment_id BIGSERIAL NOT NULL PRIMARY KEY,
     employee_id BIGSERIAL NOT NULL REFERENCES employees(employee_id),
-    vendor VARCHAR(30) NOT NULL,
+    vendor VARCHAR(60) NOT NULL,
     shipment_total INTEGER NOT NULL,
     order_date TIMESTAMP NOT NULL,
     arrival_date TIMESTAMP NOT NULL
@@ -34,7 +34,7 @@ CREATE TABLE orders_summary (
 
 CREATE TABLE inventory (
     product_id BIGSERIAL NOT NULL PRIMARY KEY,
-    product_name VARCHAR(30),
+    product_name VARCHAR(60),
     quantity NUMERIC NOT NULL
 );
 
@@ -51,19 +51,19 @@ CREATE TABLE shipment_products (
 CREATE TABLE inventory_snapshot (
     snapshot_date TIMESTAMP NOT NULL,
     product_id BIGSERIAL NOT NULL,
-    product_name VARCHAR(30) NOT NULL,
+    product_name VARCHAR(60) NOT NULL,
     subtotal NUMERIC NOT NULL,
     PRIMARY KEY (snapshot_date, product_id),
     FOREIGN KEY (product_id) REFERENCES inventory(product_id)
 );
 
 CREATE TABLE menu (
-    menu_item VARCHAR(30) NOT NULL PRIMARY KEY,
+    menu_item VARCHAR(60) NOT NULL PRIMARY KEY,
     price NUMERIC NOT NULL
 );
 
 CREATE TABLE menu_item_ingredients (
-    menu_item VARCHAR(30) NOT NULL,
+    menu_item VARCHAR(60) NOT NULL,
     product_id BIGSERIAL NOT NULL,
     quantity NUMERIC NOT NULL,
     PRIMARY KEY (menu_item, product_id),
@@ -73,7 +73,7 @@ CREATE TABLE menu_item_ingredients (
 
 CREATE TABLE orders_by_item (
     item_id BIGSERIAL NOT NULL PRIMARY KEY,
-    menu_item VARCHAR(30) NOT NULL REFERENCES menu(menu_item),
+    menu_item VARCHAR(60) NOT NULL REFERENCES menu(menu_item),
     order_id BIGSERIAL NOT NULL REFERENCES orders_summary(order_id),
     item_date TIMESTAMP NOT NULL,
     item_price NUMERIC NOT NULL
