@@ -4,7 +4,7 @@ product_id,product_name,quantity
 3,Almond,384
 4,Apple Blueberry Juice Blend,307
 5,Apple Juice Blend,385
-6,Apple Pineapple Blue Juice Blend,57
+6,Apple Pineapple Juice Blend,57
 7,Banana,40
 8,Blueberries (Wild),171
 9,Butter Pecan Ice Cream,298
@@ -14,7 +14,7 @@ product_id,product_name,quantity
 13,Coconut Water,159
 14,Cold Brew Coffee,278
 15,Dairy Whey Blend,481
-16,Dates ,162
+16,Dates,162
 17,Diet Down Enhancer,410
 18,Electrolyte Blend,41
 19,Energy Boost Enhancer,394
@@ -48,7 +48,7 @@ product_id,product_name,quantity
 47,Peanut Butter,200
 48,Pear Juice Blend,496
 49,Pear Passion Fruit Juice Blend,73
-50,Pineapples,230
+50,Pineapple,230
 51,Probiotic Powder Enhancer,375
 52,Protein Blend,477
 53,Pumpkin - Organic,284
@@ -59,7 +59,7 @@ product_id,product_name,quantity
 58,Stevia Plant-Based Sweetener,188
 59,Strawberries - No Sugar,42
 60,Strawberries - Added Sugar,73
-61,Sunwarrior Organic Plant Based Protein,254
+61,Sunwarrior Organic Plant-Based Protein,254
 62,Super Grains Enhancer,88
 63,Tart Cherries,43
 64,Turbinado,239
