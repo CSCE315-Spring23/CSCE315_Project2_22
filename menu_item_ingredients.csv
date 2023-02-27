@@ -1,865 +1,1192 @@
 ,menu_item_id,product_id,quantity
-0,coffee high protein - almond mocha - 20,14,5.481995602600679
-1,coffee high protein - almond mocha - 20,16,2.3988406224291863
-2,coffee high protein - almond mocha - 20,42,5.570791412200874
-3,coffee high protein - almond mocha - 20,15,4.2696546480411275
-4,coffee high protein - almond mocha - 20,3,5.1840413170506
-5,coffee high protein - almond mocha - 20,66,2.8392254317000614
-6,coffee high protein - almond mocha - 20,1,3.795409659220509
-7,gladiator - coffee - 20,7,3.5532996127613057
-8,gladiator - coffee - 20,24,5.103370185204182
-9,gladiator - coffee - 20,14,1.0
-10,keto champ - coffee - 20,14,4.464814975484206
-11,keto champ - coffee - 20,33,2.322821063297795
-12,keto champ - coffee - 20,2,2.5149018791532924
-13,keto champ - coffee - 20,10,4.40963364433631
-14,keto champ - coffee - 20,1,3.3854257868985558
-15,pure recharge - mango strawberry - 20,59,1.882971221422289
-16,pure recharge - mango strawberry - 20,37,3.9682748811333153
-17,pure recharge - mango strawberry - 20,6,5.652804879506199
-18,pure recharge - mango strawberry - 20,54,1.7544296561976176
-19,pure recharge - mango strawberry - 20,18,6.0898263182882975
-20,pure recharge - pineapple - 20,7,4.1239610100662825
-21,pure recharge - pineapple - 20,50,1.8214187369304764
-22,pure recharge - pineapple - 20,54,4.985377464809645
-23,pure recharge - pineapple - 20,6,4.434603133200058
-24,pure recharge - pineapple - 20,43,6.402462027595812
-25,the activator - recovery coffee - 20,14,1.3322807357387147
-26,the activator - recovery coffee - 20,24,2.5635115837816684
-27,the activator - recovery coffee - 20,52,2.674475677480931
-28,the activator - recovery coffee - 20,7,5.513852285200135
-29,the activator - recovery coffee - 20,13,2.2717133260447895
-30,the activator - recovery coffee - 20,42,5.315953834387539
-31,the hulk - coffee - 20,7,5.31714573403109
-32,the hulk - coffee - 20,14,5.508779015188886
-33,the hulk - coffee - 20,64,3.3937012990102886
-34,the hulk - coffee - 20,29,3.9367323262815828
-35,the hulk - coffee - 20,9,4.8580210564955495
-36,vegan coffee mocha - 20,7,3.542728615434254
-37,vegan coffee mocha - 20,16,3.8010818191076305
-38,vegan coffee mocha - 20,44,2.1290857378358288
-39,vegan coffee mocha - 20,14,3.2239455925531972
-40,vegan coffee mocha - 20,1,1.4554420181302539
-41,vegan coffee mocha - 20,61,2.618756374549779
-42,coffee high protein - almond mocha - 32,14,8.771192964161086
-43,coffee high protein - almond mocha - 32,16,3.838144995886698
-44,coffee high protein - almond mocha - 32,42,8.913266259521398
-45,coffee high protein - almond mocha - 32,15,6.831447436865805
-46,coffee high protein - almond mocha - 32,3,8.29446610728096
-47,coffee high protein - almond mocha - 32,66,4.542760690720098
-48,coffee high protein - almond mocha - 32,1,6.072655454752815
-49,gladiator - coffee - 32,7,5.6852793804180894
-50,gladiator - coffee - 32,24,8.165392296326692
-51,gladiator - coffee - 32,14,1.6
-52,keto champ - coffee - 32,14,7.1437039607747295
-53,keto champ - coffee - 32,33,3.716513701276472
-54,keto champ - coffee - 32,2,4.023843006645268
-55,keto champ - coffee - 32,10,7.055413830938097
-56,keto champ - coffee - 32,1,5.41668125903769
-57,pure recharge - mango strawberry - 32,59,3.0127539542756625
-58,pure recharge - mango strawberry - 32,37,6.349239809813305
-59,pure recharge - mango strawberry - 32,6,9.044487807209919
-60,pure recharge - mango strawberry - 32,54,2.8070874499161884
-61,pure recharge - mango strawberry - 32,18,9.743722109261277
-62,pure recharge - pineapple - 32,7,6.598337616106052
-63,pure recharge - pineapple - 32,50,2.9142699790887625
-64,pure recharge - pineapple - 32,54,7.976603943695432
-65,pure recharge - pineapple - 32,6,7.095365013120094
-66,pure recharge - pineapple - 32,43,10.2439392441533
-67,the activator - recovery coffee - 32,14,2.1316491771819437
-68,the activator - recovery coffee - 32,24,4.10161853405067
-69,the activator - recovery coffee - 32,52,4.27916108396949
-70,the activator - recovery coffee - 32,7,8.822163656320216
-71,the activator - recovery coffee - 32,13,3.6347413216716635
-72,the activator - recovery coffee - 32,42,8.505526135020062
-73,the hulk - coffee - 32,7,8.507433174449744
-74,the hulk - coffee - 32,14,8.814046424302218
-75,the hulk - coffee - 32,64,5.429922078416462
-76,the hulk - coffee - 32,29,6.298771722050533
-77,the hulk - coffee - 32,9,7.772833690392879
-78,vegan coffee mocha - 32,7,5.668365784694807
-79,vegan coffee mocha - 32,16,6.081730910572209
-80,vegan coffee mocha - 32,44,3.406537180537326
-81,vegan coffee mocha - 32,14,5.158312948085116
-82,vegan coffee mocha - 32,1,2.328707229008406
-83,vegan coffee mocha - 32,61,4.190010199279647
-84,coffee high protein - almond mocha - 40,14,10.963991205201358
-85,coffee high protein - almond mocha - 40,16,4.7976812448583726
-86,coffee high protein - almond mocha - 40,42,11.141582824401748
-87,coffee high protein - almond mocha - 40,15,8.539309296082255
-88,coffee high protein - almond mocha - 40,3,10.3680826341012
-89,coffee high protein - almond mocha - 40,66,5.678450863400123
-90,coffee high protein - almond mocha - 40,1,7.590819318441018
-91,gladiator - coffee - 40,7,7.106599225522611
-92,gladiator - coffee - 40,24,10.206740370408363
-93,gladiator - coffee - 40,14,2.0
-94,keto champ - coffee - 40,14,8.929629950968412
-95,keto champ - coffee - 40,33,4.64564212659559
-96,keto champ - coffee - 40,2,5.029803758306585
-97,keto champ - coffee - 40,10,8.81926728867262
-98,keto champ - coffee - 40,1,6.7708515737971116
-99,pure recharge - mango strawberry - 40,59,3.765942442844578
-100,pure recharge - mango strawberry - 40,37,7.936549762266631
-101,pure recharge - mango strawberry - 40,6,11.305609759012398
-102,pure recharge - mango strawberry - 40,54,3.508859312395235
-103,pure recharge - mango strawberry - 40,18,12.179652636576595
-104,pure recharge - pineapple - 40,7,8.247922020132565
-105,pure recharge - pineapple - 40,50,3.642837473860953
-106,pure recharge - pineapple - 40,54,9.97075492961929
-107,pure recharge - pineapple - 40,6,8.869206266400116
-108,pure recharge - pineapple - 40,43,12.804924055191623
-109,the activator - recovery coffee - 40,14,2.6645614714774295
-110,the activator - recovery coffee - 40,24,5.127023167563337
-111,the activator - recovery coffee - 40,52,5.348951354961862
-112,the activator - recovery coffee - 40,7,11.02770457040027
-113,the activator - recovery coffee - 40,13,4.543426652089579
-114,the activator - recovery coffee - 40,42,10.631907668775078
-115,the hulk - coffee - 40,7,10.63429146806218
-116,the hulk - coffee - 40,14,11.017558030377772
-117,the hulk - coffee - 40,64,6.787402598020577
-118,the hulk - coffee - 40,29,7.8734646525631655
-119,the hulk - coffee - 40,9,9.716042112991099
-120,vegan coffee mocha - 40,7,7.085457230868508
-121,vegan coffee mocha - 40,16,7.602163638215261
-122,vegan coffee mocha - 40,44,4.2581714756716575
-123,vegan coffee mocha - 40,14,6.4478911851063945
-124,vegan coffee mocha - 40,1,2.9108840362605077
-125,vegan coffee mocha - 40,61,5.237512749099558
-126,the hulk - vanilla - 20,7,5.443480254571476
-127,the hulk - vanilla - 20,64,5.32217726865886
-128,the hulk - vanilla - 20,29,5.582946535698554
-129,the hulk - vanilla - 20,9,3.837225323129265
-130,the hulk - chocolate - 20,7,4.332097527589834
-131,the hulk - chocolate - 20,1,2.9810652497461607
-132,the hulk - chocolate - 20,29,5.3124142873773765
-133,the hulk - chocolate - 20,64,6.860947579650439
-134,the hulk - chocolate - 20,9,1.6182074707288119
-135,the hulk - strawberry - 20,7,3.744962624220038
-136,the hulk - strawberry - 20,60,3.9726493069507884
-137,the hulk - strawberry - 20,64,4.16801690962074
-138,the hulk - strawberry - 20,29,5.477861940414161
-139,the hulk - strawberry - 20,9,1.0
-140,peanut power plus - chocolate - 20,7,5.924793090820581
-141,peanut power plus - chocolate - 20,47,3.7208400797236614
-142,peanut power plus - chocolate - 20,16,3.29436119226168
-143,peanut power plus - chocolate - 20,42,4.415291019920992
-144,peanut power plus - chocolate - 20,52,5.324722601656051
-145,peanut power plus - chocolate - 20,1,4.094227908602308
-146,peanut power plus - strawberry - 20,7,7.244550819434789
-147,peanut power plus - strawberry - 20,59,5.8849632338257
-148,peanut power plus - strawberry - 20,47,3.7795638120166775
-149,peanut power plus - strawberry - 20,16,1.6571053972768643
-150,peanut power plus - strawberry - 20,42,1.3279568629890859
-151,peanut power plus - strawberry - 20,52,1.268014174436075
-152,peanut power plus - strawberry - 20,64,3.121625458287533
-153,power punch plus - 20,7,7.435664589104291
-154,power punch plus - 20,59,6.8052615514594965
-155,power punch plus - 20,43,5.1154476859855835
-156,power punch plus - 20,64,3.81269605243783
-157,stretch and flex - tart cherry -  20,7,5.48000519133205
-158,stretch and flex - tart cherry -  20,63,7.839937965161356
-159,stretch and flex - tart cherry -  20,4,4.854979108345632
-160,stretch and flex - tart cherry -  20,16,2.7822446819741273
-161,stretch and flex - tart cherry -  20,13,3.0158915370227044
-162,stretch and flex - tart cherry -  20,61,1.0
-163,stretch and flex - tart cherry -  20,31,4.731516876451711
-164,stretch and flex - pineapple kale - 20,7,4.291504155310636
-165,stretch and flex - pineapple kale - 20,50,1.0
-166,stretch and flex - pineapple kale - 20,16,4.553140842504417
-167,stretch and flex - pineapple kale - 20,13,8.2311721871877
-168,stretch and flex - pineapple kale - 20,61,2.888595681983732
-169,stretch and flex - pineapple kale - 20,31,4.387375852375132
-170,stretch and flex - pineapple kale - 20,32,5.777529636169721
-171,gladiator - vanilla - 20,26,3.0233148788346313
-172,gladiator - chocolate - 20,24,1.2331602566706326
-173,gladiator - strawberry - 20,25,1.0
-174,the activator recovery - blueberry tart cherry - 20,63,1.90878426683703
-175,the activator recovery - blueberry tart cherry - 20,8,3.8390035521617247
-176,the activator recovery - blueberry tart cherry - 20,4,8.789313019878481
-177,the activator recovery - blueberry tart cherry - 20,13,2.374896512400747
-178,the activator recovery - blueberry tart cherry - 20,52,2.0991704739524577
-179,the activator recovery - blueberry tart cherry - 20,26,6.152954504000668
-180,the activator recovery - strawberry banana - 20,7,1.0
-181,the activator recovery - strawberry banana - 20,59,1.0
-182,the activator recovery - strawberry banana - 20,5,2.0601081315721816
-183,the activator recovery - strawberry banana - 20,13,1.106377704165784
-184,the activator recovery - strawberry banana - 20,26,6.809687164578182
-185,the activator recovery - strawberry banana - 20,52,1.6553389494608397
-186,high intensity workout - chocolate cinnamon - 20,7,4.604450929522738
-187,high intensity workout - chocolate cinnamon - 20,10,4.955980579648172
-188,high intensity workout - chocolate cinnamon - 20,16,4.515289475446279
-189,high intensity workout - chocolate cinnamon - 20,2,5.738446701704069
-190,high intensity workout - chocolate cinnamon - 20,22,1.0
-191,high intensity workout - chocolate cinnamon - 20,1,4.983465997380585
-192,high intensity workout - chocolate cinnamon - 20,12,4.288407648968185
-193,the hulk - vanilla - 32,7,8.709568407314363
-194,the hulk - vanilla - 32,64,8.515483629854177
-195,the hulk - vanilla - 32,29,8.932714457117687
-196,the hulk - vanilla - 32,9,6.139560517006824
-197,the hulk - chocolate - 32,7,6.931356044143735
-198,the hulk - chocolate - 32,1,4.7697043995938575
-199,the hulk - chocolate - 32,29,8.499862859803804
-200,the hulk - chocolate - 32,64,10.977516127440703
-201,the hulk - chocolate - 32,9,2.589131953166099
-202,the hulk - strawberry - 32,7,5.9919401987520615
-203,the hulk - strawberry - 32,60,6.3562388911212615
-204,the hulk - strawberry - 32,64,6.6688270553931845
-205,the hulk - strawberry - 32,29,8.764579104662657
-206,the hulk - strawberry - 32,9,1.6
-207,peanut power plus - chocolate - 32,7,9.479668945312929
-208,peanut power plus - chocolate - 32,47,5.953344127557859
-209,peanut power plus - chocolate - 32,16,5.270977907618688
-210,peanut power plus - chocolate - 32,42,7.0644656318735874
-211,peanut power plus - chocolate - 32,52,8.519556162649682
-212,peanut power plus - chocolate - 32,1,6.550764653763693
-213,peanut power plus - strawberry - 32,7,11.591281311095663
-214,peanut power plus - strawberry - 32,59,9.415941174121121
-215,peanut power plus - strawberry - 32,47,6.047302099226684
-216,peanut power plus - strawberry - 32,16,2.6513686356429833
-217,peanut power plus - strawberry - 32,42,2.1247309807825374
-218,peanut power plus - strawberry - 32,52,2.0288226790977197
-219,peanut power plus - strawberry - 32,64,4.994600733260054
-220,power punch plus - 32,7,11.897063342566867
-221,power punch plus - 32,59,10.888418482335195
-222,power punch plus - 32,43,8.184716297576934
-223,power punch plus - 32,64,6.100313683900528
-224,stretch and flex - tart cherry -  32,7,8.76800830613128
-225,stretch and flex - tart cherry -  32,63,12.54390074425817
-226,stretch and flex - tart cherry -  32,4,7.767966573353012
-227,stretch and flex - tart cherry -  32,16,4.451591491158604
-228,stretch and flex - tart cherry -  32,13,4.825426459236327
-229,stretch and flex - tart cherry -  32,61,1.6
-230,stretch and flex - tart cherry -  32,31,7.570427002322738
-231,stretch and flex - pineapple kale - 32,7,6.866406648497018
-232,stretch and flex - pineapple kale - 32,50,1.6
-233,stretch and flex - pineapple kale - 32,16,7.285025348007068
-234,stretch and flex - pineapple kale - 32,13,13.169875499500321
-235,stretch and flex - pineapple kale - 32,61,4.6217530911739715
-236,stretch and flex - pineapple kale - 32,31,7.0198013638002115
-237,stretch and flex - pineapple kale - 32,32,9.244047417871554
-238,gladiator - vanilla - 32,26,4.83730380613541
-239,gladiator - chocolate - 32,24,1.9730564106730122
-240,gladiator - strawberry - 32,25,1.6
-241,the activator recovery - blueberry tart cherry - 32,63,3.0540548269392485
-242,the activator recovery - blueberry tart cherry - 32,8,6.14240568345876
-243,the activator recovery - blueberry tart cherry - 32,4,14.062900831805571
-244,the activator recovery - blueberry tart cherry - 32,13,3.7998344198411953
-245,the activator recovery - blueberry tart cherry - 32,52,3.3586727583239324
-246,the activator recovery - blueberry tart cherry - 32,26,9.84472720640107
-247,the activator recovery - strawberry banana - 32,7,1.6
-248,the activator recovery - strawberry banana - 32,59,1.6
-249,the activator recovery - strawberry banana - 32,5,3.2961730105154907
-250,the activator recovery - strawberry banana - 32,13,1.7702043266652545
-251,the activator recovery - strawberry banana - 32,26,10.895499463325091
-252,the activator recovery - strawberry banana - 32,52,2.6485423191373436
-253,high intensity workout - chocolate cinnamon - 32,7,7.367121487236381
-254,high intensity workout - chocolate cinnamon - 32,10,7.929568927437076
-255,high intensity workout - chocolate cinnamon - 32,16,7.224463160714047
-256,high intensity workout - chocolate cinnamon - 32,2,9.18151472272651
-257,high intensity workout - chocolate cinnamon - 32,22,1.6
-258,high intensity workout - chocolate cinnamon - 32,1,7.973545595808936
-259,high intensity workout - chocolate cinnamon - 32,12,6.861452238349097
-260,the hulk - vanilla - 40,7,10.886960509142952
-261,the hulk - vanilla - 40,64,10.64435453731772
-262,the hulk - vanilla - 40,29,11.165893071397107
-263,the hulk - vanilla - 40,9,7.67445064625853
-264,the hulk - chocolate - 40,7,8.664195055179668
-265,the hulk - chocolate - 40,1,5.962130499492321
-266,the hulk - chocolate - 40,29,10.624828574754753
-267,the hulk - chocolate - 40,64,13.721895159300878
-268,the hulk - chocolate - 40,9,3.2364149414576238
-269,the hulk - strawberry - 40,7,7.489925248440076
-270,the hulk - strawberry - 40,60,7.945298613901577
-271,the hulk - strawberry - 40,64,8.33603381924148
-272,the hulk - strawberry - 40,29,10.955723880828321
-273,the hulk - strawberry - 40,9,2.0
-274,peanut power plus - chocolate - 40,7,11.849586181641161
-275,peanut power plus - chocolate - 40,47,7.441680159447323
-276,peanut power plus - chocolate - 40,16,6.58872238452336
-277,peanut power plus - chocolate - 40,42,8.830582039841984
-278,peanut power plus - chocolate - 40,52,10.649445203312101
-279,peanut power plus - chocolate - 40,1,8.188455817204616
-280,peanut power plus - strawberry - 40,7,14.489101638869577
-281,peanut power plus - strawberry - 40,59,11.7699264676514
-282,peanut power plus - strawberry - 40,47,7.559127624033355
-283,peanut power plus - strawberry - 40,16,3.3142107945537287
-284,peanut power plus - strawberry - 40,42,2.6559137259781718
-285,peanut power plus - strawberry - 40,52,2.53602834887215
-286,peanut power plus - strawberry - 40,64,6.243250916575066
-287,power punch plus - 40,7,14.871329178208581
-288,power punch plus - 40,59,13.610523102918993
-289,power punch plus - 40,43,10.230895371971167
-290,power punch plus - 40,64,7.62539210487566
-291,stretch and flex - tart cherry -  40,7,10.9600103826641
-292,stretch and flex - tart cherry -  40,63,15.679875930322712
-293,stretch and flex - tart cherry -  40,4,9.709958216691264
-294,stretch and flex - tart cherry -  40,16,5.564489363948255
-295,stretch and flex - tart cherry -  40,13,6.031783074045409
-296,stretch and flex - tart cherry -  40,61,2.0
-297,stretch and flex - tart cherry -  40,31,9.463033752903423
-298,stretch and flex - pineapple kale - 40,7,8.583008310621272
-299,stretch and flex - pineapple kale - 40,50,2.0
-300,stretch and flex - pineapple kale - 40,16,9.106281685008835
-301,stretch and flex - pineapple kale - 40,13,16.4623443743754
-302,stretch and flex - pineapple kale - 40,61,5.777191363967464
-303,stretch and flex - pineapple kale - 40,31,8.774751704750264
-304,stretch and flex - pineapple kale - 40,32,11.555059272339442
-305,gladiator - vanilla - 40,26,6.046629757669263
-306,gladiator - chocolate - 40,24,2.466320513341265
-307,gladiator - strawberry - 40,25,2.0
-308,the activator recovery - blueberry tart cherry - 40,63,3.81756853367406
-309,the activator recovery - blueberry tart cherry - 40,8,7.6780071043234495
-310,the activator recovery - blueberry tart cherry - 40,4,17.578626039756962
-311,the activator recovery - blueberry tart cherry - 40,13,4.749793024801494
-312,the activator recovery - blueberry tart cherry - 40,52,4.198340947904915
-313,the activator recovery - blueberry tart cherry - 40,26,12.305909008001336
-314,the activator recovery - strawberry banana - 40,7,2.0
-315,the activator recovery - strawberry banana - 40,59,2.0
-316,the activator recovery - strawberry banana - 40,5,4.120216263144363
-317,the activator recovery - strawberry banana - 40,13,2.212755408331568
-318,the activator recovery - strawberry banana - 40,26,13.619374329156363
-319,the activator recovery - strawberry banana - 40,52,3.3106778989216794
-320,high intensity workout - chocolate cinnamon - 40,7,9.208901859045476
-321,high intensity workout - chocolate cinnamon - 40,10,9.911961159296345
-322,high intensity workout - chocolate cinnamon - 40,16,9.030578950892558
-323,high intensity workout - chocolate cinnamon - 40,2,11.476893403408138
-324,high intensity workout - chocolate cinnamon - 40,22,2.0
-325,high intensity workout - chocolate cinnamon - 40,1,9.96693199476117
-326,high intensity workout - chocolate cinnamon - 40,12,8.57681529793637
-327,metabolism boost strawberry pineapple - 20,50,2.4476749030532856
-328,metabolism boost strawberry pineapple - 20,59,2.075773274720169
-329,metabolism boost strawberry pineapple - 20,34,6.356976181707756
-330,metabolism boost strawberry pineapple - 20,26,1.0
-331,metabolism boost strawberry pineapple - 20,52,4.388308686301336
-332,metabolism boost strawberry pineapple - 20,39,5.572221657434122
-333,metabolism boost strawberry pineapple - 20,21,6.6291837350957525
-334,metabolism boost mango ginger - 20,37,3.319975070163091
-335,metabolism boost mango ginger - 20,7,2.403213276941202
-336,metabolism boost mango ginger - 20,57,4.565741609880385
-337,metabolism boost mango ginger - 20,67,2.1706155767491717
-338,metabolism boost mango ginger - 20,26,1.8268185069455714
-339,metabolism boost mango ginger - 20,52,6.799626224807164
-340,metabolism boost mango ginger - 20,23,3.3623334703877297
-341,metabolism boost mango ginger - 20,39,1.0
-342,metabolism boost mango ginger - 20,21,2.2363358235646045
-343,slim - n - trim - chocolate - 20,7,5.719013081307426
-344,slim - n - trim - chocolate - 20,42,1.0
-345,slim - n - trim - chocolate - 20,52,5.1114271631010535
-346,slim - n - trim - chocolate - 20,35,3.4786910578739967
-347,slim - n - trim - chocolate - 20,24,2.457609995958331
-348,slim - n - trim - chocolate - 20,1,2.6263130790891265
-349,slim - n - trim - chocolate - 20,21,2.102600570328776
-350,slim - n - trim - chocolate - 20,58,1.0
-351,slim - n - trim - strawberry - 20,59,2.1685193712338355
-352,slim - n - trim - strawberry - 20,26,2.8684232696927943
-353,slim - n - trim - strawberry - 20,36,3.1051132980919385
-354,slim - n - trim - strawberry - 20,52,7.000356562163897
-355,slim - n - trim - strawberry - 20,58,4.166169188382699
-356,slim - n - trim - strawberry - 20,21,2.6503174635870566
-357,keto champ - berry - 20,8,1.2943929593493508
-358,keto champ - berry - 20,55,5.840250481639954
-359,keto champ - berry - 20,33,1.0
-360,keto champ - berry - 20,2,1.5005529603053758
-361,keto champ - berry - 20,1,4.5037568530073955
-362,keto champ - berry - 20,10,3.5435767732506114
-363,lean - chocolate - 20,7,6.638746373023547
-364,lean - chocolate - 20,3,1.0
-365,lean - chocolate - 20,35,4.738444352770053
-366,lean - strawberry - 20,59,1.618984004344598
-367,lean - strawberry - 20,36,1.5332453153796097
-368,lean - strawberry - 20,58,2.8083648402226364
-369,metabolism boost strawberry pineapple - 32,50,3.916279844885257
-370,metabolism boost strawberry pineapple - 32,59,3.321237239552271
-371,metabolism boost strawberry pineapple - 32,34,10.17116189073241
-372,metabolism boost strawberry pineapple - 32,26,1.6
-373,metabolism boost strawberry pineapple - 32,52,7.021293898082138
-374,metabolism boost strawberry pineapple - 32,39,8.915554651894595
-375,metabolism boost strawberry pineapple - 32,21,10.606693976153204
-376,metabolism boost mango ginger - 32,37,5.311960112260945
-377,metabolism boost mango ginger - 32,7,3.8451412431059233
-378,metabolism boost mango ginger - 32,57,7.305186575808617
-379,metabolism boost mango ginger - 32,67,3.472984922798675
-380,metabolism boost mango ginger - 32,26,2.9229096111129143
-381,metabolism boost mango ginger - 32,52,10.879401959691464
-382,metabolism boost mango ginger - 32,23,5.379733552620368
-383,metabolism boost mango ginger - 32,39,1.6
-384,metabolism boost mango ginger - 32,21,3.5781373177033675
-385,slim - n - trim - chocolate - 32,7,9.150420930091881
-386,slim - n - trim - chocolate - 32,42,1.6
-387,slim - n - trim - chocolate - 32,52,8.178283460961685
-388,slim - n - trim - chocolate - 32,35,5.565905692598395
-389,slim - n - trim - chocolate - 32,24,3.93217599353333
-390,slim - n - trim - chocolate - 32,1,4.202100926542602
-391,slim - n - trim - chocolate - 32,21,3.364160912526042
-392,slim - n - trim - chocolate - 32,58,1.6
-393,slim - n - trim - strawberry - 32,59,3.469630993974137
-394,slim - n - trim - strawberry - 32,26,4.589477231508471
-395,slim - n - trim - strawberry - 32,36,4.968181276947102
-396,slim - n - trim - strawberry - 32,52,11.200570499462236
-397,slim - n - trim - strawberry - 32,58,6.665870701412318
-398,slim - n - trim - strawberry - 32,21,4.240507941739291
-399,keto champ - berry - 32,8,2.0710287349589613
-400,keto champ - berry - 32,55,9.344400770623926
-401,keto champ - berry - 32,33,1.6
-402,keto champ - berry - 32,2,2.4008847364886012
-403,keto champ - berry - 32,1,7.206010964811833
-404,keto champ - berry - 32,10,5.669722837200979
-405,lean - chocolate - 32,7,10.621994196837676
-406,lean - chocolate - 32,3,1.6
-407,lean - chocolate - 32,35,7.581510964432084
-408,lean - strawberry - 32,59,2.590374406951357
-409,lean - strawberry - 32,36,2.453192504607376
-410,lean - strawberry - 32,58,4.493383744356218
-411,metabolism boost strawberry pineapple - 40,50,4.895349806106571
-412,metabolism boost strawberry pineapple - 40,59,4.151546549440338
-413,metabolism boost strawberry pineapple - 40,34,12.713952363415512
-414,metabolism boost strawberry pineapple - 40,26,2.0
-415,metabolism boost strawberry pineapple - 40,52,8.776617372602672
-416,metabolism boost strawberry pineapple - 40,39,11.144443314868244
-417,metabolism boost strawberry pineapple - 40,21,13.258367470191505
-418,metabolism boost mango ginger - 40,37,6.639950140326182
-419,metabolism boost mango ginger - 40,7,4.806426553882404
-420,metabolism boost mango ginger - 40,57,9.13148321976077
-421,metabolism boost mango ginger - 40,67,4.341231153498343
-422,metabolism boost mango ginger - 40,26,3.6536370138911427
-423,metabolism boost mango ginger - 40,52,13.599252449614328
-424,metabolism boost mango ginger - 40,23,6.724666940775459
-425,metabolism boost mango ginger - 40,39,2.0
-426,metabolism boost mango ginger - 40,21,4.472671647129209
-427,slim - n - trim - chocolate - 40,7,11.438026162614852
-428,slim - n - trim - chocolate - 40,42,2.0
-429,slim - n - trim - chocolate - 40,52,10.222854326202107
-430,slim - n - trim - chocolate - 40,35,6.957382115747993
-431,slim - n - trim - chocolate - 40,24,4.915219991916662
-432,slim - n - trim - chocolate - 40,1,5.252626158178253
-433,slim - n - trim - chocolate - 40,21,4.205201140657552
-434,slim - n - trim - chocolate - 40,58,2.0
-435,slim - n - trim - strawberry - 40,59,4.337038742467671
-436,slim - n - trim - strawberry - 40,26,5.7368465393855885
-437,slim - n - trim - strawberry - 40,36,6.210226596183877
-438,slim - n - trim - strawberry - 40,52,14.000713124327794
-439,slim - n - trim - strawberry - 40,58,8.332338376765398
-440,slim - n - trim - strawberry - 40,21,5.300634927174113
-441,keto champ - berry - 40,8,2.5887859186987017
-442,keto champ - berry - 40,55,11.680500963279908
-443,keto champ - berry - 40,33,2.0
-444,keto champ - berry - 40,2,3.0011059206107515
-445,keto champ - berry - 40,1,9.007513706014791
-446,keto champ - berry - 40,10,7.087153546501223
-447,lean - chocolate - 40,7,13.277492746047095
-448,lean - chocolate - 40,3,2.0
-449,lean - chocolate - 40,35,9.476888705540105
-450,lean - strawberry - 40,59,3.237968008689196
-451,lean - strawberry - 40,36,3.0664906307592195
-452,lean - strawberry - 40,58,5.616729680445273
-453,vegan - pineapple spinach - 20,61,1.7439940933160287
-454,vegan - pineapple spinach - 20,50,5.5205014180228105
-455,vegan - pineapple spinach - 20,57,1.0
-456,vegan - pineapple spinach - 20,7,3.919894304694738
-457,vegan - pineapple spinach - 20,6,6.052055850405364
-458,vegan - pineapple spinach - 20,11,1.7919366167022217
-459,vegan - pineapple spinach - 20,67,2.9554833634400994
-460,vegan - pineapple spinach - 20,3,3.6055347707431658
-461,vegan - pineapple spinach - 20,58,6.130067864990485
-462,vegan - mango kale - 20,61,3.0199875293929628
-463,vegan - mango kale - 20,37,2.054609008135364
-464,vegan - mango kale - 20,32,2.6303877658115336
-465,vegan - mango kale - 20,7,1.478453946697487
-466,vegan - mango kale - 20,6,2.6219583677590395
-467,vegan - mango kale - 20,5,1.0881557357056277
-468,vegan - mango kale - 20,3,3.873180165298329
-469,vegan - nutty super grain - 20,61,1.0
-470,vegan - nutty super grain - 20,47,3.893718407680077
-471,vegan - nutty super grain - 20,7,2.5213749773761074
-472,vegan - nutty super grain - 20,10,5.154955290247852
-473,vegan - nutty super grain - 20,5,1.0
-474,vegan - nutty super grain - 20,62,2.442395823171429
-475,vegan - nutty super grain - 20,1,2.621405549655824
-476,vegan - mixed berry - 20,61,1.9807955956365368
-477,vegan - mixed berry - 20,59,1.0
-478,vegan - mixed berry - 20,8,1.0
-479,vegan - mixed berry - 20,55,1.0
-480,vegan - mixed berry - 20,7,2.411968932348506
-481,vegan - mixed berry - 20,62,1.0
-482,vegan - mixed berry - 20,44,1.0807430105326217
-483,vegan - mixed berry - 20,4,1.0
-484,vegan - mixed berry - 20,48,1.5084034950832483
-485,veggie - apple kiwi kale - 20,32,2.2839804170612688
-486,veggie - apple kiwi kale - 20,7,5.2106266020249405
-487,veggie - apple kiwi kale - 20,5,1.0
-488,veggie - apple kiwi kale - 20,34,5.128235985721728
-489,veggie - apple kiwi kale - 20,18,4.620358375034496
-490,veggie - lemon ginger spinach - 20,57,4.578887409799115
-491,veggie - lemon ginger spinach - 20,11,5.682357299716806
-492,veggie - lemon ginger spinach - 20,32,4.4186425380938665
-493,veggie - lemon ginger spinach - 20,23,3.063664210421728
-494,veggie - lemon ginger spinach - 20,37,3.784626731411594
-495,veggie - lemon ginger spinach - 20,50,4.855079593356805
-496,veggie - lemon ginger spinach - 20,67,1.3685577447425339
-497,veggie - lemon ginger spinach - 20,46,1.781577735294119
-498,veggie - lemon ginger spinach - 20,58,2.711324462026278
-499,greek yogurt - pineapple mango - 20,27,4.926526738534233
-500,greek yogurt - pineapple mango - 20,52,2.7427427263057056
-501,greek yogurt - pineapple mango - 20,21,3.2496118982025965
-502,greek yogurt - pineapple mango - 20,37,4.172457602575708
-503,greek yogurt - pineapple mango - 20,50,2.9396656064289814
-504,greek yogurt - pineapple mango - 20,49,5.654810385706654
-505,greek yogurt - pineapple mango - 20,6,1.4842307765092015
-506,greek yogurt - strawberry blueberry - 20,27,2.8746197409464007
-507,greek yogurt - strawberry blueberry - 20,52,2.963261194601112
-508,greek yogurt - strawberry blueberry - 20,21,1.5989554858094017
-509,greek yogurt - strawberry blueberry - 20,59,2.48840322951073
-510,greek yogurt - strawberry blueberry - 20,8,2.447662242468506
-511,greek yogurt - strawberry blueberry - 20,4,4.758158015784449
-512,greek yogurt - strawberry blueberry - 20,48,4.244575708355198
-513,immune builder - mixed berry - 20,7,2.8383063660956567
-514,immune builder - mixed berry - 20,59,1.5743917642790926
-515,immune builder - mixed berry - 20,55,2.3122755064126808
-516,immune builder - mixed berry - 20,8,4.2126772246372886
-517,immune builder - mixed berry - 20,4,2.2332103265167222
-518,immune builder - mixed berry - 20,10,1.0
-519,immune builder - mixed berry - 20,48,4.906109511049717
-520,immune builder - mixed berry - 20,30,1.2303663060720325
-521,immunie builder - orange - 20,7,5.9897955070910704
-522,immunie builder - orange - 20,37,1.9567545761815044
-523,immunie builder - orange - 20,6,2.489275492858027
-524,immunie builder - orange - 20,45,2.1367323352689302
-525,immunie builder - orange - 20,30,3.0235634822937
-526,daily warrior - 20,7,1.0
-527,daily warrior - 20,8,3.5562402285008003
-528,daily warrior - 20,4,1.691203470211131
-529,daily warrior - 20,16,6.388457624764036
-530,daily warrior - 20,47,1.550222623891904
-531,daily warrior - 20,3,3.2936677016282974
-532,daily warrior - 20,58,3.3936865419966975
-533,daily warrior - 20,57,1.0
-534,vegan - pineapple spinach - 32,61,2.7903905493056462
-535,vegan - pineapple spinach - 32,50,8.832802268836497
-536,vegan - pineapple spinach - 32,57,1.6
-537,vegan - pineapple spinach - 32,7,6.271830887511581
-538,vegan - pineapple spinach - 32,6,9.683289360648583
-539,vegan - pineapple spinach - 32,11,2.867098586723555
-540,vegan - pineapple spinach - 32,67,4.728773381504159
-541,vegan - pineapple spinach - 32,3,5.768855633189066
-542,vegan - pineapple spinach - 32,58,9.808108583984776
-543,vegan - mango kale - 32,61,4.831980047028741
-544,vegan - mango kale - 32,37,3.2873744130165825
-545,vegan - mango kale - 32,32,4.208620425298454
-546,vegan - mango kale - 32,7,2.3655263147159795
-547,vegan - mango kale - 32,6,4.1951333884144635
-548,vegan - mango kale - 32,5,1.7410491771290044
-549,vegan - mango kale - 32,3,6.197088264477326
-550,vegan - nutty super grain - 32,61,1.6
-551,vegan - nutty super grain - 32,47,6.229949452288124
-552,vegan - nutty super grain - 32,7,4.034199963801772
-553,vegan - nutty super grain - 32,10,8.247928464396564
-554,vegan - nutty super grain - 32,5,1.6
-555,vegan - nutty super grain - 32,62,3.907833317074287
-556,vegan - nutty super grain - 32,1,4.194248879449319
-557,vegan - mixed berry - 32,61,3.169272953018459
-558,vegan - mixed berry - 32,59,1.6
-559,vegan - mixed berry - 32,8,1.6
-560,vegan - mixed berry - 32,55,1.6
-561,vegan - mixed berry - 32,7,3.8591502917576097
-562,vegan - mixed berry - 32,62,1.6
-563,vegan - mixed berry - 32,44,1.7291888168521947
-564,vegan - mixed berry - 32,4,1.6
-565,vegan - mixed berry - 32,48,2.4134455921331974
-566,veggie - apple kiwi kale - 32,32,3.65436866729803
-567,veggie - apple kiwi kale - 32,7,8.337002563239905
-568,veggie - apple kiwi kale - 32,5,1.6
-569,veggie - apple kiwi kale - 32,34,8.205177577154766
-570,veggie - apple kiwi kale - 32,18,7.392573400055195
-571,veggie - lemon ginger spinach - 32,57,7.326219855678584
-572,veggie - lemon ginger spinach - 32,11,9.09177167954689
-573,veggie - lemon ginger spinach - 32,32,7.0698280609501865
-574,veggie - lemon ginger spinach - 32,23,4.901862736674765
-575,veggie - lemon ginger spinach - 32,37,6.05540277025855
-576,veggie - lemon ginger spinach - 32,50,7.768127349370889
-577,veggie - lemon ginger spinach - 32,67,2.1896923915880544
-578,veggie - lemon ginger spinach - 32,46,2.8505243764705903
-579,veggie - lemon ginger spinach - 32,58,4.338119139242045
-580,greek yogurt - pineapple mango - 32,27,7.882442781654773
-581,greek yogurt - pineapple mango - 32,52,4.388388362089129
-582,greek yogurt - pineapple mango - 32,21,5.199379037124155
-583,greek yogurt - pineapple mango - 32,37,6.675932164121133
-584,greek yogurt - pineapple mango - 32,50,4.703464970286371
-585,greek yogurt - pineapple mango - 32,49,9.047696617130645
-586,greek yogurt - pineapple mango - 32,6,2.3747692424147226
-587,greek yogurt - strawberry blueberry - 32,27,4.599391585514241
-588,greek yogurt - strawberry blueberry - 32,52,4.741217911361779
-589,greek yogurt - strawberry blueberry - 32,21,2.558328777295043
-590,greek yogurt - strawberry blueberry - 32,59,3.981445167217168
-591,greek yogurt - strawberry blueberry - 32,8,3.9162595879496096
-592,greek yogurt - strawberry blueberry - 32,4,7.613052825255119
-593,greek yogurt - strawberry blueberry - 32,48,6.791321133368317
-594,immune builder - mixed berry - 32,7,4.541290185753051
-595,immune builder - mixed berry - 32,59,2.5190268228465484
-596,immune builder - mixed berry - 32,55,3.6996408102602896
-597,immune builder - mixed berry - 32,8,6.740283559419662
-598,immune builder - mixed berry - 32,4,3.573136522426756
-599,immune builder - mixed berry - 32,10,1.6
-600,immune builder - mixed berry - 32,48,7.8497752176795474
-601,immune builder - mixed berry - 32,30,1.968586089715252
-602,immunie builder - orange - 32,7,9.583672811345712
-603,immunie builder - orange - 32,37,3.130807321890407
-604,immunie builder - orange - 32,6,3.9828407885728434
-605,immunie builder - orange - 32,45,3.4187717364302888
-606,immunie builder - orange - 32,30,4.83770157166992
-607,daily warrior - 32,7,1.6
-608,daily warrior - 32,8,5.689984365601281
-609,daily warrior - 32,4,2.70592555233781
-610,daily warrior - 32,16,10.221532199622459
-611,daily warrior - 32,47,2.4803561982270463
-612,daily warrior - 32,3,5.2698683226052765
-613,daily warrior - 32,58,5.429898467194716
-614,daily warrior - 32,57,1.6
-615,vegan - pineapple spinach - 40,61,3.4879881866320575
-616,vegan - pineapple spinach - 40,50,11.041002836045621
-617,vegan - pineapple spinach - 40,57,2.0
-618,vegan - pineapple spinach - 40,7,7.839788609389476
-619,vegan - pineapple spinach - 40,6,12.104111700810728
-620,vegan - pineapple spinach - 40,11,3.5838732334044434
-621,vegan - pineapple spinach - 40,67,5.910966726880199
-622,vegan - pineapple spinach - 40,3,7.2110695414863315
-623,vegan - pineapple spinach - 40,58,12.26013572998097
-624,vegan - mango kale - 40,61,6.0399750587859256
-625,vegan - mango kale - 40,37,4.109218016270728
-626,vegan - mango kale - 40,32,5.260775531623067
-627,vegan - mango kale - 40,7,2.956907893394974
-628,vegan - mango kale - 40,6,5.243916735518079
-629,vegan - mango kale - 40,5,2.1763114714112555
-630,vegan - mango kale - 40,3,7.746360330596658
-631,vegan - nutty super grain - 40,61,2.0
-632,vegan - nutty super grain - 40,47,7.787436815360154
-633,vegan - nutty super grain - 40,7,5.042749954752215
-634,vegan - nutty super grain - 40,10,10.309910580495703
-635,vegan - nutty super grain - 40,5,2.0
-636,vegan - nutty super grain - 40,62,4.884791646342858
-637,vegan - nutty super grain - 40,1,5.242811099311648
-638,vegan - mixed berry - 40,61,3.9615911912730737
-639,vegan - mixed berry - 40,59,2.0
-640,vegan - mixed berry - 40,8,2.0
-641,vegan - mixed berry - 40,55,2.0
-642,vegan - mixed berry - 40,7,4.823937864697012
-643,vegan - mixed berry - 40,62,2.0
-644,vegan - mixed berry - 40,44,2.1614860210652433
-645,vegan - mixed berry - 40,4,2.0
-646,vegan - mixed berry - 40,48,3.0168069901664967
-647,veggie - apple kiwi kale - 40,32,4.5679608341225375
-648,veggie - apple kiwi kale - 40,7,10.421253204049881
-649,veggie - apple kiwi kale - 40,5,2.0
-650,veggie - apple kiwi kale - 40,34,10.256471971443457
-651,veggie - apple kiwi kale - 40,18,9.240716750068993
-652,veggie - lemon ginger spinach - 40,57,9.15777481959823
-653,veggie - lemon ginger spinach - 40,11,11.364714599433611
-654,veggie - lemon ginger spinach - 40,32,8.837285076187733
-655,veggie - lemon ginger spinach - 40,23,6.127328420843456
-656,veggie - lemon ginger spinach - 40,37,7.569253462823188
-657,veggie - lemon ginger spinach - 40,50,9.71015918671361
-658,veggie - lemon ginger spinach - 40,67,2.7371154894850678
-659,veggie - lemon ginger spinach - 40,46,3.563155470588238
-660,veggie - lemon ginger spinach - 40,58,5.422648924052556
-661,greek yogurt - pineapple mango - 40,27,9.853053477068466
-662,greek yogurt - pineapple mango - 40,52,5.485485452611411
-663,greek yogurt - pineapple mango - 40,21,6.499223796405193
-664,greek yogurt - pineapple mango - 40,37,8.344915205151416
-665,greek yogurt - pineapple mango - 40,50,5.879331212857963
-666,greek yogurt - pineapple mango - 40,49,11.309620771413307
-667,greek yogurt - pineapple mango - 40,6,2.968461553018403
-668,greek yogurt - strawberry blueberry - 40,27,5.749239481892801
-669,greek yogurt - strawberry blueberry - 40,52,5.926522389202224
-670,greek yogurt - strawberry blueberry - 40,21,3.1979109716188034
-671,greek yogurt - strawberry blueberry - 40,59,4.97680645902146
-672,greek yogurt - strawberry blueberry - 40,8,4.895324484937012
-673,greek yogurt - strawberry blueberry - 40,4,9.516316031568898
-674,greek yogurt - strawberry blueberry - 40,48,8.489151416710396
-675,immune builder - mixed berry - 40,7,5.676612732191313
-676,immune builder - mixed berry - 40,59,3.148783528558185
-677,immune builder - mixed berry - 40,55,4.6245510128253615
-678,immune builder - mixed berry - 40,8,8.425354449274577
-679,immune builder - mixed berry - 40,4,4.4664206530334445
-680,immune builder - mixed berry - 40,10,2.0
-681,immune builder - mixed berry - 40,48,9.812219022099434
-682,immune builder - mixed berry - 40,30,2.460732612144065
-683,immunie builder - orange - 40,7,11.979591014182141
-684,immunie builder - orange - 40,37,3.913509152363009
-685,immunie builder - orange - 40,6,4.978550985716054
-686,immunie builder - orange - 40,45,4.2734646705378605
-687,immunie builder - orange - 40,30,6.0471269645874
-688,daily warrior - 40,7,2.0
-689,daily warrior - 40,8,7.112480457001601
-690,daily warrior - 40,4,3.382406940422262
-691,daily warrior - 40,16,12.776915249528072
-692,daily warrior - 40,47,3.100445247783808
-693,daily warrior - 40,3,6.587335403256595
-694,daily warrior - 40,58,6.787373083993395
-695,daily warrior - 40,57,2.0
-696,angel food - 20,60,1.0233188342378252
-697,angel food - 20,7,5.545789438479621
-698,angel food - 20,42,4.541376071394104
-699,angel food - 20,64,1.0
-700,angel food slim - 20,59,1.3692910490518675
-701,angel food slim - 20,7,4.240215191074549
-702,angel food slim - 20,48,2.87859065764031
-703,angel food slim - 20,52,5.427738873583224
-704,angel food slim - 20,58,4.670508211876762
-705,pineapple surf - 20,50,9.359493765318216
-706,pineapple surf - 20,60,2.6491967995512518
-707,pineapple surf - 20,34,2.4890628540841035
-708,pineapple surf - 20,15,4.782871827836209
-709,pineapple surf - 20,64,4.988545073663049
-710,caribbean way - 20,60,6.74370764057872
-711,caribbean way - 20,7,4.220802055775808
-712,caribbean way - 20,46,4.825338649701762
-713,caribbean way - 20,64,3.123206309496326
-714,banana boat - 20,7,7.425255600730063
-715,banana boat - 20,65,6.023311623314051
-716,banana boat - 20,15,2.2232677014146747
-717,banana boat - 20,64,3.0296011729381025
-718,banana berry treat - 20,7,1.0650882289775057
-719,banana berry treat - 20,60,4.344929403100805
-720,banana berry treat - 20,55,4.005695736349309
-721,banana berry treat - 20,46,2.9816515544029842
-722,banana berry treat - 20,15,4.71111638994153
-723,strawberry kiwi breeze - 20,60,7.032739962971536
-724,strawberry kiwi breeze - 20,34,6.243261082132946
-725,strawberry kiwi breeze - 20,46,6.5195451515051595
-726,strawberry kiwi breeze - 20,15,3.251428241462569
-727,lemon twist strawberry - 20,60,2.520337058657754
-728,lemon twist strawberry - 20,67,7.6962708211495166
-729,lemon twist strawberry - 20,46,7.8299857677291484
-730,lemon twist strawberry - 20,64,6.220154196754677
-731,island impact - 20,37,1.2163311442493905
-732,island impact - 20,50,2.6724771672993732
-733,island impact - 20,46,8.149093339148482
-734,island impact - 20,52,6.30067399757706
-735,island impact - 20,6,5.0886152261423225
-736,x-treme - tart cherry - 20,63,3.7983257260589323
-737,x-treme - tart cherry - 20,7,3.8089902147957706
-738,x-treme - tart cherry - 20,49,6.047081219782777
-739,x-treme - tart cherry - 20,15,2.7480649126246646
-740,x-treme - tart cherry - 20,64,1.0
-741,x-treme - strawberry - 20,60,2.686765127174871
-742,x-treme - strawberry - 20,46,4.816628425898618
-743,x-treme - orange - 20,45,5.380460728219395
-744,x-treme - orange - 20,7,4.7905272304246616
-745,x-treme - orange - 20,6,2.3294096505128308
-746,x-treme - orange - 20,18,5.724869727182313
-747,x-treme - orange - 20,64,6.31022765713961
-748,kindness in a cup - 20,60,9.012150719885394
-749,kindness in a cup - 20,7,3.285195348778312
-750,kindness in a cup - 20,45,6.83820758499694
-751,kindness in a cup - 20,64,1.0
-752,angel food - 32,60,1.6373101347805203
-753,angel food - 32,7,8.873263101567394
-754,angel food - 32,42,7.266201714230566
-755,angel food - 32,64,1.6
-756,angel food slim - 32,59,2.190865678482988
-757,angel food slim - 32,7,6.784344305719279
-758,angel food slim - 32,48,4.6057450522244965
-759,angel food slim - 32,52,8.684382197733159
-760,angel food slim - 32,58,7.47281313900282
-761,pineapple surf - 32,50,14.975190024509146
-762,pineapple surf - 32,60,4.238714879282003
-763,pineapple surf - 32,34,3.982500566534566
-764,pineapple surf - 32,15,7.652594924537934
-765,pineapple surf - 32,64,7.981672117860879
-766,caribbean way - 32,60,10.789932224925954
-767,caribbean way - 32,7,6.753283289241293
-768,caribbean way - 32,46,7.72054183952282
-769,caribbean way - 32,64,4.997130095194122
-770,banana boat - 32,7,11.8804089611681
-771,banana boat - 32,65,9.637298597302483
-772,banana boat - 32,15,3.5572283222634797
-773,banana boat - 32,64,4.8473618767009645
-774,banana berry treat - 32,7,1.7041411663640091
-775,banana berry treat - 32,60,6.951887044961288
-776,banana berry treat - 32,55,6.409113178158894
-777,banana berry treat - 32,46,4.770642487044775
-778,banana berry treat - 32,15,7.537786223906449
-779,strawberry kiwi breeze - 32,60,11.252383940754457
-780,strawberry kiwi breeze - 32,34,9.989217731412715
-781,strawberry kiwi breeze - 32,46,10.431272242408255
-782,strawberry kiwi breeze - 32,15,5.20228518634011
-783,lemon twist strawberry - 32,60,4.032539293852406
-784,lemon twist strawberry - 32,67,12.314033313839227
-785,lemon twist strawberry - 32,46,12.527977228366638
-786,lemon twist strawberry - 32,64,9.952246714807485
-787,island impact - 32,37,1.946129830799025
-788,island impact - 32,50,4.275963467678998
-789,island impact - 32,46,13.038549342637573
-790,island impact - 32,52,10.081078396123296
-791,island impact - 32,6,8.141784361827716
-792,x-treme - tart cherry - 32,63,6.077321161694292
-793,x-treme - tart cherry - 32,7,6.094384343673234
-794,x-treme - tart cherry - 32,49,9.675329951652444
-795,x-treme - tart cherry - 32,15,4.396903860199464
-796,x-treme - tart cherry - 32,64,1.6
-797,x-treme - strawberry - 32,60,4.298824203479794
-798,x-treme - strawberry - 32,46,7.70660548143779
-799,x-treme - orange - 32,45,8.608737165151032
-800,x-treme - orange - 32,7,7.6648435686794585
-801,x-treme - orange - 32,6,3.7270554408205294
-802,x-treme - orange - 32,18,9.1597915634917
-803,x-treme - orange - 32,64,10.096364251423376
-804,kindness in a cup - 32,60,14.419441151816631
-805,kindness in a cup - 32,7,5.256312558045299
-806,kindness in a cup - 32,45,10.941132135995105
-807,kindness in a cup - 32,64,1.6
-808,angel food - 40,60,2.0466376684756504
-809,angel food - 40,7,11.091578876959241
-810,angel food - 40,42,9.082752142788207
-811,angel food - 40,64,2.0
-812,angel food slim - 40,59,2.738582098103735
-813,angel food slim - 40,7,8.480430382149098
-814,angel food slim - 40,48,5.75718131528062
-815,angel food slim - 40,52,10.855477747166448
-816,angel food slim - 40,58,9.341016423753524
-817,pineapple surf - 40,50,18.718987530636433
-818,pineapple surf - 40,60,5.2983935991025035
-819,pineapple surf - 40,34,4.978125708168207
-820,pineapple surf - 40,15,9.565743655672417
-821,pineapple surf - 40,64,9.977090147326098
-822,caribbean way - 40,60,13.48741528115744
-823,caribbean way - 40,7,8.441604111551616
-824,caribbean way - 40,46,9.650677299403524
-825,caribbean way - 40,64,6.246412618992652
-826,banana boat - 40,7,14.850511201460126
-827,banana boat - 40,65,12.046623246628101
-828,banana boat - 40,15,4.446535402829349
-829,banana boat - 40,64,6.059202345876205
-830,banana berry treat - 40,7,2.1301764579550113
-831,banana berry treat - 40,60,8.68985880620161
-832,banana berry treat - 40,55,8.011391472698618
-833,banana berry treat - 40,46,5.9633031088059685
-834,banana berry treat - 40,15,9.42223277988306
-835,strawberry kiwi breeze - 40,60,14.065479925943071
-836,strawberry kiwi breeze - 40,34,12.486522164265892
-837,strawberry kiwi breeze - 40,46,13.039090303010319
-838,strawberry kiwi breeze - 40,15,6.502856482925138
-839,lemon twist strawberry - 40,60,5.040674117315508
-840,lemon twist strawberry - 40,67,15.392541642299033
-841,lemon twist strawberry - 40,46,15.659971535458297
-842,lemon twist strawberry - 40,64,12.440308393509355
-843,island impact - 40,37,2.432662288498781
-844,island impact - 40,50,5.3449543345987465
-845,island impact - 40,46,16.298186678296965
-846,island impact - 40,52,12.60134799515412
-847,island impact - 40,6,10.177230452284645
-848,x-treme - tart cherry - 40,63,7.5966514521178645
-849,x-treme - tart cherry - 40,7,7.617980429591541
-850,x-treme - tart cherry - 40,49,12.094162439565554
-851,x-treme - tart cherry - 40,15,5.496129825249329
-852,x-treme - tart cherry - 40,64,2.0
-853,x-treme - strawberry - 40,60,5.373530254349742
-854,x-treme - strawberry - 40,46,9.633256851797237
-855,x-treme - orange - 40,45,10.76092145643879
-856,x-treme - orange - 40,7,9.581054460849323
-857,x-treme - orange - 40,6,4.6588193010256616
-858,x-treme - orange - 40,18,11.449739454364625
-859,x-treme - orange - 40,64,12.62045531427922
-860,kindness in a cup - 40,60,18.024301439770788
-861,kindness in a cup - 40,7,6.570390697556624
-862,kindness in a cup - 40,45,13.67641516999388
-863,kindness in a cup - 40,64,2.0
+0,coffee high protein - almond mocha - 20,14,1.0
+1,coffee high protein - almond mocha - 20,16,5.061949436872281
+2,coffee high protein - almond mocha - 20,42,3.550588414087657
+3,coffee high protein - almond mocha - 20,15,1.0358237775220716
+4,coffee high protein - almond mocha - 20,3,1.0
+5,coffee high protein - almond mocha - 20,66,2.5153324569913083
+6,coffee high protein - almond mocha - 20,1,2.150644728826115
+7,coffee high protein - almond mocha - 20,77,1.0
+8,coffee high protein - almond mocha - 20,80,1.0
+9,gladiator - coffee - 20,7,3.8828468702673975
+10,gladiator - coffee - 20,24,4.282821214891486
+11,gladiator - coffee - 20,14,2.4307053601431448
+12,gladiator - coffee - 20,77,1.0
+13,gladiator - coffee - 20,80,1.0
+14,keto champ - coffee - 20,14,5.274800974111198
+15,keto champ - coffee - 20,33,1.0
+16,keto champ - coffee - 20,2,2.830739518855435
+17,keto champ - coffee - 20,10,6.680445630498102
+18,keto champ - coffee - 20,1,3.111358109767065
+19,keto champ - coffee - 20,77,1.0
+20,keto champ - coffee - 20,80,1.0
+21,pure recharge - mango strawberry - 20,59,2.223116289264909
+22,pure recharge - mango strawberry - 20,37,4.866204944014184
+23,pure recharge - mango strawberry - 20,6,5.72863957547209
+24,pure recharge - mango strawberry - 20,54,5.700633316936123
+25,pure recharge - mango strawberry - 20,18,2.9756381890481967
+26,pure recharge - mango strawberry - 20,77,1.0
+27,pure recharge - mango strawberry - 20,80,1.0
+28,pure recharge - pineapple - 20,7,1.0
+29,pure recharge - pineapple - 20,50,2.3123830900301887
+30,pure recharge - pineapple - 20,54,3.2397762728833075
+31,pure recharge - pineapple - 20,6,2.8760333517645145
+32,pure recharge - pineapple - 20,43,1.104054323404996
+33,pure recharge - pineapple - 20,77,1.0
+34,pure recharge - pineapple - 20,80,1.0
+35,the activator - recovery coffee - 20,14,4.51660578587618
+36,the activator - recovery coffee - 20,24,1.0
+37,the activator - recovery coffee - 20,52,5.077300511764754
+38,the activator - recovery coffee - 20,7,2.506113325890819
+39,the activator - recovery coffee - 20,13,5.659651334623462
+40,the activator - recovery coffee - 20,42,2.0195189193389202
+41,the activator - recovery coffee - 20,77,1.0
+42,the activator - recovery coffee - 20,80,1.0
+43,the hulk - coffee - 20,7,2.549823143304806
+44,the hulk - coffee - 20,14,3.2022769288491397
+45,the hulk - coffee - 20,64,2.72749437085376
+46,the hulk - coffee - 20,29,1.0
+47,the hulk - coffee - 20,9,3.1349724021332794
+48,the hulk - coffee - 20,77,1.0
+49,the hulk - coffee - 20,80,1.0
+50,vegan coffee mocha - 20,7,5.236972499635632
+51,vegan coffee mocha - 20,16,2.5435491085382576
+52,vegan coffee mocha - 20,44,1.0
+53,vegan coffee mocha - 20,14,1.0
+54,vegan coffee mocha - 20,1,4.281852638602475
+55,vegan coffee mocha - 20,61,1.0
+56,vegan coffee mocha - 20,77,1.0
+57,vegan coffee mocha - 20,80,1.0
+58,coffee high protein - almond mocha - 32,14,1.6
+59,coffee high protein - almond mocha - 32,16,8.099119098995649
+60,coffee high protein - almond mocha - 32,42,5.680941462540251
+61,coffee high protein - almond mocha - 32,15,1.6573180440353146
+62,coffee high protein - almond mocha - 32,3,1.6
+63,coffee high protein - almond mocha - 32,66,4.024531931186093
+64,coffee high protein - almond mocha - 32,1,3.441031566121784
+65,coffee high protein - almond mocha - 32,78,1.0
+66,coffee high protein - almond mocha - 32,80,1.0
+67,gladiator - coffee - 32,7,6.212554992427837
+68,gladiator - coffee - 32,24,6.852513943826378
+69,gladiator - coffee - 32,14,3.889128576229032
+70,gladiator - coffee - 32,78,1.0
+71,gladiator - coffee - 32,80,1.0
+72,keto champ - coffee - 32,14,8.439681558577917
+73,keto champ - coffee - 32,33,1.6
+74,keto champ - coffee - 32,2,4.529183230168696
+75,keto champ - coffee - 32,10,10.688713008796965
+76,keto champ - coffee - 32,1,4.978172975627304
+77,keto champ - coffee - 32,78,1.0
+78,keto champ - coffee - 32,80,1.0
+79,pure recharge - mango strawberry - 32,59,3.5569860628238548
+80,pure recharge - mango strawberry - 32,37,7.785927910422695
+81,pure recharge - mango strawberry - 32,6,9.165823320755344
+82,pure recharge - mango strawberry - 32,54,9.121013307097797
+83,pure recharge - mango strawberry - 32,18,4.761021102477115
+84,pure recharge - mango strawberry - 32,78,1.0
+85,pure recharge - mango strawberry - 32,80,1.0
+86,pure recharge - pineapple - 32,7,1.6
+87,pure recharge - pineapple - 32,50,3.6998129440483023
+88,pure recharge - pineapple - 32,54,5.183642036613293
+89,pure recharge - pineapple - 32,6,4.601653362823224
+90,pure recharge - pineapple - 32,43,1.7664869174479936
+91,pure recharge - pineapple - 32,78,1.0
+92,pure recharge - pineapple - 32,80,1.0
+93,the activator - recovery coffee - 32,14,7.226569257401889
+94,the activator - recovery coffee - 32,24,1.6
+95,the activator - recovery coffee - 32,52,8.123680818823606
+96,the activator - recovery coffee - 32,7,4.009781321425311
+97,the activator - recovery coffee - 32,13,9.05544213539754
+98,the activator - recovery coffee - 32,42,3.2312302709422727
+99,the activator - recovery coffee - 32,78,1.0
+100,the activator - recovery coffee - 32,80,1.0
+101,the hulk - coffee - 32,7,4.07971702928769
+102,the hulk - coffee - 32,14,5.123643086158624
+103,the hulk - coffee - 32,64,4.3639909933660155
+104,the hulk - coffee - 32,29,1.6
+105,the hulk - coffee - 32,9,5.015955843413248
+106,the hulk - coffee - 32,78,1.0
+107,the hulk - coffee - 32,80,1.0
+108,vegan coffee mocha - 32,7,8.379155999417012
+109,vegan coffee mocha - 32,16,4.069678573661212
+110,vegan coffee mocha - 32,44,1.6
+111,vegan coffee mocha - 32,14,1.6
+112,vegan coffee mocha - 32,1,6.8509642217639595
+113,vegan coffee mocha - 32,61,1.6
+114,vegan coffee mocha - 32,78,1.0
+115,vegan coffee mocha - 32,80,1.0
+116,coffee high protein - almond mocha - 40,14,2.0
+117,coffee high protein - almond mocha - 40,16,10.123898873744562
+118,coffee high protein - almond mocha - 40,42,7.101176828175314
+119,coffee high protein - almond mocha - 40,15,2.071647555044143
+120,coffee high protein - almond mocha - 40,3,2.0
+121,coffee high protein - almond mocha - 40,66,5.0306649139826165
+122,coffee high protein - almond mocha - 40,1,4.30128945765223
+123,coffee high protein - almond mocha - 40,79,1.0
+124,coffee high protein - almond mocha - 40,80,1.0
+125,gladiator - coffee - 40,7,7.765693740534795
+126,gladiator - coffee - 40,24,8.565642429782972
+127,gladiator - coffee - 40,14,4.8614107202862895
+128,gladiator - coffee - 40,79,1.0
+129,gladiator - coffee - 40,80,1.0
+130,keto champ - coffee - 40,14,10.549601948222396
+131,keto champ - coffee - 40,33,2.0
+132,keto champ - coffee - 40,2,5.66147903771087
+133,keto champ - coffee - 40,10,13.360891260996205
+134,keto champ - coffee - 40,1,6.22271621953413
+135,keto champ - coffee - 40,79,1.0
+136,keto champ - coffee - 40,80,1.0
+137,pure recharge - mango strawberry - 40,59,4.446232578529818
+138,pure recharge - mango strawberry - 40,37,9.732409888028368
+139,pure recharge - mango strawberry - 40,6,11.45727915094418
+140,pure recharge - mango strawberry - 40,54,11.401266633872247
+141,pure recharge - mango strawberry - 40,18,5.951276378096393
+142,pure recharge - mango strawberry - 40,79,1.0
+143,pure recharge - mango strawberry - 40,80,1.0
+144,pure recharge - pineapple - 40,7,2.0
+145,pure recharge - pineapple - 40,50,4.624766180060377
+146,pure recharge - pineapple - 40,54,6.479552545766615
+147,pure recharge - pineapple - 40,6,5.752066703529029
+148,pure recharge - pineapple - 40,43,2.208108646809992
+149,pure recharge - pineapple - 40,79,1.0
+150,pure recharge - pineapple - 40,80,1.0
+151,the activator - recovery coffee - 40,14,9.03321157175236
+152,the activator - recovery coffee - 40,24,2.0
+153,the activator - recovery coffee - 40,52,10.154601023529509
+154,the activator - recovery coffee - 40,7,5.012226651781638
+155,the activator - recovery coffee - 40,13,11.319302669246923
+156,the activator - recovery coffee - 40,42,4.0390378386778405
+157,the activator - recovery coffee - 40,79,1.0
+158,the activator - recovery coffee - 40,80,1.0
+159,the hulk - coffee - 40,7,5.099646286609612
+160,the hulk - coffee - 40,14,6.4045538576982795
+161,the hulk - coffee - 40,64,5.45498874170752
+162,the hulk - coffee - 40,29,2.0
+163,the hulk - coffee - 40,9,6.269944804266559
+164,the hulk - coffee - 40,79,1.0
+165,the hulk - coffee - 40,80,1.0
+166,vegan coffee mocha - 40,7,10.473944999271264
+167,vegan coffee mocha - 40,16,5.087098217076515
+168,vegan coffee mocha - 40,44,2.0
+169,vegan coffee mocha - 40,14,2.0
+170,vegan coffee mocha - 40,1,8.56370527720495
+171,vegan coffee mocha - 40,61,2.0
+172,vegan coffee mocha - 40,79,1.0
+173,vegan coffee mocha - 40,80,1.0
+174,the hulk - vanilla - 20,7,1.0
+175,the hulk - vanilla - 20,64,3.6203633519895577
+176,the hulk - vanilla - 20,29,1.0
+177,the hulk - vanilla - 20,9,4.104580944974023
+178,the hulk - vanilla - 20,77,1.0
+179,the hulk - vanilla - 20,80,1.0
+180,the hulk - chocolate - 20,7,1.010524737845179
+181,the hulk - chocolate - 20,1,2.6302213297210613
+182,the hulk - chocolate - 20,29,1.0
+183,the hulk - chocolate - 20,64,4.0777251156194385
+184,the hulk - chocolate - 20,9,1.0
+185,the hulk - chocolate - 20,77,1.0
+186,the hulk - chocolate - 20,80,1.0
+187,the hulk - strawberry - 20,7,2.8711765264057068
+188,the hulk - strawberry - 20,60,6.638077898670454
+189,the hulk - strawberry - 20,64,1.0
+190,the hulk - strawberry - 20,29,1.6475755625860156
+191,the hulk - strawberry - 20,9,2.962855660841301
+192,the hulk - strawberry - 20,77,1.0
+193,the hulk - strawberry - 20,80,1.0
+194,peanut power plus - chocolate - 20,7,4.7103129682732625
+195,peanut power plus - chocolate - 20,47,4.76820375419554
+196,peanut power plus - chocolate - 20,16,1.0
+197,peanut power plus - chocolate - 20,42,7.4042085622746985
+198,peanut power plus - chocolate - 20,52,1.2337951073449245
+199,peanut power plus - chocolate - 20,1,3.821063522877048
+200,peanut power plus - chocolate - 20,77,1.0
+201,peanut power plus - chocolate - 20,80,1.0
+202,peanut power plus - strawberry - 20,7,1.3042509663154267
+203,peanut power plus - strawberry - 20,59,1.704407721337091
+204,peanut power plus - strawberry - 20,47,1.3491244862464749
+205,peanut power plus - strawberry - 20,16,4.271806471715014
+206,peanut power plus - strawberry - 20,42,4.227389890401302
+207,peanut power plus - strawberry - 20,52,6.855130797555888
+208,peanut power plus - strawberry - 20,64,1.0
+209,peanut power plus - strawberry - 20,77,1.0
+210,peanut power plus - strawberry - 20,80,1.0
+211,power punch plus - 20,7,1.575303223113678
+212,power punch plus - 20,59,9.548072966357742
+213,power punch plus - 20,43,2.567002249188057
+214,power punch plus - 20,64,4.718480618737956
+215,power punch plus - 20,77,1.0
+216,power punch plus - 20,80,1.0
+217,stretch and flex - tart cherry -  20,7,4.228745933390627
+218,stretch and flex - tart cherry -  20,63,5.827730232343729
+219,stretch and flex - tart cherry -  20,4,1.0
+220,stretch and flex - tart cherry -  20,16,2.8800775952692668
+221,stretch and flex - tart cherry -  20,13,2.488920828834923
+222,stretch and flex - tart cherry -  20,61,3.611876278386662
+223,stretch and flex - tart cherry -  20,31,1.0
+224,stretch and flex - tart cherry -  20,77,1.0
+225,stretch and flex - tart cherry -  20,80,1.0
+226,stretch and flex - pineapple kale - 20,7,2.6871021265478365
+227,stretch and flex - pineapple kale - 20,50,3.1217539791236133
+228,stretch and flex - pineapple kale - 20,16,2.0834332624598204
+229,stretch and flex - pineapple kale - 20,13,7.667967164959331
+230,stretch and flex - pineapple kale - 20,61,5.264364879471461
+231,stretch and flex - pineapple kale - 20,31,1.0
+232,stretch and flex - pineapple kale - 20,32,1.4207970205682035
+233,stretch and flex - pineapple kale - 20,77,1.0
+234,stretch and flex - pineapple kale - 20,80,1.0
+235,gladiator - vanilla - 20,26,1.0
+236,gladiator - vanilla - 20,77,1.0
+237,gladiator - vanilla - 20,80,1.0
+238,gladiator - chocolate - 20,24,1.9379850302258979
+239,gladiator - chocolate - 20,77,1.0
+240,gladiator - chocolate - 20,80,1.0
+241,gladiator - strawberry - 20,25,3.011143129923546
+242,gladiator - strawberry - 20,77,1.0
+243,gladiator - strawberry - 20,80,1.0
+244,the activator recovery - blueberry tart cherry - 20,63,5.722334190169677
+245,the activator recovery - blueberry tart cherry - 20,8,2.082649669705576
+246,the activator recovery - blueberry tart cherry - 20,4,7.0194644092617136
+247,the activator recovery - blueberry tart cherry - 20,13,4.811125088151586
+248,the activator recovery - blueberry tart cherry - 20,52,1.8674873906101652
+249,the activator recovery - blueberry tart cherry - 20,26,1.0
+250,the activator recovery - blueberry tart cherry - 20,77,1.0
+251,the activator recovery - blueberry tart cherry - 20,80,1.0
+252,the activator recovery - strawberry banana - 20,7,3.5791116972323342
+253,the activator recovery - strawberry banana - 20,59,1.8234801850760924
+254,the activator recovery - strawberry banana - 20,5,6.504499923139232
+255,the activator recovery - strawberry banana - 20,13,3.0512005537972136
+256,the activator recovery - strawberry banana - 20,26,3.090681314630535
+257,the activator recovery - strawberry banana - 20,52,2.6208146427629684
+258,the activator recovery - strawberry banana - 20,77,1.0
+259,the activator recovery - strawberry banana - 20,80,1.0
+260,high intensity workout - chocolate cinnamon - 20,7,3.6071208974182105
+261,high intensity workout - chocolate cinnamon - 20,10,3.9184205337405977
+262,high intensity workout - chocolate cinnamon - 20,16,4.158406801515707
+263,high intensity workout - chocolate cinnamon - 20,2,1.0
+264,high intensity workout - chocolate cinnamon - 20,22,4.781419357143086
+265,high intensity workout - chocolate cinnamon - 20,1,5.9025859577401025
+266,high intensity workout - chocolate cinnamon - 20,12,1.0
+267,high intensity workout - chocolate cinnamon - 20,77,1.0
+268,high intensity workout - chocolate cinnamon - 20,80,1.0
+269,the hulk - vanilla - 32,7,1.6
+270,the hulk - vanilla - 32,64,5.7925813631832925
+271,the hulk - vanilla - 32,29,1.6
+272,the hulk - vanilla - 32,9,6.567329511958437
+273,the hulk - vanilla - 32,78,1.0
+274,the hulk - vanilla - 32,80,1.0
+275,the hulk - chocolate - 32,7,1.6168395805522864
+276,the hulk - chocolate - 32,1,4.208354127553698
+277,the hulk - chocolate - 32,29,1.6
+278,the hulk - chocolate - 32,64,6.524360184991102
+279,the hulk - chocolate - 32,9,1.6
+280,the hulk - chocolate - 32,78,1.0
+281,the hulk - chocolate - 32,80,1.0
+282,the hulk - strawberry - 32,7,4.593882442249131
+283,the hulk - strawberry - 32,60,10.620924637872726
+284,the hulk - strawberry - 32,64,1.6
+285,the hulk - strawberry - 32,29,2.636120900137625
+286,the hulk - strawberry - 32,9,4.7405690573460815
+287,the hulk - strawberry - 32,78,1.0
+288,the hulk - strawberry - 32,80,1.0
+289,peanut power plus - chocolate - 32,7,7.53650074923722
+290,peanut power plus - chocolate - 32,47,7.629126006712865
+291,peanut power plus - chocolate - 32,16,1.6
+292,peanut power plus - chocolate - 32,42,11.846733699639518
+293,peanut power plus - chocolate - 32,52,1.9740721717518792
+294,peanut power plus - chocolate - 32,1,6.1137016366032775
+295,peanut power plus - chocolate - 32,78,1.0
+296,peanut power plus - chocolate - 32,80,1.0
+297,peanut power plus - strawberry - 32,7,2.0868015461046827
+298,peanut power plus - strawberry - 32,59,2.727052354139346
+299,peanut power plus - strawberry - 32,47,2.15859917799436
+300,peanut power plus - strawberry - 32,16,6.834890354744023
+301,peanut power plus - strawberry - 32,42,6.763823824642083
+302,peanut power plus - strawberry - 32,52,10.968209276089421
+303,peanut power plus - strawberry - 32,64,1.6
+304,peanut power plus - strawberry - 32,78,1.0
+305,peanut power plus - strawberry - 32,80,1.0
+306,power punch plus - 32,7,2.520485156981885
+307,power punch plus - 32,59,15.276916746172388
+308,power punch plus - 32,43,4.107203598700891
+309,power punch plus - 32,64,7.549568989980731
+310,power punch plus - 32,78,1.0
+311,power punch plus - 32,80,1.0
+312,stretch and flex - tart cherry -  32,7,6.765993493425004
+313,stretch and flex - tart cherry -  32,63,9.324368371749967
+314,stretch and flex - tart cherry -  32,4,1.6
+315,stretch and flex - tart cherry -  32,16,4.608124152430827
+316,stretch and flex - tart cherry -  32,13,3.982273326135877
+317,stretch and flex - tart cherry -  32,61,5.779002045418659
+318,stretch and flex - tart cherry -  32,31,1.6
+319,stretch and flex - tart cherry -  32,78,1.0
+320,stretch and flex - tart cherry -  32,80,1.0
+321,stretch and flex - pineapple kale - 32,7,4.299363402476539
+322,stretch and flex - pineapple kale - 32,50,4.994806366597782
+323,stretch and flex - pineapple kale - 32,16,3.333493219935713
+324,stretch and flex - pineapple kale - 32,13,12.268747463934929
+325,stretch and flex - pineapple kale - 32,61,8.422983807154337
+326,stretch and flex - pineapple kale - 32,31,1.6
+327,stretch and flex - pineapple kale - 32,32,2.2732752329091257
+328,stretch and flex - pineapple kale - 32,78,1.0
+329,stretch and flex - pineapple kale - 32,80,1.0
+330,gladiator - vanilla - 32,26,1.6
+331,gladiator - vanilla - 32,78,1.0
+332,gladiator - vanilla - 32,80,1.0
+333,gladiator - chocolate - 32,24,3.100776048361437
+334,gladiator - chocolate - 32,78,1.0
+335,gladiator - chocolate - 32,80,1.0
+336,gladiator - strawberry - 32,25,4.817829007877673
+337,gladiator - strawberry - 32,78,1.0
+338,gladiator - strawberry - 32,80,1.0
+339,the activator recovery - blueberry tart cherry - 32,63,9.155734704271485
+340,the activator recovery - blueberry tart cherry - 32,8,3.3322394715289216
+341,the activator recovery - blueberry tart cherry - 32,4,11.231143054818743
+342,the activator recovery - blueberry tart cherry - 32,13,7.6978001410425385
+343,the activator recovery - blueberry tart cherry - 32,52,2.9879798249762644
+344,the activator recovery - blueberry tart cherry - 32,26,1.6
+345,the activator recovery - blueberry tart cherry - 32,78,1.0
+346,the activator recovery - blueberry tart cherry - 32,80,1.0
+347,the activator recovery - strawberry banana - 32,7,5.726578715571735
+348,the activator recovery - strawberry banana - 32,59,2.917568296121748
+349,the activator recovery - strawberry banana - 32,5,10.407199877022771
+350,the activator recovery - strawberry banana - 32,13,4.881920886075542
+351,the activator recovery - strawberry banana - 32,26,4.945090103408856
+352,the activator recovery - strawberry banana - 32,52,4.19330342842075
+353,the activator recovery - strawberry banana - 32,78,1.0
+354,the activator recovery - strawberry banana - 32,80,1.0
+355,high intensity workout - chocolate cinnamon - 32,7,5.771393435869137
+356,high intensity workout - chocolate cinnamon - 32,10,6.269472853984957
+357,high intensity workout - chocolate cinnamon - 32,16,6.653450882425132
+358,high intensity workout - chocolate cinnamon - 32,2,1.6
+359,high intensity workout - chocolate cinnamon - 32,22,7.650270971428938
+360,high intensity workout - chocolate cinnamon - 32,1,9.444137532384165
+361,high intensity workout - chocolate cinnamon - 32,12,1.6
+362,high intensity workout - chocolate cinnamon - 32,78,1.0
+363,high intensity workout - chocolate cinnamon - 32,80,1.0
+364,the hulk - vanilla - 40,7,2.0
+365,the hulk - vanilla - 40,64,7.240726703979115
+366,the hulk - vanilla - 40,29,2.0
+367,the hulk - vanilla - 40,9,8.209161889948046
+368,the hulk - vanilla - 40,79,1.0
+369,the hulk - vanilla - 40,80,1.0
+370,the hulk - chocolate - 40,7,2.021049475690358
+371,the hulk - chocolate - 40,1,5.2604426594421225
+372,the hulk - chocolate - 40,29,2.0
+373,the hulk - chocolate - 40,64,8.155450231238877
+374,the hulk - chocolate - 40,9,2.0
+375,the hulk - chocolate - 40,79,1.0
+376,the hulk - chocolate - 40,80,1.0
+377,the hulk - strawberry - 40,7,5.7423530528114135
+378,the hulk - strawberry - 40,60,13.276155797340907
+379,the hulk - strawberry - 40,64,2.0
+380,the hulk - strawberry - 40,29,3.295151125172031
+381,the hulk - strawberry - 40,9,5.925711321682602
+382,the hulk - strawberry - 40,79,1.0
+383,the hulk - strawberry - 40,80,1.0
+384,peanut power plus - chocolate - 40,7,9.420625936546525
+385,peanut power plus - chocolate - 40,47,9.53640750839108
+386,peanut power plus - chocolate - 40,16,2.0
+387,peanut power plus - chocolate - 40,42,14.808417124549397
+388,peanut power plus - chocolate - 40,52,2.467590214689849
+389,peanut power plus - chocolate - 40,1,7.642127045754096
+390,peanut power plus - chocolate - 40,79,1.0
+391,peanut power plus - chocolate - 40,80,1.0
+392,peanut power plus - strawberry - 40,7,2.6085019326308534
+393,peanut power plus - strawberry - 40,59,3.408815442674182
+394,peanut power plus - strawberry - 40,47,2.6982489724929497
+395,peanut power plus - strawberry - 40,16,8.543612943430029
+396,peanut power plus - strawberry - 40,42,8.454779780802603
+397,peanut power plus - strawberry - 40,52,13.710261595111776
+398,peanut power plus - strawberry - 40,64,2.0
+399,peanut power plus - strawberry - 40,79,1.0
+400,peanut power plus - strawberry - 40,80,1.0
+401,power punch plus - 40,7,3.150606446227356
+402,power punch plus - 40,59,19.096145932715483
+403,power punch plus - 40,43,5.134004498376114
+404,power punch plus - 40,64,9.436961237475913
+405,power punch plus - 40,79,1.0
+406,power punch plus - 40,80,1.0
+407,stretch and flex - tart cherry -  40,7,8.457491866781254
+408,stretch and flex - tart cherry -  40,63,11.655460464687458
+409,stretch and flex - tart cherry -  40,4,2.0
+410,stretch and flex - tart cherry -  40,16,5.7601551905385335
+411,stretch and flex - tart cherry -  40,13,4.977841657669846
+412,stretch and flex - tart cherry -  40,61,7.223752556773324
+413,stretch and flex - tart cherry -  40,31,2.0
+414,stretch and flex - tart cherry -  40,79,1.0
+415,stretch and flex - tart cherry -  40,80,1.0
+416,stretch and flex - pineapple kale - 40,7,5.374204253095673
+417,stretch and flex - pineapple kale - 40,50,6.243507958247227
+418,stretch and flex - pineapple kale - 40,16,4.166866524919641
+419,stretch and flex - pineapple kale - 40,13,15.335934329918661
+420,stretch and flex - pineapple kale - 40,61,10.528729758942921
+421,stretch and flex - pineapple kale - 40,31,2.0
+422,stretch and flex - pineapple kale - 40,32,2.841594041136407
+423,stretch and flex - pineapple kale - 40,79,1.0
+424,stretch and flex - pineapple kale - 40,80,1.0
+425,gladiator - vanilla - 40,26,2.0
+426,gladiator - vanilla - 40,79,1.0
+427,gladiator - vanilla - 40,80,1.0
+428,gladiator - chocolate - 40,24,3.8759700604517957
+429,gladiator - chocolate - 40,79,1.0
+430,gladiator - chocolate - 40,80,1.0
+431,gladiator - strawberry - 40,25,6.022286259847092
+432,gladiator - strawberry - 40,79,1.0
+433,gladiator - strawberry - 40,80,1.0
+434,the activator recovery - blueberry tart cherry - 40,63,11.444668380339355
+435,the activator recovery - blueberry tart cherry - 40,8,4.165299339411152
+436,the activator recovery - blueberry tart cherry - 40,4,14.038928818523427
+437,the activator recovery - blueberry tart cherry - 40,13,9.622250176303172
+438,the activator recovery - blueberry tart cherry - 40,52,3.7349747812203304
+439,the activator recovery - blueberry tart cherry - 40,26,2.0
+440,the activator recovery - blueberry tart cherry - 40,79,1.0
+441,the activator recovery - blueberry tart cherry - 40,80,1.0
+442,the activator recovery - strawberry banana - 40,7,7.1582233944646685
+443,the activator recovery - strawberry banana - 40,59,3.646960370152185
+444,the activator recovery - strawberry banana - 40,5,13.008999846278464
+445,the activator recovery - strawberry banana - 40,13,6.102401107594427
+446,the activator recovery - strawberry banana - 40,26,6.18136262926107
+447,the activator recovery - strawberry banana - 40,52,5.241629285525937
+448,the activator recovery - strawberry banana - 40,79,1.0
+449,the activator recovery - strawberry banana - 40,80,1.0
+450,high intensity workout - chocolate cinnamon - 40,7,7.214241794836421
+451,high intensity workout - chocolate cinnamon - 40,10,7.8368410674811955
+452,high intensity workout - chocolate cinnamon - 40,16,8.316813603031415
+453,high intensity workout - chocolate cinnamon - 40,2,2.0
+454,high intensity workout - chocolate cinnamon - 40,22,9.562838714286173
+455,high intensity workout - chocolate cinnamon - 40,1,11.805171915480205
+456,high intensity workout - chocolate cinnamon - 40,12,2.0
+457,high intensity workout - chocolate cinnamon - 40,79,1.0
+458,high intensity workout - chocolate cinnamon - 40,80,1.0
+459,metabolism boost strawberry pineapple - 20,50,1.9612261530075537
+460,metabolism boost strawberry pineapple - 20,59,4.980823185741389
+461,metabolism boost strawberry pineapple - 20,34,1.0
+462,metabolism boost strawberry pineapple - 20,26,3.186809391112657
+463,metabolism boost strawberry pineapple - 20,52,2.39573100731236
+464,metabolism boost strawberry pineapple - 20,39,3.3752923042805154
+465,metabolism boost strawberry pineapple - 20,21,4.3767694897212275
+466,metabolism boost strawberry pineapple - 20,77,1.0
+467,metabolism boost strawberry pineapple - 20,80,1.0
+468,metabolism boost mango ginger - 20,37,3.186983547233006
+469,metabolism boost mango ginger - 20,7,2.0965470837104663
+470,metabolism boost mango ginger - 20,57,4.751190283386467
+471,metabolism boost mango ginger - 20,67,2.5361411117995027
+472,metabolism boost mango ginger - 20,26,2.3669019608557798
+473,metabolism boost mango ginger - 20,52,3.8991768244113305
+474,metabolism boost mango ginger - 20,23,2.5142887791981074
+475,metabolism boost mango ginger - 20,39,2.344385766112908
+476,metabolism boost mango ginger - 20,21,3.9823092890758067
+477,metabolism boost mango ginger - 20,77,1.0
+478,metabolism boost mango ginger - 20,80,1.0
+479,slim - n - trim - chocolate - 20,7,3.828173176285378
+480,slim - n - trim - chocolate - 20,42,3.730225192419544
+481,slim - n - trim - chocolate - 20,52,1.0966732127886796
+482,slim - n - trim - chocolate - 20,35,4.017419265355694
+483,slim - n - trim - chocolate - 20,24,3.3788631240625246
+484,slim - n - trim - chocolate - 20,1,1.5227629802057425
+485,slim - n - trim - chocolate - 20,21,2.18007991420839
+486,slim - n - trim - chocolate - 20,58,1.3767857835703818
+487,slim - n - trim - chocolate - 20,77,1.0
+488,slim - n - trim - chocolate - 20,80,1.0
+489,slim - n - trim - strawberry - 20,59,1.0
+490,slim - n - trim - strawberry - 20,26,4.015476670487799
+491,slim - n - trim - strawberry - 20,36,4.006582910844417
+492,slim - n - trim - strawberry - 20,52,1.0
+493,slim - n - trim - strawberry - 20,58,5.180324687408625
+494,slim - n - trim - strawberry - 20,21,1.0
+495,slim - n - trim - strawberry - 20,77,1.0
+496,slim - n - trim - strawberry - 20,80,1.0
+497,keto champ - berry - 20,8,3.093708221919511
+498,keto champ - berry - 20,55,1.0
+499,keto champ - berry - 20,33,1.0
+500,keto champ - berry - 20,2,4.321952975415587
+501,keto champ - berry - 20,1,2.5535871628712385
+502,keto champ - berry - 20,10,1.0
+503,keto champ - berry - 20,77,1.0
+504,keto champ - berry - 20,80,1.0
+505,lean - chocolate - 20,7,2.6499053454477317
+506,lean - chocolate - 20,3,1.0
+507,lean - chocolate - 20,35,4.302954303470163
+508,lean - chocolate - 20,77,1.0
+509,lean - chocolate - 20,80,1.0
+510,lean - strawberry - 20,59,4.828117462601824
+511,lean - strawberry - 20,36,1.3842751263043267
+512,lean - strawberry - 20,58,1.9620045014941028
+513,lean - strawberry - 20,77,1.0
+514,lean - strawberry - 20,80,1.0
+515,metabolism boost strawberry pineapple - 32,50,3.137961844812086
+516,metabolism boost strawberry pineapple - 32,59,7.969317097186224
+517,metabolism boost strawberry pineapple - 32,34,1.6
+518,metabolism boost strawberry pineapple - 32,26,5.0988950257802514
+519,metabolism boost strawberry pineapple - 32,52,3.8331696116997764
+520,metabolism boost strawberry pineapple - 32,39,5.400467686848825
+521,metabolism boost strawberry pineapple - 32,21,7.0028311835539645
+522,metabolism boost strawberry pineapple - 32,78,1.0
+523,metabolism boost strawberry pineapple - 32,80,1.0
+524,metabolism boost mango ginger - 32,37,5.0991736755728105
+525,metabolism boost mango ginger - 32,7,3.354475333936746
+526,metabolism boost mango ginger - 32,57,7.601904453418348
+527,metabolism boost mango ginger - 32,67,4.057825778879205
+528,metabolism boost mango ginger - 32,26,3.7870431373692477
+529,metabolism boost mango ginger - 32,52,6.238682919058129
+530,metabolism boost mango ginger - 32,23,4.0228620467169725
+531,metabolism boost mango ginger - 32,39,3.7510172257806533
+532,metabolism boost mango ginger - 32,21,6.3716948625212915
+533,metabolism boost mango ginger - 32,78,1.0
+534,metabolism boost mango ginger - 32,80,1.0
+535,slim - n - trim - chocolate - 32,7,6.125077082056605
+536,slim - n - trim - chocolate - 32,42,5.968360307871271
+537,slim - n - trim - chocolate - 32,52,1.7546771404618875
+538,slim - n - trim - chocolate - 32,35,6.427870824569111
+539,slim - n - trim - chocolate - 32,24,5.40618099850004
+540,slim - n - trim - chocolate - 32,1,2.4364207683291883
+541,slim - n - trim - chocolate - 32,21,3.4881278627334242
+542,slim - n - trim - chocolate - 32,58,2.202857253712611
+543,slim - n - trim - chocolate - 32,78,1.0
+544,slim - n - trim - chocolate - 32,80,1.0
+545,slim - n - trim - strawberry - 32,59,1.6
+546,slim - n - trim - strawberry - 32,26,6.424762672780479
+547,slim - n - trim - strawberry - 32,36,6.410532657351067
+548,slim - n - trim - strawberry - 32,52,1.6
+549,slim - n - trim - strawberry - 32,58,8.2885194998538
+550,slim - n - trim - strawberry - 32,21,1.6
+551,slim - n - trim - strawberry - 32,78,1.0
+552,slim - n - trim - strawberry - 32,80,1.0
+553,keto champ - berry - 32,8,4.949933155071218
+554,keto champ - berry - 32,55,1.6
+555,keto champ - berry - 32,33,1.6
+556,keto champ - berry - 32,2,6.9151247606649395
+557,keto champ - berry - 32,1,4.085739460593982
+558,keto champ - berry - 32,10,1.6
+559,keto champ - berry - 32,78,1.0
+560,keto champ - berry - 32,80,1.0
+561,lean - chocolate - 32,7,4.239848552716371
+562,lean - chocolate - 32,3,1.6
+563,lean - chocolate - 32,35,6.884726885552261
+564,lean - chocolate - 32,78,1.0
+565,lean - chocolate - 32,80,1.0
+566,lean - strawberry - 32,59,7.724987940162919
+567,lean - strawberry - 32,36,2.214840202086923
+568,lean - strawberry - 32,58,3.1392072023905646
+569,lean - strawberry - 32,78,1.0
+570,lean - strawberry - 32,80,1.0
+571,metabolism boost strawberry pineapple - 40,50,3.9224523060151073
+572,metabolism boost strawberry pineapple - 40,59,9.961646371482779
+573,metabolism boost strawberry pineapple - 40,34,2.0
+574,metabolism boost strawberry pineapple - 40,26,6.373618782225314
+575,metabolism boost strawberry pineapple - 40,52,4.79146201462472
+576,metabolism boost strawberry pineapple - 40,39,6.750584608561031
+577,metabolism boost strawberry pineapple - 40,21,8.753538979442455
+578,metabolism boost strawberry pineapple - 40,79,1.0
+579,metabolism boost strawberry pineapple - 40,80,1.0
+580,metabolism boost mango ginger - 40,37,6.373967094466012
+581,metabolism boost mango ginger - 40,7,4.1930941674209325
+582,metabolism boost mango ginger - 40,57,9.502380566772935
+583,metabolism boost mango ginger - 40,67,5.0722822235990055
+584,metabolism boost mango ginger - 40,26,4.7338039217115595
+585,metabolism boost mango ginger - 40,52,7.798353648822661
+586,metabolism boost mango ginger - 40,23,5.028577558396215
+587,metabolism boost mango ginger - 40,39,4.688771532225816
+588,metabolism boost mango ginger - 40,21,7.9646185781516134
+589,metabolism boost mango ginger - 40,79,1.0
+590,metabolism boost mango ginger - 40,80,1.0
+591,slim - n - trim - chocolate - 40,7,7.656346352570756
+592,slim - n - trim - chocolate - 40,42,7.460450384839088
+593,slim - n - trim - chocolate - 40,52,2.193346425577359
+594,slim - n - trim - chocolate - 40,35,8.034838530711388
+595,slim - n - trim - chocolate - 40,24,6.757726248125049
+596,slim - n - trim - chocolate - 40,1,3.045525960411485
+597,slim - n - trim - chocolate - 40,21,4.36015982841678
+598,slim - n - trim - chocolate - 40,58,2.7535715671407637
+599,slim - n - trim - chocolate - 40,79,1.0
+600,slim - n - trim - chocolate - 40,80,1.0
+601,slim - n - trim - strawberry - 40,59,2.0
+602,slim - n - trim - strawberry - 40,26,8.030953340975598
+603,slim - n - trim - strawberry - 40,36,8.013165821688833
+604,slim - n - trim - strawberry - 40,52,2.0
+605,slim - n - trim - strawberry - 40,58,10.36064937481725
+606,slim - n - trim - strawberry - 40,21,2.0
+607,slim - n - trim - strawberry - 40,79,1.0
+608,slim - n - trim - strawberry - 40,80,1.0
+609,keto champ - berry - 40,8,6.187416443839022
+610,keto champ - berry - 40,55,2.0
+611,keto champ - berry - 40,33,2.0
+612,keto champ - berry - 40,2,8.643905950831174
+613,keto champ - berry - 40,1,5.107174325742477
+614,keto champ - berry - 40,10,2.0
+615,keto champ - berry - 40,79,1.0
+616,keto champ - berry - 40,80,1.0
+617,lean - chocolate - 40,7,5.299810690895463
+618,lean - chocolate - 40,3,2.0
+619,lean - chocolate - 40,35,8.605908606940327
+620,lean - chocolate - 40,79,1.0
+621,lean - chocolate - 40,80,1.0
+622,lean - strawberry - 40,59,9.656234925203648
+623,lean - strawberry - 40,36,2.7685502526086534
+624,lean - strawberry - 40,58,3.9240090029882055
+625,lean - strawberry - 40,79,1.0
+626,lean - strawberry - 40,80,1.0
+627,vegan - pineapple spinach - 20,61,1.0
+628,vegan - pineapple spinach - 20,50,2.4867472389450977
+629,vegan - pineapple spinach - 20,57,2.154916989207763
+630,vegan - pineapple spinach - 20,7,2.8914073548721917
+631,vegan - pineapple spinach - 20,6,4.862897021643749
+632,vegan - pineapple spinach - 20,11,5.289855686818869
+633,vegan - pineapple spinach - 20,67,3.280443529907967
+634,vegan - pineapple spinach - 20,3,1.8850482631378276
+635,vegan - pineapple spinach - 20,58,1.0
+636,vegan - pineapple spinach - 20,77,1.0
+637,vegan - pineapple spinach - 20,80,1.0
+638,vegan - mango kale - 20,61,1.7055898102035645
+639,vegan - mango kale - 20,37,3.5758188592346576
+640,vegan - mango kale - 20,32,1.0285696088824645
+641,vegan - mango kale - 20,7,1.0
+642,vegan - mango kale - 20,6,1.0
+643,vegan - mango kale - 20,5,1.0
+644,vegan - mango kale - 20,3,4.390025946662066
+645,vegan - mango kale - 20,77,1.0
+646,vegan - mango kale - 20,80,1.0
+647,vegan - nutty super grain - 20,61,3.797224607690763
+648,vegan - nutty super grain - 20,47,1.0
+649,vegan - nutty super grain - 20,7,1.0
+650,vegan - nutty super grain - 20,10,1.0
+651,vegan - nutty super grain - 20,5,1.0
+652,vegan - nutty super grain - 20,62,1.0
+653,vegan - nutty super grain - 20,1,4.122028336438664
+654,vegan - nutty super grain - 20,77,1.0
+655,vegan - nutty super grain - 20,80,1.0
+656,vegan - mixed berry - 20,61,2.9290118172648536
+657,vegan - mixed berry - 20,59,2.412316713020892
+658,vegan - mixed berry - 20,8,5.069619814611682
+659,vegan - mixed berry - 20,55,1.0
+660,vegan - mixed berry - 20,7,1.622527353891363
+661,vegan - mixed berry - 20,62,2.1796658693441486
+662,vegan - mixed berry - 20,44,1.4972533737990381
+663,vegan - mixed berry - 20,4,1.0
+664,vegan - mixed berry - 20,48,3.1276940169094565
+665,vegan - mixed berry - 20,77,1.0
+666,vegan - mixed berry - 20,80,1.0
+667,veggie - apple kiwi kale - 20,32,2.4988699582792804
+668,veggie - apple kiwi kale - 20,7,2.7688800473862996
+669,veggie - apple kiwi kale - 20,5,2.513125513011588
+670,veggie - apple kiwi kale - 20,34,2.0528454017620734
+671,veggie - apple kiwi kale - 20,18,1.0
+672,veggie - apple kiwi kale - 20,77,1.0
+673,veggie - apple kiwi kale - 20,80,1.0
+674,veggie - lemon ginger spinach - 20,57,1.1742104538745992
+675,veggie - lemon ginger spinach - 20,11,5.473792084515273
+676,veggie - lemon ginger spinach - 20,32,3.8296796871383716
+677,veggie - lemon ginger spinach - 20,23,1.0
+678,veggie - lemon ginger spinach - 20,37,3.228455752241418
+679,veggie - lemon ginger spinach - 20,50,1.0
+680,veggie - lemon ginger spinach - 20,67,2.064330963989745
+681,veggie - lemon ginger spinach - 20,46,1.837488645399668
+682,veggie - lemon ginger spinach - 20,58,1.3597253890102294
+683,veggie - lemon ginger spinach - 20,77,1.0
+684,veggie - lemon ginger spinach - 20,80,1.0
+685,greek yogurt - pineapple mango - 20,27,8.039313913604582
+686,greek yogurt - pineapple mango - 20,52,2.745819611260841
+687,greek yogurt - pineapple mango - 20,21,1.0
+688,greek yogurt - pineapple mango - 20,37,1.0
+689,greek yogurt - pineapple mango - 20,50,1.0
+690,greek yogurt - pineapple mango - 20,49,2.25790677119425
+691,greek yogurt - pineapple mango - 20,6,4.275350906510878
+692,greek yogurt - pineapple mango - 20,77,1.0
+693,greek yogurt - pineapple mango - 20,80,1.0
+694,greek yogurt - strawberry blueberry - 20,27,4.613231019480925
+695,greek yogurt - strawberry blueberry - 20,52,1.0
+696,greek yogurt - strawberry blueberry - 20,21,1.0
+697,greek yogurt - strawberry blueberry - 20,59,3.2292724143009375
+698,greek yogurt - strawberry blueberry - 20,8,1.0
+699,greek yogurt - strawberry blueberry - 20,4,1.0
+700,greek yogurt - strawberry blueberry - 20,48,1.8024779277572196
+701,greek yogurt - strawberry blueberry - 20,77,1.0
+702,greek yogurt - strawberry blueberry - 20,80,1.0
+703,immune builder - mixed berry - 20,7,2.0375442925837017
+704,immune builder - mixed berry - 20,59,1.0
+705,immune builder - mixed berry - 20,55,3.101752028197094
+706,immune builder - mixed berry - 20,8,1.0
+707,immune builder - mixed berry - 20,4,5.887221373940388
+708,immune builder - mixed berry - 20,10,2.5544061275664056
+709,immune builder - mixed berry - 20,48,1.0
+710,immune builder - mixed berry - 20,30,1.0
+711,immune builder - mixed berry - 20,77,1.0
+712,immune builder - mixed berry - 20,80,1.0
+713,immunie builder - orange - 20,7,1.0
+714,immunie builder - orange - 20,37,1.0
+715,immunie builder - orange - 20,6,1.0516203915047062
+716,immunie builder - orange - 20,45,3.5527228442309244
+717,immunie builder - orange - 20,30,3.053516972091955
+718,immunie builder - orange - 20,77,1.0
+719,immunie builder - orange - 20,80,1.0
+720,daily warrior - 20,7,1.0
+721,daily warrior - 20,8,1.0
+722,daily warrior - 20,4,4.67239744509447
+723,daily warrior - 20,16,2.7554739615248023
+724,daily warrior - 20,47,2.684864056254925
+725,daily warrior - 20,3,4.737938818004345
+726,daily warrior - 20,58,1.6541159890564932
+727,daily warrior - 20,57,1.0
+728,daily warrior - 20,77,1.0
+729,daily warrior - 20,80,1.0
+730,vegan - pineapple spinach - 32,61,1.6
+731,vegan - pineapple spinach - 32,50,3.9787955823121566
+732,vegan - pineapple spinach - 32,57,3.4478671827324208
+733,vegan - pineapple spinach - 32,7,4.626251767795507
+734,vegan - pineapple spinach - 32,6,7.780635234629999
+735,vegan - pineapple spinach - 32,11,8.46376909891019
+736,vegan - pineapple spinach - 32,67,5.248709647852747
+737,vegan - pineapple spinach - 32,3,3.0160772210205242
+738,vegan - pineapple spinach - 32,58,1.6
+739,vegan - pineapple spinach - 32,78,1.0
+740,vegan - pineapple spinach - 32,80,1.0
+741,vegan - mango kale - 32,61,2.7289436963257034
+742,vegan - mango kale - 32,37,5.721310174775453
+743,vegan - mango kale - 32,32,1.6457113742119434
+744,vegan - mango kale - 32,7,1.6
+745,vegan - mango kale - 32,6,1.6
+746,vegan - mango kale - 32,5,1.6
+747,vegan - mango kale - 32,3,7.024041514659306
+748,vegan - mango kale - 32,78,1.0
+749,vegan - mango kale - 32,80,1.0
+750,vegan - nutty super grain - 32,61,6.0755593723052215
+751,vegan - nutty super grain - 32,47,1.6
+752,vegan - nutty super grain - 32,7,1.6
+753,vegan - nutty super grain - 32,10,1.6
+754,vegan - nutty super grain - 32,5,1.6
+755,vegan - nutty super grain - 32,62,1.6
+756,vegan - nutty super grain - 32,1,6.595245338301862
+757,vegan - nutty super grain - 32,78,1.0
+758,vegan - nutty super grain - 32,80,1.0
+759,vegan - mixed berry - 32,61,4.686418907623766
+760,vegan - mixed berry - 32,59,3.859706740833427
+761,vegan - mixed berry - 32,8,8.111391703378692
+762,vegan - mixed berry - 32,55,1.6
+763,vegan - mixed berry - 32,7,2.596043766226181
+764,vegan - mixed berry - 32,62,3.487465390950638
+765,vegan - mixed berry - 32,44,2.395605398078461
+766,vegan - mixed berry - 32,4,1.6
+767,vegan - mixed berry - 32,48,5.004310427055131
+768,vegan - mixed berry - 32,78,1.0
+769,vegan - mixed berry - 32,80,1.0
+770,veggie - apple kiwi kale - 32,32,3.998191933246849
+771,veggie - apple kiwi kale - 32,7,4.430208075818079
+772,veggie - apple kiwi kale - 32,5,4.021000820818541
+773,veggie - apple kiwi kale - 32,34,3.2845526428193175
+774,veggie - apple kiwi kale - 32,18,1.6
+775,veggie - apple kiwi kale - 32,78,1.0
+776,veggie - apple kiwi kale - 32,80,1.0
+777,veggie - lemon ginger spinach - 32,57,1.8787367261993588
+778,veggie - lemon ginger spinach - 32,11,8.758067335224437
+779,veggie - lemon ginger spinach - 32,32,6.127487499421395
+780,veggie - lemon ginger spinach - 32,23,1.6
+781,veggie - lemon ginger spinach - 32,37,5.165529203586269
+782,veggie - lemon ginger spinach - 32,50,1.6
+783,veggie - lemon ginger spinach - 32,67,3.302929542383592
+784,veggie - lemon ginger spinach - 32,46,2.939981832639469
+785,veggie - lemon ginger spinach - 32,58,2.1755606224163673
+786,veggie - lemon ginger spinach - 32,78,1.0
+787,veggie - lemon ginger spinach - 32,80,1.0
+788,greek yogurt - pineapple mango - 32,27,12.862902261767331
+789,greek yogurt - pineapple mango - 32,52,4.393311378017346
+790,greek yogurt - pineapple mango - 32,21,1.6
+791,greek yogurt - pineapple mango - 32,37,1.6
+792,greek yogurt - pineapple mango - 32,50,1.6
+793,greek yogurt - pineapple mango - 32,49,3.6126508339108003
+794,greek yogurt - pineapple mango - 32,6,6.840561450417406
+795,greek yogurt - pineapple mango - 32,78,1.0
+796,greek yogurt - pineapple mango - 32,80,1.0
+797,greek yogurt - strawberry blueberry - 32,27,7.381169631169481
+798,greek yogurt - strawberry blueberry - 32,52,1.6
+799,greek yogurt - strawberry blueberry - 32,21,1.6
+800,greek yogurt - strawberry blueberry - 32,59,5.1668358628815
+801,greek yogurt - strawberry blueberry - 32,8,1.6
+802,greek yogurt - strawberry blueberry - 32,4,1.6
+803,greek yogurt - strawberry blueberry - 32,48,2.8839646844115516
+804,greek yogurt - strawberry blueberry - 32,78,1.0
+805,greek yogurt - strawberry blueberry - 32,80,1.0
+806,immune builder - mixed berry - 32,7,3.2600708681339228
+807,immune builder - mixed berry - 32,59,1.6
+808,immune builder - mixed berry - 32,55,4.96280324511535
+809,immune builder - mixed berry - 32,8,1.6
+810,immune builder - mixed berry - 32,4,9.419554198304622
+811,immune builder - mixed berry - 32,10,4.0870498041062495
+812,immune builder - mixed berry - 32,48,1.6
+813,immune builder - mixed berry - 32,30,1.6
+814,immune builder - mixed berry - 32,78,1.0
+815,immune builder - mixed berry - 32,80,1.0
+816,immunie builder - orange - 32,7,1.6
+817,immunie builder - orange - 32,37,1.6
+818,immunie builder - orange - 32,6,1.68259262640753
+819,immunie builder - orange - 32,45,5.684356550769479
+820,immunie builder - orange - 32,30,4.885627155347128
+821,immunie builder - orange - 32,78,1.0
+822,immunie builder - orange - 32,80,1.0
+823,daily warrior - 32,7,1.6
+824,daily warrior - 32,8,1.6
+825,daily warrior - 32,4,7.475835912151152
+826,daily warrior - 32,16,4.408758338439684
+827,daily warrior - 32,47,4.29578249000788
+828,daily warrior - 32,3,7.580702108806952
+829,daily warrior - 32,58,2.646585582490389
+830,daily warrior - 32,57,1.6
+831,daily warrior - 32,78,1.0
+832,daily warrior - 32,80,1.0
+833,vegan - pineapple spinach - 40,61,2.0
+834,vegan - pineapple spinach - 40,50,4.9734944778901955
+835,vegan - pineapple spinach - 40,57,4.309833978415526
+836,vegan - pineapple spinach - 40,7,5.782814709744383
+837,vegan - pineapple spinach - 40,6,9.725794043287499
+838,vegan - pineapple spinach - 40,11,10.579711373637737
+839,vegan - pineapple spinach - 40,67,6.560887059815934
+840,vegan - pineapple spinach - 40,3,3.770096526275655
+841,vegan - pineapple spinach - 40,58,2.0
+842,vegan - pineapple spinach - 40,79,1.0
+843,vegan - pineapple spinach - 40,80,1.0
+844,vegan - mango kale - 40,61,3.411179620407129
+845,vegan - mango kale - 40,37,7.151637718469315
+846,vegan - mango kale - 40,32,2.057139217764929
+847,vegan - mango kale - 40,7,2.0
+848,vegan - mango kale - 40,6,2.0
+849,vegan - mango kale - 40,5,2.0
+850,vegan - mango kale - 40,3,8.780051893324131
+851,vegan - mango kale - 40,79,1.0
+852,vegan - mango kale - 40,80,1.0
+853,vegan - nutty super grain - 40,61,7.594449215381526
+854,vegan - nutty super grain - 40,47,2.0
+855,vegan - nutty super grain - 40,7,2.0
+856,vegan - nutty super grain - 40,10,2.0
+857,vegan - nutty super grain - 40,5,2.0
+858,vegan - nutty super grain - 40,62,2.0
+859,vegan - nutty super grain - 40,1,8.244056672877328
+860,vegan - nutty super grain - 40,79,1.0
+861,vegan - nutty super grain - 40,80,1.0
+862,vegan - mixed berry - 40,61,5.858023634529707
+863,vegan - mixed berry - 40,59,4.824633426041784
+864,vegan - mixed berry - 40,8,10.139239629223365
+865,vegan - mixed berry - 40,55,2.0
+866,vegan - mixed berry - 40,7,3.245054707782726
+867,vegan - mixed berry - 40,62,4.359331738688297
+868,vegan - mixed berry - 40,44,2.9945067475980762
+869,vegan - mixed berry - 40,4,2.0
+870,vegan - mixed berry - 40,48,6.255388033818913
+871,vegan - mixed berry - 40,79,1.0
+872,vegan - mixed berry - 40,80,1.0
+873,veggie - apple kiwi kale - 40,32,4.997739916558561
+874,veggie - apple kiwi kale - 40,7,5.537760094772599
+875,veggie - apple kiwi kale - 40,5,5.026251026023176
+876,veggie - apple kiwi kale - 40,34,4.105690803524147
+877,veggie - apple kiwi kale - 40,18,2.0
+878,veggie - apple kiwi kale - 40,79,1.0
+879,veggie - apple kiwi kale - 40,80,1.0
+880,veggie - lemon ginger spinach - 40,57,2.3484209077491984
+881,veggie - lemon ginger spinach - 40,11,10.947584169030547
+882,veggie - lemon ginger spinach - 40,32,7.659359374276743
+883,veggie - lemon ginger spinach - 40,23,2.0
+884,veggie - lemon ginger spinach - 40,37,6.456911504482836
+885,veggie - lemon ginger spinach - 40,50,2.0
+886,veggie - lemon ginger spinach - 40,67,4.12866192797949
+887,veggie - lemon ginger spinach - 40,46,3.674977290799336
+888,veggie - lemon ginger spinach - 40,58,2.719450778020459
+889,veggie - lemon ginger spinach - 40,79,1.0
+890,veggie - lemon ginger spinach - 40,80,1.0
+891,greek yogurt - pineapple mango - 40,27,16.078627827209164
+892,greek yogurt - pineapple mango - 40,52,5.491639222521682
+893,greek yogurt - pineapple mango - 40,21,2.0
+894,greek yogurt - pineapple mango - 40,37,2.0
+895,greek yogurt - pineapple mango - 40,50,2.0
+896,greek yogurt - pineapple mango - 40,49,4.5158135423885
+897,greek yogurt - pineapple mango - 40,6,8.550701813021757
+898,greek yogurt - pineapple mango - 40,79,1.0
+899,greek yogurt - pineapple mango - 40,80,1.0
+900,greek yogurt - strawberry blueberry - 40,27,9.22646203896185
+901,greek yogurt - strawberry blueberry - 40,52,2.0
+902,greek yogurt - strawberry blueberry - 40,21,2.0
+903,greek yogurt - strawberry blueberry - 40,59,6.458544828601875
+904,greek yogurt - strawberry blueberry - 40,8,2.0
+905,greek yogurt - strawberry blueberry - 40,4,2.0
+906,greek yogurt - strawberry blueberry - 40,48,3.604955855514439
+907,greek yogurt - strawberry blueberry - 40,79,1.0
+908,greek yogurt - strawberry blueberry - 40,80,1.0
+909,immune builder - mixed berry - 40,7,4.0750885851674035
+910,immune builder - mixed berry - 40,59,2.0
+911,immune builder - mixed berry - 40,55,6.203504056394188
+912,immune builder - mixed berry - 40,8,2.0
+913,immune builder - mixed berry - 40,4,11.774442747880776
+914,immune builder - mixed berry - 40,10,5.108812255132811
+915,immune builder - mixed berry - 40,48,2.0
+916,immune builder - mixed berry - 40,30,2.0
+917,immune builder - mixed berry - 40,79,1.0
+918,immune builder - mixed berry - 40,80,1.0
+919,immunie builder - orange - 40,7,2.0
+920,immunie builder - orange - 40,37,2.0
+921,immunie builder - orange - 40,6,2.1032407830094124
+922,immunie builder - orange - 40,45,7.105445688461849
+923,immunie builder - orange - 40,30,6.10703394418391
+924,immunie builder - orange - 40,79,1.0
+925,immunie builder - orange - 40,80,1.0
+926,daily warrior - 40,7,2.0
+927,daily warrior - 40,8,2.0
+928,daily warrior - 40,4,9.34479489018894
+929,daily warrior - 40,16,5.510947923049605
+930,daily warrior - 40,47,5.36972811250985
+931,daily warrior - 40,3,9.47587763600869
+932,daily warrior - 40,58,3.3082319781129863
+933,daily warrior - 40,57,2.0
+934,daily warrior - 40,79,1.0
+935,daily warrior - 40,80,1.0
+936,angel food - 20,60,1.767090057296345
+937,angel food - 20,7,2.7273836951810573
+938,angel food - 20,42,5.525333703566336
+939,angel food - 20,64,1.0
+940,angel food - 20,77,1.0
+941,angel food - 20,80,1.0
+942,angel food slim - 20,59,2.8689420580636082
+943,angel food slim - 20,7,3.327093638037168
+944,angel food slim - 20,48,7.1600238022663465
+945,angel food slim - 20,52,2.609669333547804
+946,angel food slim - 20,58,6.682976299731196
+947,angel food slim - 20,77,1.0
+948,angel food slim - 20,80,1.0
+949,pineapple surf - 20,50,2.8742901277605344
+950,pineapple surf - 20,60,9.349467327611444
+951,pineapple surf - 20,34,1.0798234056948646
+952,pineapple surf - 20,15,2.1669378360578353
+953,pineapple surf - 20,64,1.0
+954,pineapple surf - 20,77,1.0
+955,pineapple surf - 20,80,1.0
+956,caribbean way - 20,60,3.4783615096513523
+957,caribbean way - 20,7,3.955647329590785
+958,caribbean way - 20,46,1.6890264319955417
+959,caribbean way - 20,64,1.7744362108286735
+960,caribbean way - 20,77,1.0
+961,caribbean way - 20,80,1.0
+962,banana boat - 20,7,6.7766235698449755
+963,banana boat - 20,65,2.191408351407334
+964,banana boat - 20,15,1.8726170404540814
+965,banana boat - 20,64,6.859005639858844
+966,banana boat - 20,77,1.0
+967,banana boat - 20,80,1.0
+968,banana berry treat - 20,7,7.076565488259634
+969,banana berry treat - 20,60,1.0
+970,banana berry treat - 20,55,6.306958597618827
+971,banana berry treat - 20,46,1.0
+972,banana berry treat - 20,15,2.4447355865361926
+973,banana berry treat - 20,77,1.0
+974,banana berry treat - 20,80,1.0
+975,strawberry kiwi breeze - 20,60,1.9847045895140984
+976,strawberry kiwi breeze - 20,34,3.5037734565870293
+977,strawberry kiwi breeze - 20,46,6.986148654500498
+978,strawberry kiwi breeze - 20,15,1.2050334242397216
+979,strawberry kiwi breeze - 20,77,1.0
+980,strawberry kiwi breeze - 20,80,1.0
+981,lemon twist strawberry - 20,60,4.551046527311157
+982,lemon twist strawberry - 20,67,1.5944989716749693
+983,lemon twist strawberry - 20,46,1.0
+984,lemon twist strawberry - 20,64,5.300499642025418
+985,lemon twist strawberry - 20,77,1.0
+986,lemon twist strawberry - 20,80,1.0
+987,island impact - 20,37,3.282235444487785
+988,island impact - 20,50,2.5264764317500408
+989,island impact - 20,46,1.0
+990,island impact - 20,52,2.5850853419288953
+991,island impact - 20,6,3.7762449229467636
+992,island impact - 20,77,1.0
+993,island impact - 20,80,1.0
+994,x-treme - tart cherry - 20,63,5.609758585761455
+995,x-treme - tart cherry - 20,7,3.2725384120261234
+996,x-treme - tart cherry - 20,49,5.109422658931338
+997,x-treme - tart cherry - 20,15,1.0
+998,x-treme - tart cherry - 20,64,6.51310035055949
+999,x-treme - tart cherry - 20,77,1.0
+1000,x-treme - tart cherry - 20,80,1.0
+1001,x-treme - strawberry - 20,60,1.0
+1002,x-treme - strawberry - 20,46,6.072600204597542
+1003,x-treme - strawberry - 20,77,1.0
+1004,x-treme - strawberry - 20,80,1.0
+1005,x-treme - orange - 20,45,3.7939997453529655
+1006,x-treme - orange - 20,7,1.6278094989413439
+1007,x-treme - orange - 20,6,1.0
+1008,x-treme - orange - 20,18,4.760473511615328
+1009,x-treme - orange - 20,64,5.165149768313203
+1010,x-treme - orange - 20,77,1.0
+1011,x-treme - orange - 20,80,1.0
+1012,kindness in a cup - 20,60,4.501421081006369
+1013,kindness in a cup - 20,7,4.586804438852203
+1014,kindness in a cup - 20,45,3.82815616769017
+1015,kindness in a cup - 20,64,3.1892985002036465
+1016,kindness in a cup - 20,77,1.0
+1017,kindness in a cup - 20,80,1.0
+1018,angel food - 32,60,2.8273440916741523
+1019,angel food - 32,7,4.363813912289692
+1020,angel food - 32,42,8.840533925706138
+1021,angel food - 32,64,1.6
+1022,angel food - 32,78,1.0
+1023,angel food - 32,80,1.0
+1024,angel food slim - 32,59,4.590307292901773
+1025,angel food slim - 32,7,5.32334982085947
+1026,angel food slim - 32,48,11.456038083626154
+1027,angel food slim - 32,52,4.175470933676486
+1028,angel food slim - 32,58,10.692762079569915
+1029,angel food slim - 32,78,1.0
+1030,angel food slim - 32,80,1.0
+1031,pineapple surf - 32,50,4.598864204416855
+1032,pineapple surf - 32,60,14.959147724178312
+1033,pineapple surf - 32,34,1.7277174491117835
+1034,pineapple surf - 32,15,3.4671005376925366
+1035,pineapple surf - 32,64,1.6
+1036,pineapple surf - 32,78,1.0
+1037,pineapple surf - 32,80,1.0
+1038,caribbean way - 32,60,5.565378415442164
+1039,caribbean way - 32,7,6.329035727345256
+1040,caribbean way - 32,46,2.7024422911928667
+1041,caribbean way - 32,64,2.839097937325878
+1042,caribbean way - 32,78,1.0
+1043,caribbean way - 32,80,1.0
+1044,banana boat - 32,7,10.842597711751962
+1045,banana boat - 32,65,3.5062533622517345
+1046,banana boat - 32,15,2.9961872647265304
+1047,banana boat - 32,64,10.97440902377415
+1048,banana boat - 32,78,1.0
+1049,banana boat - 32,80,1.0
+1050,banana berry treat - 32,7,11.322504781215414
+1051,banana berry treat - 32,60,1.6
+1052,banana berry treat - 32,55,10.091133756190125
+1053,banana berry treat - 32,46,1.6
+1054,banana berry treat - 32,15,3.9115769384579084
+1055,banana berry treat - 32,78,1.0
+1056,banana berry treat - 32,80,1.0
+1057,strawberry kiwi breeze - 32,60,3.1755273432225577
+1058,strawberry kiwi breeze - 32,34,5.606037530539247
+1059,strawberry kiwi breeze - 32,46,11.177837847200799
+1060,strawberry kiwi breeze - 32,15,1.9280534787835546
+1061,strawberry kiwi breeze - 32,78,1.0
+1062,strawberry kiwi breeze - 32,80,1.0
+1063,lemon twist strawberry - 32,60,7.2816744436978516
+1064,lemon twist strawberry - 32,67,2.551198354679951
+1065,lemon twist strawberry - 32,46,1.6
+1066,lemon twist strawberry - 32,64,8.480799427240669
+1067,lemon twist strawberry - 32,78,1.0
+1068,lemon twist strawberry - 32,80,1.0
+1069,island impact - 32,37,5.251576711180456
+1070,island impact - 32,50,4.042362290800066
+1071,island impact - 32,46,1.6
+1072,island impact - 32,52,4.136136547086233
+1073,island impact - 32,6,6.041991876714822
+1074,island impact - 32,78,1.0
+1075,island impact - 32,80,1.0
+1076,x-treme - tart cherry - 32,63,8.975613737218328
+1077,x-treme - tart cherry - 32,7,5.236061459241798
+1078,x-treme - tart cherry - 32,49,8.175076254290142
+1079,x-treme - tart cherry - 32,15,1.6
+1080,x-treme - tart cherry - 32,64,10.420960560895185
+1081,x-treme - tart cherry - 32,78,1.0
+1082,x-treme - tart cherry - 32,80,1.0
+1083,x-treme - strawberry - 32,60,1.6
+1084,x-treme - strawberry - 32,46,9.716160327356068
+1085,x-treme - strawberry - 32,78,1.0
+1086,x-treme - strawberry - 32,80,1.0
+1087,x-treme - orange - 32,45,6.070399592564745
+1088,x-treme - orange - 32,7,2.60449519830615
+1089,x-treme - orange - 32,6,1.6
+1090,x-treme - orange - 32,18,7.616757618584526
+1091,x-treme - orange - 32,64,8.264239629301125
+1092,x-treme - orange - 32,78,1.0
+1093,x-treme - orange - 32,80,1.0
+1094,kindness in a cup - 32,60,7.202273729610191
+1095,kindness in a cup - 32,7,7.338887102163525
+1096,kindness in a cup - 32,45,6.125049868304273
+1097,kindness in a cup - 32,64,5.102877600325835
+1098,kindness in a cup - 32,78,1.0
+1099,kindness in a cup - 32,80,1.0
+1100,angel food - 40,60,3.53418011459269
+1101,angel food - 40,7,5.4547673903621146
+1102,angel food - 40,42,11.050667407132671
+1103,angel food - 40,64,2.0
+1104,angel food - 40,79,1.0
+1105,angel food - 40,80,1.0
+1106,angel food slim - 40,59,5.7378841161272165
+1107,angel food slim - 40,7,6.654187276074336
+1108,angel food slim - 40,48,14.320047604532693
+1109,angel food slim - 40,52,5.219338667095608
+1110,angel food slim - 40,58,13.365952599462393
+1111,angel food slim - 40,79,1.0
+1112,angel food slim - 40,80,1.0
+1113,pineapple surf - 40,50,5.748580255521069
+1114,pineapple surf - 40,60,18.69893465522289
+1115,pineapple surf - 40,34,2.159646811389729
+1116,pineapple surf - 40,15,4.333875672115671
+1117,pineapple surf - 40,64,2.0
+1118,pineapple surf - 40,79,1.0
+1119,pineapple surf - 40,80,1.0
+1120,caribbean way - 40,60,6.9567230193027045
+1121,caribbean way - 40,7,7.91129465918157
+1122,caribbean way - 40,46,3.3780528639910834
+1123,caribbean way - 40,64,3.548872421657347
+1124,caribbean way - 40,79,1.0
+1125,caribbean way - 40,80,1.0
+1126,banana boat - 40,7,13.553247139689951
+1127,banana boat - 40,65,4.382816702814668
+1128,banana boat - 40,15,3.745234080908163
+1129,banana boat - 40,64,13.718011279717688
+1130,banana boat - 40,79,1.0
+1131,banana boat - 40,80,1.0
+1132,banana berry treat - 40,7,14.153130976519268
+1133,banana berry treat - 40,60,2.0
+1134,banana berry treat - 40,55,12.613917195237654
+1135,banana berry treat - 40,46,2.0
+1136,banana berry treat - 40,15,4.889471173072385
+1137,banana berry treat - 40,79,1.0
+1138,banana berry treat - 40,80,1.0
+1139,strawberry kiwi breeze - 40,60,3.969409179028197
+1140,strawberry kiwi breeze - 40,34,7.007546913174059
+1141,strawberry kiwi breeze - 40,46,13.972297309000997
+1142,strawberry kiwi breeze - 40,15,2.410066848479443
+1143,strawberry kiwi breeze - 40,79,1.0
+1144,strawberry kiwi breeze - 40,80,1.0
+1145,lemon twist strawberry - 40,60,9.102093054622314
+1146,lemon twist strawberry - 40,67,3.1889979433499387
+1147,lemon twist strawberry - 40,46,2.0
+1148,lemon twist strawberry - 40,64,10.600999284050836
+1149,lemon twist strawberry - 40,79,1.0
+1150,lemon twist strawberry - 40,80,1.0
+1151,island impact - 40,37,6.56447088897557
+1152,island impact - 40,50,5.0529528635000815
+1153,island impact - 40,46,2.0
+1154,island impact - 40,52,5.1701706838577906
+1155,island impact - 40,6,7.552489845893527
+1156,island impact - 40,79,1.0
+1157,island impact - 40,80,1.0
+1158,x-treme - tart cherry - 40,63,11.21951717152291
+1159,x-treme - tart cherry - 40,7,6.545076824052247
+1160,x-treme - tart cherry - 40,49,10.218845317862677
+1161,x-treme - tart cherry - 40,15,2.0
+1162,x-treme - tart cherry - 40,64,13.02620070111898
+1163,x-treme - tart cherry - 40,79,1.0
+1164,x-treme - tart cherry - 40,80,1.0
+1165,x-treme - strawberry - 40,60,2.0
+1166,x-treme - strawberry - 40,46,12.145200409195084
+1167,x-treme - strawberry - 40,79,1.0
+1168,x-treme - strawberry - 40,80,1.0
+1169,x-treme - orange - 40,45,7.587999490705931
+1170,x-treme - orange - 40,7,3.2556189978826877
+1171,x-treme - orange - 40,6,2.0
+1172,x-treme - orange - 40,18,9.520947023230656
+1173,x-treme - orange - 40,64,10.330299536626406
+1174,x-treme - orange - 40,79,1.0
+1175,x-treme - orange - 40,80,1.0
+1176,kindness in a cup - 40,60,9.002842162012739
+1177,kindness in a cup - 40,7,9.173608877704407
+1178,kindness in a cup - 40,45,7.65631233538034
+1179,kindness in a cup - 40,64,6.378597000407293
+1180,kindness in a cup - 40,79,1.0
+1181,kindness in a cup - 40,80,1.0
+1182,milk chocolate almonds,68,1.0
+1183,dark chocolate cashews,69,1.0
+1184,greek yogurt trail mix,70,1.0
+1185,good health peanut butter pretzels,71,1.0
+1186,ostrim meat sticks,72,1.0
+1187,banana chips,73,1.0
+1188,natures blend,74,1.0
+1189,lenny and larry vegan cookies,75,1.0
+1190,greek yogurt pretzels,76,1.0
