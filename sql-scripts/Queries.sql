@@ -3,13 +3,15 @@ SELECT SUM(total_price) as total_revenue
 FROM orders_summary;
 
 --Total Costs
-
+SELECT SUM(shipment_total) as total_cost
+FROM shipments;
 
 --Total Profits
 
 
 --Average Daily Revenue
-
+SELECT AVG(total_price) as avg_revenue
+FROM orders_summary
 
 --Inventory Products Used On a Given Day
 
@@ -20,10 +22,11 @@ FROM orders_summary;
 --Number of a Drink Ordered Per Day
 SELECT COUNT(item_id) 
 FROM orders_by_item
-where item_date = GETDATE();
+where item_date = CURRENT_DATE;
 
 --Average Time for Shipments to Arrive
-
+SELECT DATEDIFF(day, order_date, arrival_date) as arrival_time
+FROM shipments;
 
 --Average Price per Order
 SELECT AVG(total_price)
@@ -34,7 +37,7 @@ where order_date = GETDATE();
 
 
 --How long Employee has Been Employed
-SELECT DATEDIFF(day, date_started, GETDATE()) AS days_worked;
+SELECT DATEDIFF(day, date_started, CURRENT_DATE) AS days_worked;
 
 --Number of Sales Employee Made
 SELECT COUNT(employee_id) 
