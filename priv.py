@@ -36,7 +36,7 @@ try:
     """
 
     #list of users
-    users = ["csce315331_hipp","csce315331_Pinto", "csce315331_Veselka", "csce315331_Padala", "csce315331_Nair", "csce315331_Vu_b"]
+    users = ["csce315331_hipp","csce315331_pinto", "csce315331_veselka", "csce315331_padala", "csce315331_nair", "csce315331_vu_b"]
     #list of tables
     tables = ["employees","inventory","inventory_snapshot","item_additives","menu","menu_item_ingredients","orders_by_item","orders_summary","shipment_products","shipments"]
     
