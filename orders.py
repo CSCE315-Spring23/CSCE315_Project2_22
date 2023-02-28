@@ -59,7 +59,7 @@ ingredient_cost['cost_per_oz'] = pd.Series(np.random.normal(loc=0.26, scale=0.02
 ingredient_cost['cost_per_oz'].iloc[-13:-4] = 1  # $1.00 for each snack
 ingredient_cost['cost_per_oz'].iloc[-4:] = 0.1  # $0.10 for each cup/straw
 
-t0 = '2022-01-01'  # jan 1 2022
+t0 = '2021-01-01'  # jan 1 2021
 tend = '2023-01-01'
 days = pd.date_range(t0, tend, freq='D')  # calendar day frequency
 item_id = 1
