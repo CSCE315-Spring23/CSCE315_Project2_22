@@ -1,4 +1,3 @@
-#import libraries for common function usage throughout code
 import pandas as pd
 import numpy as np
 
@@ -17,24 +16,21 @@ import numpy as np
     # every week, take snapshot of inventory and concatenate to inventory snapshot
     # every week, place shipments for each ingredient. 60k oz
 
-#if dataframes are ever displayed, rows/col/width are set to large values to see most values in dataframe
 pd.options.display.max_rows = 999
 pd.options.display.max_columns = 999
 pd.options.display.width = 999
 
-#Four dataframes (i.e. 2d arrays) are created using pandas ability to read + convert csv files into them
 menu_item_ingredients = pd.read_csv('menu_item_ingredients.csv')
+
 menu = pd.read_csv('menu.csv')
 inventory = pd.read_csv('inventory.csv')
 overused_ingredients = pd.read_csv('overused_ingredients.csv')
 
-#makes the column? (or column title) values lower case
 menu['menu_item'] = menu['menu_item'].str.lower()
 menu['category'] = menu['category'].str.lower()
 menu_item_ingredients['menu_item_id'] = menu_item_ingredients['menu_item_id'].str.lower()
 inventory['product_name'] = inventory['product_name'].str.lower()
 
-#creates a dataframe that sets the main column of the inventory dataframe to the the "product_id", uses it to replace old inventory df
 inventory.set_index('product_id', inplace=True, drop=True)
 
 prodtoid = {product : product_id for product, product_id in zip(inventory['product_name'], inventory.index)}
@@ -42,7 +38,6 @@ additives = pd.read_csv('additives.csv')
 additives['additives'] = additives['additives'].str.lower()
 additives.replace(to_replace=prodtoid, inplace=True)
 
-#calculates a random amount for the cost_per_oz of ingredients
 cost_per_oz = np.random.normal(.35, .02, (inventory.shape[0])).clip(0.05, None) # min cost if $0.05
 
 TOTAL_INGREDIENTS = 90000  # expected + 50% padding, keeps inventory positive
@@ -59,14 +54,18 @@ ingredient_cost['cost_per_oz'] = pd.Series(np.random.normal(loc=0.26, scale=0.02
 ingredient_cost['cost_per_oz'].iloc[-13:-4] = 1  # $1.00 for each snack
 ingredient_cost['cost_per_oz'].iloc[-4:] = 0.1  # $0.10 for each cup/straw
 
-t0 = '2021-01-01'  # jan 1 2021
+t0 = '2022-01-01'  # jan 1 2022
 tend = '2023-01-01'
+gamedays = [pd.Timestamp('2022-01-18'), pd.Timestamp('2022-09-16')]
 days = pd.date_range(t0, tend, freq='D')  # calendar day frequency
+gamedays_weeks = [(days.get_loc(gameday) + 1) // 7 for gameday in gamedays]
 item_id = 1
 order_id = 1
 shipment_id = 1
+gameday_multiplier = 2
+avg_orders_per_day = 305
 
-# creates five df with the column names specified for each
+
 item_additives = pd.DataFrame(columns=['item_id', 'product_id', 'price', 'amount'])
 order_by_item = pd.DataFrame(columns=['item_id', 'order_id', 'menu_item_id', 'timestamp', 'price'])
 inventory_snapshot = pd.DataFrame(columns=['product_name', 'quantity', 'timestamp'])
@@ -77,17 +76,17 @@ additive_probabilty = np.array([.4, .6])
 multiple_items_probability = np.array([.95, .05])
 vendors = ['vendor_1', 'vendor_2', 'vendor_3']
 
-#iterates through the days of the stated time range above
 for day in days:
+    week = ((day - days[0]) // pd.Timedelta(7, unit='days'))  # skip ordering on week0
+    gameday_next_week = (week + 1) in gamedays_weeks
     if (day - days[0]) % pd.Timedelta(7, unit='days') == pd.Timedelta(0, units='days'):  # every week
         # place shipments
-        week = ((day - days[0]) // pd.Timedelta(7, unit='days'))  # skip ordering on week0
         if week > 0:
             # make new shipment
             inventory_used = inventory_snapshot[inventory_snapshot['timestamp'] == (day - pd.Timedelta(7, unit='days'))]['quantity'] \
                                 - inventory['quantity']  # amount used in 1 week
             inventory_used = inventory_used[inventory_used > 0]
-            inventory_used *= 1.03  # extra
+            inventory_used *= 1.03 if not gameday_next_week else (1.03 + gameday_multiplier / 7) # extra, add extra supply for gamedays
 
             shipment_products = pd.DataFrame(columns=['shipment_id', 'product_id', 'quantity', 'subtotal'])  # similar name, just going to be concatenated
             shipment_products['shipment_id'] = pd.Series([shipment_id] * (inventory_used > 0).sum())
@@ -113,9 +112,10 @@ for day in days:
     snapshot['timestamp'] = pd.Series([day] * inventory.shape[0], index=list(range(1, inventory.shape[0] + 1)))
     inventory_snapshot = pd.concat([snapshot, inventory_snapshot], axis=0)
 
-    orders = np.random.randint(0, menu.shape[0], size=(280))
+    num_orders = avg_orders_per_day if not (day in gamedays) else avg_orders_per_day * gameday_multiplier
+    orders = np.random.randint(0, menu.shape[0], size=(num_orders))
 
-    order_times = pd.date_range(start=day + pd.Timedelta(8, unit='hours'), end=(day + pd.Timedelta(17, unit='hours')), periods=280) # evenly spaced times
+    order_times = pd.date_range(start=day + pd.Timedelta(8, unit='hours'), end=(day + pd.Timedelta(17, unit='hours')), periods=num_orders) # evenly spaced times
     order_time_idx = 0
     
     order_items = menu.loc[orders]
@@ -148,12 +148,14 @@ for day in days:
         order_time_idx += new_order
 
 
-#converts the values of the df columns to specific types for sql usage
+
 order_by_item = order_by_item.astype({'item_id': int, 'menu_item_id': str, 'order_id': int, 'price': float})
 item_additives = item_additives.astype({'item_id': int, 'product_id': int, 'price': float, 'amount': float})
 inventory_snapshot = inventory_snapshot.astype({'product_name': str, 'quantity': float})
 shipment_product = shipment_product.astype({'shipment_id': int, 'product_id': int, 'quantity': float, 'subtotal': float})
 shipments = shipments.astype({'shipment_id': int, 'vendor': str, 'employee_id': int, 'shipment_total': float})
+
+inventory_snapshot.index.rename('product_id', inplace=True)
 
 # save
     # inventory
@@ -164,7 +166,7 @@ shipments = shipments.astype({'shipment_id': int, 'vendor': str, 'employee_id': 
     # order by item
     # price per oz
 inventory.to_csv('inventory_final.csv')
-inventory_snapshot.to_csv('inventory_snapshot_final.csv', index=False)
+inventory_snapshot.to_csv('inventory_snapshot_final.csv')
 shipments.to_csv('shipments_final.csv', index=False)
 shipment_product.to_csv('shipmnet_products_final.csv', index=False)
 item_additives.to_csv('item_additives_final.csv', index=False)
