@@ -1,3 +1,4 @@
+#import libraries for common function usage throughout code
 import pandas as pd
 import numpy as np
 
@@ -16,20 +17,24 @@ import numpy as np
     # every week, take snapshot of inventory and concatenate to inventory snapshot
     # every week, place shipments for each ingredient. 60k oz
 
+#if dataframes are ever displayed, rows/col/width are set to large values to see most values in dataframe
 pd.options.display.max_rows = 999
 pd.options.display.max_columns = 999
 pd.options.display.width = 999
 
+#Four dataframes (i.e. 2d arrays) are created using pandas ability to read + convert csv files into them
 menu_item_ingredients = pd.read_csv('menu_item_ingredients.csv')
 menu = pd.read_csv('menu.csv')
 inventory = pd.read_csv('inventory.csv')
 overused_ingredients = pd.read_csv('overused_ingredients.csv')
 
+#makes the column? (or column title) values lower case
 menu['menu_item'] = menu['menu_item'].str.lower()
 menu['category'] = menu['category'].str.lower()
 menu_item_ingredients['menu_item_id'] = menu_item_ingredients['menu_item_id'].str.lower()
 inventory['product_name'] = inventory['product_name'].str.lower()
 
+#creates a dataframe that sets the main column of the inventory dataframe to the the "product_id", uses it to replace old inventory df
 inventory.set_index('product_id', inplace=True, drop=True)
 
 prodtoid = {product : product_id for product, product_id in zip(inventory['product_name'], inventory.index)}
@@ -37,6 +42,7 @@ additives = pd.read_csv('additives.csv')
 additives['additives'] = additives['additives'].str.lower()
 additives.replace(to_replace=prodtoid, inplace=True)
 
+#calculates a random amount for the cost_per_oz of ingredients
 cost_per_oz = np.random.normal(.35, .02, (inventory.shape[0])).clip(0.05, None) # min cost if $0.05
 
 TOTAL_INGREDIENTS = 90000  # expected + 50% padding, keeps inventory positive
@@ -60,7 +66,7 @@ item_id = 1
 order_id = 1
 shipment_id = 1
 
-
+# creates five df with the column names specified for each
 item_additives = pd.DataFrame(columns=['item_id', 'product_id', 'price', 'amount'])
 order_by_item = pd.DataFrame(columns=['item_id', 'order_id', 'menu_item_id', 'timestamp', 'price'])
 inventory_snapshot = pd.DataFrame(columns=['product_name', 'quantity', 'timestamp'])
@@ -71,6 +77,7 @@ additive_probabilty = np.array([.4, .6])
 multiple_items_probability = np.array([.95, .05])
 vendors = ['vendor_1', 'vendor_2', 'vendor_3']
 
+#iterates through the days of the stated time range above
 for day in days:
     if (day - days[0]) % pd.Timedelta(7, unit='days') == pd.Timedelta(0, units='days'):  # every week
         # place shipments
@@ -141,7 +148,7 @@ for day in days:
         order_time_idx += new_order
 
 
-
+#converts the values of the df columns to specific types for sql usage
 order_by_item = order_by_item.astype({'item_id': int, 'menu_item_id': str, 'order_id': int, 'price': float})
 item_additives = item_additives.astype({'item_id': int, 'product_id': int, 'price': float, 'amount': float})
 inventory_snapshot = inventory_snapshot.astype({'product_name': str, 'quantity': float})
