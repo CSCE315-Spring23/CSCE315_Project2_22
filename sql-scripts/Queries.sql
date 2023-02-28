@@ -1,17 +1,19 @@
 --Total Revenue 
-SELECT SUM(total_price) as total_revenue  
+SELECT SUM(total_price) AS total_revenue  
 FROM orders_summary;
 
 --Total Costs
-SELECT SUM(shipment_total) as total_cost
+SELECT SUM(shipment_total) AS total_cost
 FROM shipments;
 
 --Total Profits
+SELECT (SELECT SUM(total_price) FROM orders_summary) - (SELECT SUM(shipment_total) FROM shipments) AS total_profit;
 
+--Revenue Per Day
+SELECT DATE(order_date), SUM(total_price) AS daily_revenue FROM orders_summary GROUP BY DATE(order_date);
 
 --Average Daily Revenue
-SELECT AVG(total_price) as avg_revenue
-FROM orders_summary
+SELECT AVG(sum) AS average_daily_revenue FROM (SELECT SUM(total_price) FROM orders_summary GROUP BY date(order_date)) AS revenue_per_day;
 
 --Inventory Products Used On a Given Day
 
@@ -40,9 +42,7 @@ where order_date = GETDATE();
 SELECT DATEDIFF(day, date_started, CURRENT_DATE) AS days_worked;
 
 --Number of Sales Employee Made
-SELECT COUNT(employee_id) 
-FROM orders_summary;
-where 
+select employee_id, count(employee_id) as sales from orders_summary group by employee_id order by employee_id;
 
 --Average Number of Additives per Drink
 

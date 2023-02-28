@@ -4,7 +4,6 @@ DROP TABLES SCRIPT
     - dropped in order of table dependencies
 */
 
-
 /*Sub Tables*/
 DROP TABLE item_additives;
 
