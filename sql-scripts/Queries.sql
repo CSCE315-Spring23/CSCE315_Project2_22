@@ -27,19 +27,19 @@ FROM orders_by_item
 where item_date = CURRENT_DATE;
 
 --Average Time for Shipments to Arrive
-SELECT DATEDIFF(day, order_date, arrival_date) as arrival_time
+SELECT DATE_PART('day', arrival_date-order_date) as arrival_time
 FROM shipments;
 
 --Average Price per Order
 SELECT AVG(total_price)
-FROM orders_summary
-where order_date = GETDATE();
+FROM orders_summary;
 
 --Most Popular Additives
 
 
 --How long Employee has Been Employed
-SELECT DATEDIFF(day, date_started, CURRENT_DATE) AS days_worked;
+SELECT employee_id, first_name, DATE_PART('day', CURRENT_DATE - date_started) AS days_worked
+FROM employees;
 
 --Number of Sales Employee Made
 select employee_id, count(employee_id) as sales from orders_summary group by employee_id order by employee_id;
