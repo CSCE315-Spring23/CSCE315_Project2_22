@@ -25,6 +25,12 @@ FROM (
     SELECT SUM(total_price) FROM orders_summary GROUP BY date(order_date)
 ) AS revenue_per_day;
 
+--Query to figure out game days
+SELECT DATE(order_date), SUM(total_price) AS daily_revenue 
+FROM orders_summary 
+GROUP BY DATE(order_date)
+HAVING SUM(total_price) > 4000;
+
 --Sales Per Drink
 SELECT menu_item_id AS menu_item, COUNT(menu_item_id) AS sales 
 FROM orders_by_item
@@ -83,3 +89,11 @@ SELECT *
 FROM inventory_snapshot
 WHERE product_id = '1'
 ORDER BY snapshot_date DESC;
+
+--Display Inventory (at least 20 items, with cups, etc)
+SELECT * FROM inventory;
+
+--Display First and Last Orders (52 weeks of order history)
+SELECT * FROM orders_summary ORDER BY order_date LIMIT 1;
+SELECT * FROM orders_summary ORDER BY order_date DESC LIMIT 1;
+
