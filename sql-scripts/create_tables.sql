@@ -49,10 +49,10 @@ CREATE TABLE shipment_products (
 );
 
 CREATE TABLE inventory_snapshot (
-    snapshot_date TIMESTAMP NOT NULL,
     product_id BIGSERIAL NOT NULL,
     product_name VARCHAR(60) NOT NULL,
-    subtotal NUMERIC NOT NULL,
+    quantity NUMERIC NOT NULL,
+    snapshot_date TIMESTAMP NOT NULL,
     PRIMARY KEY (snapshot_date, product_id),
     FOREIGN KEY (product_id) REFERENCES inventory(product_id)
 );

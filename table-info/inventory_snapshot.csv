@@ -1,4 +1,4 @@
-product_id,product_name,quantity,timestamp
+product_id,product_name,quantity,snapshot_date
 1,100% cocoa,5726.458220513759,2023-01-01
 2,almond butter,2555.1001265875416,2023-01-01
 3,almond,2911.348152004141,2023-01-01
