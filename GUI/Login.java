@@ -29,12 +29,10 @@ public class Login extends JPanel implements ActionListener {
         for (ArrayList<String> entry : employee_data) {
             if (entry.get(1).equals(un) && entry.get(2).equals(pw)) {
                 JOptionPane.showMessageDialog(null, "Logged in as " + entry.get(0));
+                return;
             }
-            else {
-                JOptionPane.showMessageDialog(null, "Username or password incorrect.");
-            }
-            return;
         }
+        JOptionPane.showMessageDialog(null, "Username or password incorrect.");
     }
 
     private static void loadEmployees() {
