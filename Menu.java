@@ -6,20 +6,29 @@ import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import java.util.Vector;
 
+
+
 public class Menu extends JFrame {
 
     private JTable table;
 
+    public boolean isCellEditable(int row, int column) { 
+        return true; 
+    }
+
+   
     public Menu(){
         try{
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22", "csce315331_nair", "428008776");            
 
             table = new JTable();
+            table.getTableHeader().setReorderingAllowed(false);
+
             Statement stmt = conn.createStatement();
             ResultSet menu = stmt.executeQuery("SELECT * FROM menu");
             ResultSet menu_ingredients = stmt.executeQuery("SELECT menu_item_id,product_id FROM menu_item_ingredients");
-
+            
             // Populate table model with menu data
             DefaultTableModel model = new DefaultTableModel();
             ResultSetMetaData rsmd = menu.getMetaData();
@@ -36,9 +45,9 @@ public class Menu extends JFrame {
             }
 
             //only want to add the one column that contains the string of "product" (read-> ingredient ids) for a menu item
-            model.addColumn("product_ids");
+            model.addColumn("ingredient_ids");
             
-            //gets the first row value of the column 0
+            //gets the first row value of the column 1
             String menu_name_prev = menu_ingredients.getString(1);
             //iterates through the table rows 
             while(menu_ingredients.next()) {
@@ -53,9 +62,31 @@ public class Menu extends JFrame {
                     model.addRow(row);
                 }
             }
-                
-            table.setModel(model);
 
+            //TODO -> create two buttons, one to edit (i.e. add, remove) prices, other to edit (i.e. add, remove) menu items  
+            table.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    int row = table.rowAtPoint(evt.getPoint());
+                    int col = table.columnAtPoint(evt.getPoint());
+                    int prev_value = 0;
+                    if (row >= 0 && col > 1) {
+                        isCellEditable(row, col);
+                        prev_value = (Integer) table.getValueAt(row, col);
+    
+                    }
+                    if (!table.isEditing()) {
+                        if(prev_value != (Integer) table.getValueAt(row, col)) {
+                            //stmt.executeQuery("UPDATE menu SET menu_id= col WHERE something='some value'");
+                            // table.revalidate();
+                        }
+                    }
+                }
+            });
+            
+            //table.setValueAt(menu_name_prev, columnCount, columnCount);
+           
+            table.setModel(model);
             table.setRowHeight(30);
 
             //Set column headers
