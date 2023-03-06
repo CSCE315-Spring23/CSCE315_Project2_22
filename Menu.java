@@ -69,21 +69,27 @@ public class Menu extends JFrame {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     int row = table.rowAtPoint(evt.getPoint());
                     int col = table.columnAtPoint(evt.getPoint());
-                    int prev_value = 0;
-                    if (row >= 0 && col > 1) {
+                    double prev_value = 0.0;
+                    double new_value = 0.0;
+                    String prev_name;
+                    if (row >= 0 && col == 2) {
                         isCellEditable(row, col);
-                        prev_value = (Integer) table.getValueAt(row, col);
-    
-                    }
-                    if (!table.isEditing()) {
-                        if(prev_value != (Integer) table.getValueAt(row, col)) {
-                            //stmt.executeQuery("UPDATE menu SET menu_id= col WHERE something='some value'");
-                            // table.revalidate();
-                        }
-                    }
+                        prev_value = (Double) table.getValueAt(row, col);
+                        prev_name = (String) table.getValueAt(row, 0);
+                    } 
+                    // if (!table.isEditing() && prev_value != (Integer) table.getValueAt(row, col)) {  
+                    //     new_value =  (Integer) table.getValueAt(row, col);
+                 
+                    //     PreparedStatement ps = conn.prepareStatement("UPDATE menu SET price=? WHERE menu_item=?");
+                    //     ps.setDouble(1, new_value);
+                    //     ps.setString(2, prev_name);
+                    //     ps.executeQuery();
+                    //     table.revalidate();
+                    // } 
                 }
             });
-            
+
+           
             //table.setValueAt(menu_name_prev, columnCount, columnCount);
            
             table.setModel(model);
