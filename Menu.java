@@ -34,19 +34,18 @@ public class Menu extends JFrame {
                 }
                 model.addRow(row);
             }
-            //gets data from menu_ingredients table 
-            rsmd = menu_ingredients.getMetaData();
+
             //only want to add the one column that contains the string of "product" (read-> ingredient ids) for a menu item
-            model.addColumn("product_id");
+            model.addColumn("product_ids");
             Vector<String> row = new Vector<String>();
             //gets the first row value of the column 0
-            String menu_name_prev = menu_ingredients.getString(0);
+            String menu_name_prev = menu_ingredients.getString(1);
             //iterates through the table rows 
             while(menu_ingredients.next()) {
                 //if the menu item column value is the same as the previous, add the ingredient value to the vector for that menu item
-                if(menu_ingredients.getString(0) == menu_name_prev) {
-                    menu_name_prev = menu_ingredients.getString(0);
-                    row.add(menu_ingredients.getString(1));  
+                if(menu_ingredients.getString(1) == menu_name_prev) {
+                    menu_name_prev = menu_ingredients.getString(1);
+                    row.add(menu_ingredients.getString(2));  
                 }
                 //if not, push that row to the column in model
                 else {
@@ -75,10 +74,9 @@ public class Menu extends JFrame {
             this.add(scrollPane);
             //Config frame
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            //frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             this.setSize(800,600);
             this.setLocationRelativeTo(null);
-            //this.setVisible(true);
+
         } catch (Exception e){
             e.printStackTrace();
         }
