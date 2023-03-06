@@ -37,11 +37,12 @@ public class Menu extends JFrame {
 
             //only want to add the one column that contains the string of "product" (read-> ingredient ids) for a menu item
             model.addColumn("product_ids");
-            Vector<String> row = new Vector<String>();
+            
             //gets the first row value of the column 0
             String menu_name_prev = menu_ingredients.getString(1);
             //iterates through the table rows 
             while(menu_ingredients.next()) {
+                Vector<String> row = new Vector<String>();
                 //if the menu item column value is the same as the previous, add the ingredient value to the vector for that menu item
                 if(menu_ingredients.getString(1) == menu_name_prev) {
                     menu_name_prev = menu_ingredients.getString(1);
