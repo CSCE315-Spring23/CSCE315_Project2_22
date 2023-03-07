@@ -97,8 +97,9 @@ public class Menu extends JFrame {
                         prev_row = row;
                         prev_col = col;
                     } 
+                    //NOTE-> maybe create update button?
                     //when cell is not being edited anymore and the cell value has changed
-                    if (!table.isEditing() && prev_value != ((BigDecimal) table.getValueAt(row, col)).doubleValue()) {  
+                    if (!table.isEditing() && prev_value != ((BigDecimal) table.getValueAt(prev_row, prev_col)).doubleValue()) {  
                         //System.out.println("clicked away");
                         if (prev_name == null) return;
                         //get the new value
