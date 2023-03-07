@@ -47,6 +47,9 @@ public class Menu extends JFrame {
                 }
                 model.addRow(row);
             }
+            menu.close();
+            stmt.close();
+            stmt = conn.createStatement();
             //NEW CHANGE
             ResultSet menu_ingredients = stmt.executeQuery("SELECT menu_item_id,product_id FROM menu_item_ingredients");
             //only want to add the one column that contains the string of "product" (read-> ingredient ids) for a menu item
