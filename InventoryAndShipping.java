@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.*;
+import java.util.*;
 
 import javax.swing.*;
 import javax.swing.DefaultCellEditor;
@@ -25,6 +27,8 @@ import java.sql.*;
 public class InventoryAndShipping extends JFrame {
     private int currentProductId = 0;
     private int beforeUpdateId = 0;
+    private Vector<String> removedIds = new Vector<String>();
+ 
     public InventoryAndShipping() {
 
         
@@ -65,7 +69,7 @@ public class InventoryAndShipping extends JFrame {
                         case 1:
                             return String.class;
                         case 2:
-                            return BigDecimal.class;
+                            return String.class;
                         default:
                             return super.getColumnClass(columnIndex);
                     }
@@ -101,9 +105,11 @@ public class InventoryAndShipping extends JFrame {
                     }
                 }
                 //row[columnCount] = "auto fill";
-                if(!row[2].equals(-1)){
+                
+                if(!row[2].equals("-1")){
                     model.addRow(row);
                 }
+                
                 //model.addRow(row);
                 currentProductId++;
                 
@@ -175,75 +181,43 @@ public class InventoryAndShipping extends JFrame {
                 public void actionPerformed(ActionEvent e){
                     int selectedRow = table1.getSelectedRow();
                     if(selectedRow != -1){
+                        String id = (String) model.getValueAt(selectedRow,0);
+                        removedIds.add(id);
                         model.removeRow(selectedRow);
                     }
+
                 }
             });
             buttonPanel.add(deleteRowButton);
 
             JButton updateDatabaseButton = new JButton("Update");
             updateDatabaseButton.addActionListener(new ActionListener(){
-                /*
-                @Override
-                public void actionPerformed(ActionEvent e){
-                    try{
-                        Statement stmt = conn.createStatement();
-                        stmt.executeUpdate("DELETE FROM inventory");
-
-                        for(int i = 0; i < model.getRowCount(); i++){
-                            String query = "INSERT INTO inventory VALUES (";
-                            for(int j = 0; j < model.getColumnCount(); j++){
-                                Object value = model.getValueAt(i,j);
-                                if(value == null){
-                                    query += "null, ";
-                                }else{
-                                    query += "'" + value.toString() + "',";
-                                }
-                            }
-                            query = query.substring(0, query.length() - 1);
-                            query += ")";
-                            stmt.executeUpdate(query);
-                        }
-
-                        JOptionPane.showMessageDialog(InventoryAndShipping.this, "Database updated successfully.");
-                    } catch (SQLException ex){
-                        JOptionPane.showMessageDialog(InventoryAndShipping.this, "Error updating database: " + ex.getMessage());
-                    }
-                }
-                */
                 public void actionPerformed(ActionEvent e){
                     try{
                         conn.setAutoCommit(false);
                         PreparedStatement updateStmt = conn.prepareStatement("UPDATE inventory SET product_name = ?, quantity = ? WHERE product_id = ?");
                         PreparedStatement insertStmt = conn.prepareStatement("INSERT INTO inventory (product_id, product_name, quantity) VALUES(?, ?, ?)");
-                        PreparedStatement checkStmt = conn.prepareStatement("SELECT COUNT(*) FROM inventory WHERE product_id = ?");
-                        PreparedStatement updateOldStmt = conn.prepareStatement("UPDATE inventory SET quantity = ? WHERE product_id = ?");
-                        PreparedStatement deleteStmt = conn.prepareStatement("UPDATE inventory SET quantity = -1 WHERE product_id < ? AND quantity != -1");
+                        //PreparedStatement checkStmt = conn.prepareStatement("SELECT COUNT(*) FROM inventory WHERE product_id = ?");
+                        //PreparedStatement updateOldStmt = conn.prepareStatement("UPDATE inventory SET quantity = ? WHERE product_id = ?");
+                        PreparedStatement deleteStmt = conn.prepareStatement("UPDATE inventory SET quantity = -1 WHERE product_id = ?");
 
                         // update existing rows
-                        /*
-                        for(int i = 0; i <model.getRowCount(); i++){
-                            int productId = (int)model.getValueAt(i,0);
-                            if(productId <= beforeUpdateId){
-                                String product_name = model.getValueAt(i,1).toString();
-                                int quan = Integer.parseInt(model.getValueAt(i,2).toString());
-                                updateStmt.setString(1,product_name);
-                                updateStmt.setInt(2, quan);
-                                updateStmt.executeUpdate();
-                            }
-                            checkStmt.setInt(1,productId);
-                            ResultSet rs = checkStmt.executeQuery();
-                            rs.next();
-                            int count = rs.getInt(1);
-                            rs.close();
-                            if(count == 0 && productId < beforeUpdateId){
-                                updateOldStmt.setInt(1,-1);
-                                updateOldStmt.setInt(2,productId);
-                                updateOldStmt.executeUpdate();
-                            }
+                        for(int i = 0; i < model.getRowCount(); i++){
+                            
+                            
+                            updateStmt.setString(1,(String)model.getValueAt(i,1));
+                            updateStmt.setBigDecimal(2, new BigDecimal((String)model.getValueAt(i,2)));
+                            updateStmt.setInt(3, Integer.parseInt((String)model.getValueAt(i,0)));
+                            updateStmt.executeUpdate();
                         }
-                        */
+                        
+                        // update deleted rows
+                        for(int i = 0; i < removedIds.size(); i++){
+                            deleteStmt.setInt(1, Integer.parseInt((String)removedIds.get(i)));
+                            deleteStmt.executeUpdate();
+                        }
                         // insert new rows for product_id > before Update_Id
+                        
                         for(int i = 0; i < model.getRowCount(); i++){
                             String productId = (String)model.getValueAt(i,0);
                             //int productId = tempproductId
@@ -256,17 +230,22 @@ public class InventoryAndShipping extends JFrame {
                                     insertStmt.setString(2, productName);
                                     insertStmt.setBigDecimal(3, new BigDecimal(quan));
                                     insertStmt.executeUpdate();
+                                    beforeUpdateId++;
                                 }
                                 
                                 
                             }
+
+                            //beforeUpdateId++;
                         }
-                        /*
+                        
+                        
                         // update existing rows with product_id < beforeUpdateId that have quantity = -1
-                        deleteStmt.setInt(1, beforeUpdateId);
-                        deleteStmt.executeUpdate();
-                        */
+                        //deleteStmt.setInt(1, beforeUpdateId);
+                        //deleteStmt.executeUpdate();
+                        
                         conn.commit();
+                        //stmt.executeQuery("SELECT * FROM inventory ORDER BY product_id ASC");
                         
                         JOptionPane.showMessageDialog(InventoryAndShipping.this, "Database updated successfully.");
                     }catch(SQLException ex){
