@@ -16,10 +16,11 @@ public class ManagerUI extends JFrame{
         //this.setLayout(null);
 
         // Placeholder panels
-        JPanel panel1 = new JPanel();
+        //JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
         //JPanel panel3 = new JPanel();
 
+        InventoryAndShipping inventory = new InventoryAndShipping();
         OrderHistory orderHistory = new OrderHistory();
 
 
@@ -27,9 +28,11 @@ public class ManagerUI extends JFrame{
         JTabbedPane tabbed_pane = new JTabbedPane();
         //tabbed_pane.setBounds(50,50,400,400);
 
-        tabbed_pane.add("Inventory",panel1);
+        //tabbed_pane.add("Inventory",panel1);
+        tabbed_pane.addTab("InventoryAndShipments", inventory.getContentPane());
         tabbed_pane.add("Order Trends",panel2);
         //tabbed_pane.add("Order History",panel3);
+    
         tabbed_pane.addTab("Order History", orderHistory.getContentPane());
 
         control.add(tabbed_pane);
