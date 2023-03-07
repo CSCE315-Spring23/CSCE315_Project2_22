@@ -18,12 +18,15 @@ public class Main {
         frame.setLocation(new Point(500, 300));
 
         Login login_panel = new Login(frame, frame_handler);
+        RedirectScreen redirect_panel = new RedirectScreen(frame, frame_handler);
         TableUI table_panel = new TableUI(frame, frame_handler);
 
-        fh.login = login_panel;
-        fh.tables = table_panel;
+        frame_handler.login = login_panel;
+        frame_handler.redirect = redirect_panel;
+        frame_handler.tables = table_panel;
 
         frame.add(login_panel);
+        frame.add(redirect_panel);
         frame.add(table_panel);
         frame.setContentPane(login_panel);
         frame.setVisible(true);

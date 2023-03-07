@@ -37,18 +37,23 @@ public class Login extends JPanel  {  //implements ActionListener
         }
     }
 
-    public boolean checkLogin() {
+    public ArrayList<Boolean> checkLogin() {
         String un = username.getText();
         String pw = password.getText();
+        ArrayList<Boolean> login = new ArrayList<Boolean>(); // {correct login, is manager}
+        login.add(false);
+        login.add(false);
         
         for (ArrayList<String> entry : employee_data) {
             if (entry.get(1).equals(un) && entry.get(2).equals(pw)) {
                 JOptionPane.showMessageDialog(null, "Logged in as " + entry.get(0));
-                return true;
+                if (pw.equals("man_pass")) login.set(1, true);
+                login.set(0, true);
+                return login;
             }
         }
         JOptionPane.showMessageDialog(null, "Username or password incorrect.");
-        return false;
+        return login;
     }
 
     private void loadEmployees() {
