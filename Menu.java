@@ -5,33 +5,38 @@ import javax.swing.table.*;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import java.util.Vector;
+import java.math.*;
 
 
 
 public class Menu extends JFrame {
 
     private JTable table;
-    
-    //NEW CHANGE
-    public int rows, cols;
-    public double prev_value, new_value;
-    public String prev_name;
 
     public boolean isCellEditable(int row, int column) { 
         return true; 
     }
 
+   
     public Menu(){
         try{
             Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22", "csce315331_nair", "428008776");            
+            Connection conn = null;
+            try {
+                conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22", "csce315331_nair", "428008776");   
+                // conn = DriverManager.getConnection(dbConnectionString, "csce315331_veselka", "729009874");
+            } 
+            catch (Exception e) {
+                e.printStackTrace();
+                System.err.println(e.getClass().getName()+": "+e.getMessage());
+                System.exit(0);
+            }
 
             table = new JTable();
             table.getTableHeader().setReorderingAllowed(false);
 
             Statement stmt = conn.createStatement();
             ResultSet menu = stmt.executeQuery("SELECT * FROM menu");
-          
             
             // Populate table model with menu data
             DefaultTableModel model = new DefaultTableModel();
@@ -47,27 +52,27 @@ public class Menu extends JFrame {
                 }
                 model.addRow(row);
             }
-            menu.close();
-            stmt.close();
-            stmt = conn.createStatement();
-            //NEW CHANGE
-            ResultSet menu_ingredients = stmt.executeQuery("SELECT menu_item_id,product_id FROM menu_item_ingredients");
+            
             //only want to add the one column that contains the string of "product" (read-> ingredient ids) for a menu item
             model.addColumn("ingredient_ids");
             
+            ResultSet menu_ingredients = stmt.executeQuery("SELECT menu_item_id,product_id FROM menu_item_ingredients");
             //gets the first row value of the column 1
-            String menu_name_prev = menu_ingredients.getString(1);
+
+            String menu_name_prev = null;
+            Vector<String> row = new Vector<String>();
             //iterates through the table rows 
             while(menu_ingredients.next()) {
-                Vector<String> row = new Vector<String>();
                 //if the menu item column value is the same as the previous, add the ingredient value to the vector for that menu item
-                if(menu_ingredients.getString(1) == menu_name_prev) {
+                if(menu_name_prev == null || menu_ingredients.getString(1) == menu_name_prev) {
                     menu_name_prev = menu_ingredients.getString(1);
                     row.add(menu_ingredients.getString(2));  
                 }
                 //if not, push that row to the column in model
                 else {
+                    System.out.println(row);
                     model.addRow(row);
+                    row.clear();
                 }
             }
 
@@ -75,29 +80,41 @@ public class Menu extends JFrame {
             table.addMouseListener(new java.awt.event.MouseAdapter() {
                 @Override
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
-                   
-                    rows = table.rowAtPoint(evt.getPoint());
-                    cols = table.columnAtPoint(evt.getPoint());
-                    if (rows >= 0 && cols == 2) {
-                        isCellEditable(rows, cols);
-                        prev_value = (Double) table.getValueAt(rows, cols);
-                        prev_name = (String) table.getValueAt(rows, 0);
+                    int row = table.rowAtPoint(evt.getPoint());
+                    int col = table.columnAtPoint(evt.getPoint());
+                    int prev_row = 0, prev_col = 0;
+                    double prev_value = 0.0;
+                    double new_value = 0.0;
+                    String prev_name = null;
+                    if (row >= 0 && col == 2) {
+                        isCellEditable(row, col);
+                        prev_value = ((BigDecimal) table.getValueAt(row, col)).doubleValue();
+                        prev_name = (String) table.getValueAt(row, 0);
+                        prev_row = row;
+                        prev_col = col;
                     } 
-                   
+                    if (!table.isEditing() && prev_value != ((BigDecimal) table.getValueAt(row, col)).doubleValue()) {  
+                        System.out.println("clicked away");
+                        if (prev_name == null) return;
+                        table.setValueAt(new BigDecimal((String) table.getValueAt(row, col)), prev_row, prev_col);
+                        new_value = ((BigDecimal) table.getValueAt(prev_row, prev_col)).doubleValue();
+                        try {
+                            Connection connec = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22", "csce315331_nair", "428008776");
+                            PreparedStatement ps = connec.prepareStatement("UPDATE menu SET price=? WHERE menu_item=?");
+                            ps.setDouble(1, new_value);
+                            ps.setString(2, prev_name);
+                            ps.executeQuery();
+                            // table.fireTableDataChanged();
+                        }
+                        catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    } 
                 }
             });
-            //NEW CHANGE
-            if (!table.isEditing() && prev_value != (Integer) table.getValueAt(rows, cols)) {  
-                    new_value =  (Integer) table.getValueAt(rows, cols);
-            
-                    PreparedStatement ps = conn.prepareStatement("UPDATE menu SET price=? WHERE menu_item=?");
-                    ps.setDouble(1, new_value);
-                    ps.setString(2, prev_name);
-                    ps.executeUpdate();
-                    table.revalidate();
-                } 
+
            
-            //table.setValueAt(menu_name_prev, columnCount, columnCount);
+
            
             table.setModel(model);
             table.setRowHeight(30);
@@ -121,6 +138,7 @@ public class Menu extends JFrame {
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.setSize(800,600);
             this.setLocationRelativeTo(null);
+            this.setVisible(true);
 
         } catch (Exception e){
             e.printStackTrace();
