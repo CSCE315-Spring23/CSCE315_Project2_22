@@ -11,12 +11,16 @@ import java.util.Vector;
 public class Menu extends JFrame {
 
     private JTable table;
+    
+    //NEW CHANGE
+    public int rows, cols;
+    public double prev_value, new_value;
+    public String prev_name;
 
     public boolean isCellEditable(int row, int column) { 
         return true; 
     }
 
-   
     public Menu(){
         try{
             Class.forName("org.postgresql.Driver");
@@ -27,7 +31,7 @@ public class Menu extends JFrame {
 
             Statement stmt = conn.createStatement();
             ResultSet menu = stmt.executeQuery("SELECT * FROM menu");
-            ResultSet menu_ingredients = stmt.executeQuery("SELECT menu_item_id,product_id FROM menu_item_ingredients");
+          
             
             // Populate table model with menu data
             DefaultTableModel model = new DefaultTableModel();
@@ -43,7 +47,8 @@ public class Menu extends JFrame {
                 }
                 model.addRow(row);
             }
-
+            //NEW CHANGE
+            ResultSet menu_ingredients = stmt.executeQuery("SELECT menu_item_id,product_id FROM menu_item_ingredients");
             //only want to add the one column that contains the string of "product" (read-> ingredient ids) for a menu item
             model.addColumn("ingredient_ids");
             
@@ -67,28 +72,27 @@ public class Menu extends JFrame {
             table.addMouseListener(new java.awt.event.MouseAdapter() {
                 @Override
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
-                    int row = table.rowAtPoint(evt.getPoint());
-                    int col = table.columnAtPoint(evt.getPoint());
-                    double prev_value = 0.0;
-                    double new_value = 0.0;
-                    String prev_name;
-                    if (row >= 0 && col == 2) {
-                        isCellEditable(row, col);
-                        prev_value = (Double) table.getValueAt(row, col);
-                        prev_name = (String) table.getValueAt(row, 0);
+                   
+                    rows = table.rowAtPoint(evt.getPoint());
+                    cols = table.columnAtPoint(evt.getPoint());
+                    if (rows >= 0 && cols == 2) {
+                        isCellEditable(rows, cols);
+                        prev_value = (Double) table.getValueAt(rows, cols);
+                        prev_name = (String) table.getValueAt(rows, 0);
                     } 
-                    // if (!table.isEditing() && prev_value != (Integer) table.getValueAt(row, col)) {  
-                    //     new_value =  (Integer) table.getValueAt(row, col);
-                 
-                    //     PreparedStatement ps = conn.prepareStatement("UPDATE menu SET price=? WHERE menu_item=?");
-                    //     ps.setDouble(1, new_value);
-                    //     ps.setString(2, prev_name);
-                    //     ps.executeQuery();
-                    //     table.revalidate();
-                    // } 
+                   
                 }
             });
-
+            //NEW CHANGE
+            if (!table.isEditing() && prev_value != (Integer) table.getValueAt(rows, cols)) {  
+                    new_value =  (Integer) table.getValueAt(rows, cols);
+            
+                    PreparedStatement ps = conn.prepareStatement("UPDATE menu SET price=? WHERE menu_item=?");
+                    ps.setDouble(1, new_value);
+                    ps.setString(2, prev_name);
+                    ps.executeUpdate();
+                    table.revalidate();
+                } 
            
             //table.setValueAt(menu_name_prev, columnCount, columnCount);
            
