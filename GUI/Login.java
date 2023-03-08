@@ -8,6 +8,10 @@ import java.util.*;
 //Windows: java -cp ".;postgresql-42.2.8.jar" jdbcpostgreSQL
 //Mac/Linux: java -cp ".:postgresql-42.2.8.jar" jdbcpostgreSQL
 
+/**
+ * A JPanel that handles the login process for the system.
+ * It loads employee data from the database and creates a login interface.
+ */
 public class Login extends JPanel  {  //implements ActionListener
     // load the employees table for checking passwords
     // add two password fields
@@ -25,6 +29,13 @@ public class Login extends JPanel  {  //implements ActionListener
 
     private static ArrayList<ArrayList<String>> employee_data;
 
+    /**
+     * Constructs a new Login panel with the given JFrame and FrameHandler.
+     * It loads employee data from the database and creates a login interface.
+     *
+     * @param frame The JFrame containing the Login panel.
+     * @param fh The FrameHandler that handles button clicks on the Login panel.
+     */
     Login(JFrame frame, FrameHandler fh) {
         this.frame = frame;
         this.fh = fh;
@@ -37,6 +48,13 @@ public class Login extends JPanel  {  //implements ActionListener
         }
     }
 
+    /**
+     * Checks if the entered username and password are correct and returns an ArrayList with two booleans:
+     * the first boolean indicates if the login was successful or not, and the second boolean indicates if the
+     * user is a manager or not.
+     *
+     * @return An ArrayList containing two booleans: [correct login, is manager].
+     */
     public ArrayList<Boolean> checkLogin() {
         String un = username.getText();
         String pw = password.getText();
@@ -56,6 +74,16 @@ public class Login extends JPanel  {  //implements ActionListener
         return login;
     }
 
+    /**
+
+    This method loads employee data from a PostgreSQL database by establishing a connection
+    with the database using the provided database name and team number. The database is queried
+    to retrieve employee data, including their first name, email address, and password. The retrieved
+    data is stored in an ArrayList of ArrayLists of strings, where each sub-array represents an employee
+    and contains their first name, email address, and password.
+    @throws SQLException if an error occurs while connecting to or querying the database.
+    @throws Exception if an error occurs while retrieving or storing employee data.
+    */
     private void loadEmployees() {
         Connection conn = null;
         String teamNumber = "team_22";
@@ -99,6 +127,13 @@ public class Login extends JPanel  {  //implements ActionListener
         }
     }
 
+    /**
+
+    This method creates a login panel for the GUI by setting the layout to null and positioning
+    username and password labels and text fields, and a submit button on the panel. The position
+    of these components is determined by the size of the frame and a set of calculated values.
+    @throws NullPointerException if the frame object is null.
+    */
     private void loadLogin() {
         // panel = new JPanel();  // default flow layout
         this.setLayout(null);
