@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.text.Format;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -14,16 +16,20 @@ public class Server {
         public OrderItem (String name, String price) {
             order_name = name;
             order_price = price;
+
         }
+
     }
+    
 
     
     public static void main(String[] args) {
         // INFORMATION
         ArrayList<String> categories = new ArrayList<String>();
         ArrayList<ArrayList<String>> menu_items = new ArrayList<ArrayList<String>>();
-        ArrayList<OrderItem> order_items = new ArrayList<OrderItem>();
+        ArrayList<String> order_items = new ArrayList<String>();
         ArrayList<Double> order_prices = new ArrayList<Double>();
+        ArrayList<String> item_solo = new ArrayList<String>();
 
         
 
@@ -137,45 +143,51 @@ public class Server {
             }  */
             menu_pane.add(category, panel); 
             for (ArrayList<String> items : menu_items) {
-                JButton button = new JButton(items.get(1));
+              	if (category.equals(items.get(0))) {
+                  JButton button = new JButton(items.get(1));
                 
-                panel.add(button);
+                  panel.add(button);
+
+
+                  button.addActionListener(new ActionListener() {
+
+                      public void actionPerformed(ActionEvent e) {
+                          //OrderItem order_item = new OrderItem(items.get(1),items.get(2));
+                          //order_items.add(order_item); 
+
+                          String order_item = items.get(1) + " " + items.get(2); //creates item to add to order list
+                          //OrderItem singular_item = new OrderItem(items.get(1), items.get(2));
+                          order_items.add(order_item);
+                          item_solo.add(items.get(1));
+                          DefaultListModel<String> order_list = new DefaultListModel<>();
+                          order_list.addElement(order_item); //adds order to the list
+
+                          JList<String> corder = new JList<>(order_list);  //creates displayed list 
+                          //corder.setSize(150,150); 
+                          left_panel.add(corder); //adds list to left panel
+
+                          //double order_total = 0;
+                          double single_price = Double.parseDouble(items.get(2));
+                          //order_total += single_price;
+
+                          order_prices.add(single_price);
+                          double order_total = 0.0;
+                          for (double prices : order_prices) {
+                              order_total += prices;
+                              String s_order_total = String.valueOf(order_total);
+                              button_price.setText(s_order_total);
+                          }
+
+                          //String s_order_total = String.valueOf(order_total);
+
+
+                          //JButton button_price = new JButton(String.valueOf(order_total));
+                          //order_panel.add(button_price);
+
+                      }
+                  });
+                }
                 
-                
-                button.addActionListener(new ActionListener() {
-                    
-                    public void actionPerformed(ActionEvent e) {
-                        //OrderItem order_item = new OrderItem(items.get(1),items.get(2));
-                        //order_items.add(order_item); 
-
-                        String order_item = items.get(1) + " " + items.get(2); //creates item to add to order list
-                        DefaultListModel<String> order_list = new DefaultListModel<>();
-                        order_list.addElement(order_item); //adds order to the list
-                         
-                        JList<String> corder = new JList<>(order_list);  //creates displayed list 
-                        //corder.setSize(150,150); 
-                        left_panel.add(corder); //adds list to left panel
-
-                        //double order_total = 0;
-                        double single_price = Double.parseDouble(items.get(2));
-                        //order_total += single_price;
-
-                        order_prices.add(single_price);
-                        double order_total = 0.0;
-                        for (double prices : order_prices) {
-                            order_total += prices;
-                            String s_order_total = String.valueOf(order_total);
-                            button_price.setText(s_order_total);
-                        }
-
-                        //String s_order_total = String.valueOf(order_total);
-                        
-                        
-                        //JButton button_price = new JButton(String.valueOf(order_total));
-                        //order_panel.add(button_price);
-                        
-                    }
-                });
 
                
                 
@@ -183,32 +195,78 @@ public class Server {
         }
         pay_now.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // create a new frame for payment information
+                
                 JFrame payment_frame = new JFrame("Payment Information");
                 payment_frame.setSize(400, 300);
                 payment_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 payment_frame.setVisible(true);
-                /*String order_item = items.get(1) + " " + items.get(2); //creates item to add to order list
-                DefaultListModel<String> order_list = new DefaultListModel<>();
-                order_list.addElement(order_item); //adds order to the list
-                 
-                JList<String> corder = new JList<>(order_list);  //creates displayed list 
-                //corder.setSize(150,150); 
-                payment_frame.add(corder); //adds list to left panel
+        
+                // create a panel to hold payment information
+                JPanel payment_panel = new JPanel(new BorderLayout());
+                payment_panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        
+                // create a panel to hold the order items
+                JPanel order_panel = new JPanel(new GridLayout(0, 1));
+                order_panel.setBorder(BorderFactory.createTitledBorder("Order Items"));
+        
+                // add order items to order panel
+                double order_total = 0;
+                for (String items : order_items) {
+                    JPanel item_panel = new JPanel(new GridLayout(1, 2));
+                    JLabel order_item_label = new JLabel(items);
+                    item_panel.add(order_item_label);
+        
+                    JLabel price_label = new JLabel("$" + String.format("%.2f", order_prices.get(order_items.indexOf(items))));
+                    item_panel.add(price_label);
+        
+                    order_panel.add(item_panel);
+        
+                    order_total += order_prices.get(order_items.indexOf(items));
+                }
+        
+                // add total label to order panel
+                JButton total_label = new JButton("Total: $" + String.format("%.2f", order_total));
+                order_panel.add(total_label);
+                payment_panel.add(order_panel, BorderLayout.CENTER);
+                payment_frame.add(payment_panel);
+                total_label.addActionListener(new ActionListener () {
+                    public void actionPerformed(ActionEvent e) 
+                    {
+                        
+                        for (String item : item_solo) {
+                            System.out.println(item);
+                            try {
+                                Connection conn = null;
+                                conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
+                                String selectQuery = "SELECT product_id, quantity FROM menu_item_ingredients WHERE menu_item_id = ?";
+                                PreparedStatement selectStmt = conn.prepareStatement(selectQuery);
+                                selectStmt.setString(1, item);
+                                ResultSet resultSet = selectStmt.executeQuery();
+                                while (resultSet.next()) {
+                                    int product_id = resultSet.getInt("product_id");
+                                    Double quantity = resultSet.getDouble("quantity");
+                                    System.out.println("Product ID: " + product_id + ", Quantity: " + quantity);
+                                    String updateQuery = "UPDATE inventory SET quantity = quantity - ? WHERE product_id = ?";
+                                    PreparedStatement updateStmt = conn.prepareStatement(updateQuery);
+                                    updateStmt.setDouble(1, quantity);
+                                    updateStmt.setInt(2, product_id);
+                                    updateStmt.executeUpdate();
+                                }
+                            } 
+                            catch (SQLException ex) 
+                            {
+                                ex.printStackTrace();
+                            }
+                        }
+                        
+                        
+                        
+                    }
+                });
 
-                //double order_total = 0;
-                double single_price = Double.parseDouble(items.get(2));
-                //order_total += single_price;
-
-                order_prices.add(single_price);
-                double order_total = 0.0;
-                for (double prices : order_prices) {
-                    order_total += prices;
-                    String s_order_total = String.valueOf(order_total);
-                    button_price.setText(s_order_total);
-                }*/
             }
         });
+        
 
         right_panel.add(menu_pane); 
 
