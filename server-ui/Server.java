@@ -22,7 +22,7 @@ public class Server {
         // INFORMATION
         ArrayList<String> categories = new ArrayList<String>();
         ArrayList<ArrayList<String>> menu_items = new ArrayList<ArrayList<String>>();
-        ArrayList<OrderItem> order_items = new ArrayList<OrderItem>();
+        ArrayList<String> order_items = new ArrayList<String>();
         ArrayList<Double> order_prices = new ArrayList<Double>();
 
         
@@ -149,6 +149,8 @@ public class Server {
                         //order_items.add(order_item); 
 
                         String order_item = items.get(1) + " " + items.get(2); //creates item to add to order list
+                        //OrderItem singular_item = new OrderItem(items.get(1), items.get(2));
+                        order_items.add(order_item);
                         DefaultListModel<String> order_list = new DefaultListModel<>();
                         order_list.addElement(order_item); //adds order to the list
                          
@@ -188,25 +190,26 @@ public class Server {
                 payment_frame.setSize(400, 300);
                 payment_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 payment_frame.setVisible(true);
-                /*String order_item = items.get(1) + " " + items.get(2); //creates item to add to order list
-                DefaultListModel<String> order_list = new DefaultListModel<>();
-                order_list.addElement(order_item); //adds order to the list
-                 
-                JList<String> corder = new JList<>(order_list);  //creates displayed list 
-                //corder.setSize(150,150); 
-                payment_frame.add(corder); //adds list to left panel
+                
+                JPanel pay_panel = new JPanel();
+                pay_panel.setLayout(new BoxLayout(left_panel, BoxLayout.Y_AXIS)); // Set the layout manager to a vertical BoxLayout
+                pay_panel.setBackground(Color.gray);      
+                pay_panel.setPreferredSize(new Dimension(500, 190));
 
-                //double order_total = 0;
-                double single_price = Double.parseDouble(items.get(2));
-                //order_total += single_price;
+                for (String items : order_items) {
+                    String order_item = items; //creates item to add to order list
+                    DefaultListModel<String> order_list = new DefaultListModel<>();
+                    order_list.addElement(order_item); //adds order to the list
+                        
+                    JList<String> corder = new JList<>(order_list);  //creates displayed list 
+                    //corder.setSize(150,150); 
+                    pay_panel.add(corder); //adds list to left panel
 
-                order_prices.add(single_price);
-                double order_total = 0.0;
-                for (double prices : order_prices) {
-                    order_total += prices;
-                    String s_order_total = String.valueOf(order_total);
-                    button_price.setText(s_order_total);
-                }*/
+                    JList<String> payorder = new JList<>(order_list);  //creates displayed list 
+                        //corder.setSize(150,150); 
+                    pay_panel.add(payorder); //adds list to left panel
+                }
+                payment_frame.add(pay_panel);
             }
         });
 
