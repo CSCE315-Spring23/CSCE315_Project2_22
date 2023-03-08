@@ -177,45 +177,6 @@ public class Menu extends JFrame implements TableModelListener {
             }
             model.addRow(new Object[4]);
 
-            //TODO -> create two buttons, one to edit (i.e. add, remove) prices, other to edit (i.e. add, remove) menu items  
-            // table.addMouseListener(new java.awt.event.MouseAdapter() {
-            //     @Override
-            //     public void mouseClicked(java.awt.event.MouseEvent evt) {
-            //         int row = table.rowAtPoint(evt.getPoint());
-            //         int col = table.columnAtPoint(evt.getPoint());
-            //         int prev_row = 0, prev_col = 0;
-            //         double prev_value = 0.0;
-            //         double new_value = 0.0;
-            //         String prev_name = null;
-            //         if (row >= 0 && col == 2) {
-            //             isCellEditable(row, col);
-            //             prev_value = ((BigDecimal) table.getValueAt(row, col)).doubleValue();
-            //             prev_name = (String) table.getValueAt(row, 0);
-            //             prev_row = row;
-            //             prev_col = col;
-            //         } 
-            //         if (!table.isEditing() && prev_value != ((BigDecimal) table.getValueAt(row, col)).doubleValue()) {  
-            //             System.out.println("clicked away");
-            //             if (prev_name == null) return;
-            //             table.setValueAt(new BigDecimal((String) table.getValueAt(row, col)), prev_row, prev_col);
-            //             new_value = ((BigDecimal) table.getValueAt(prev_row, prev_col)).doubleValue();
-            //             try {
-            //                 Connection connec = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22", "csce315331_nair", "428008776");
-            //                 PreparedStatement ps = connec.prepareStatement("UPDATE menu SET price=? WHERE menu_item=?");
-            //                 ps.setDouble(1, new_value);
-            //                 ps.setString(2, prev_name);
-            //                 ps.executeQuery();
-            //                 // table.revalidate();
-            //                 // table.fireTableDataChanged();
-            //             }
-            //             catch (Exception e) {
-            //                 e.printStackTrace();
-            //             }
-            //         } 
-            //     }
-            // });
-
-           
             //table.setValueAt(menu_name_prev, columnCount, columnCount);
            
             
