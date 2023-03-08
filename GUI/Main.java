@@ -19,15 +19,18 @@ public class Main {
 
         Login login_panel = new Login(frame, frame_handler);
         RedirectScreen redirect_panel = new RedirectScreen(frame, frame_handler);
-        TableUI table_panel = new TableUI(frame, frame_handler);
+        ManagerUI manager_panel = new ManagerUI(frame, frame_handler);
+        Server server_panel = new Server(frame, frame_handler);
 
         frame_handler.login = login_panel;
         frame_handler.redirect = redirect_panel;
-        frame_handler.tables = table_panel;
+        frame_handler.manager = manager_panel;
+        frame_handler.server = server_panel;
 
         frame.add(login_panel);
         frame.add(redirect_panel);
-        frame.add(table_panel);
+        frame.add(manager_panel);
+        frame.add(server_panel);
         frame.setContentPane(login_panel);
         frame.setVisible(true);
     }

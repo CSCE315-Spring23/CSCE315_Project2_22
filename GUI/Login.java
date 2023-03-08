@@ -63,7 +63,7 @@ public class Login extends JPanel  {  //implements ActionListener
         String dbConnectionString = "jdbc:postgresql://csce-315-db.engr.tamu.edu/" + dbName;
         //Connecting to the database
         try {
-            conn = DriverManager.getConnection(dbConnectionString, "csce315331_veselka", "729009874");
+            conn = DriverManager.getConnection(dbConnectionString, "csce315331_team_22_master", "0000");
         } 
         catch (Exception e) {
             e.printStackTrace();
