@@ -245,7 +245,7 @@ public class Server {
                                 while (resultSet.next()) {
                                     int product_id = resultSet.getInt("product_id");
                                     Double quantity = resultSet.getDouble("quantity");
-                                    System.out.println("Product ID: " + product_id + ", Quantity: " + quantity);
+                                    //System.out.println("Product ID: " + product_id + ", Quantity: " + quantity);
                                     String updateQuery = "UPDATE inventory SET quantity = quantity - ? WHERE product_id = ?";
                                     PreparedStatement updateStmt = conn.prepareStatement(updateQuery);
                                     updateStmt.setDouble(1, quantity);
