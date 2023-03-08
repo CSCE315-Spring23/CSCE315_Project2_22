@@ -37,7 +37,6 @@ public class Menu extends JFrame implements TableModelListener {
                 return;
             }
             if (row == menu_arr.size()) {  // adding an item
-                System.out.println("adding item");
                 ArrayList<Object> new_row = new ArrayList<Object>();
                 new_row.add("0");new_row.add("0");new_row.add(0);
                 menu_arr.add(new_row);
@@ -59,24 +58,25 @@ public class Menu extends JFrame implements TableModelListener {
                 String[] id_quantity_arr = prodid_quantity.split(",");
                 ArrayList<String> ids = new ArrayList<String>();
                 ArrayList<String> quantities = new ArrayList<String>();
-                for (int i = 0; i < id_quantity_arr.length; ++i) {
-                    String[] id_quant_pair = id_quantity_arr[i].split(":");
-                    ids.add(id_quant_pair[0]);
-                    quantities.add(id_quant_pair[1]);
-                }
-                for (int i = 0; i < ids.size(); ++i) {
-                    update_row = conn.prepareStatement("INSERT INTO menu_item_ingredients VALUES (?, ?, ?)");
-                    update_row.setString(1, (String) model.getValueAt(row, 0));
-                    update_row.setInt(2, Integer.parseInt(ids.get(i)));
-                    update_row.setDouble(3, Double.parseDouble(quantities.get(i)));
-                    update_row.executeUpdate();
+                if (!id_quantity_arr[0].equals("")) {
+                    for (int i = 0; i < id_quantity_arr.length; ++i) {
+                        String[] id_quant_pair = id_quantity_arr[i].split(":");
+                        ids.add(id_quant_pair[0]);
+                        quantities.add(id_quant_pair[1]);
+                    }
+                    for (int i = 0; i < ids.size(); ++i) {
+                        update_row = conn.prepareStatement("INSERT INTO menu_item_ingredients VALUES (?, ?, ?)");
+                        update_row.setString(1, (String) model.getValueAt(row, 0));
+                        update_row.setInt(2, Integer.parseInt(ids.get(i)));
+                        update_row.setDouble(3, Double.parseDouble(quantities.get(i)));
+                        update_row.executeUpdate();
+                    }
                 }
 
                 model.addTableModelListener(this);
                 return;
             }   
             if (!(menu_item_id = (String) model.getValueAt(row, 0)).equals("")) {
-                System.out.println("updating item");
                 update_row = conn.prepareStatement("UPDATE menu SET " + columnName + "=? WHERE menu_item_id=?");
                 String updated_val = (String) model.getValueAt(row, column);
                 update_row.setString(2, (String) menu_arr.get(row).get(0));
@@ -91,12 +91,14 @@ public class Menu extends JFrame implements TableModelListener {
                 update_row.executeUpdate();
             }
             else if (columnName.equals("menu_item_id") && (menu_item_id = (String) model.getValueAt(row, 0)).equals("")) {
-                System.out.println("deleting item");
-                update_row = conn.prepareStatement("DELETE FROM menu WHERE menu_item_id=?");
-                System.out.println((String) menu_arr.get(row).get(0));
-                System.out.println(menu_item_id);
+                update_row = conn.prepareStatement("DELETE FROM menu_item_ingredients WHERE menu_item_id=?");
                 update_row.setString(1, (String) menu_arr.get(row).get(0));
                 update_row.executeUpdate();
+
+                update_row = conn.prepareStatement("DELETE FROM menu WHERE menu_item_id=?");
+                update_row.setString(1, (String) menu_arr.get(row).get(0));
+                update_row.executeUpdate();
+
 
                 menu_arr.remove(row);
                 model.removeRow(row);
