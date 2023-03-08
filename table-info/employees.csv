@@ -1,8 +1,8 @@
-employee_id, first_name, last_name, dob, position, email, phone_number, date_started, salary
-1, Austin, Veselka, 08/03/2001, manager, austinveselka@gmail.com, 281-449-0329, 02/25/2023, 2000.00
-2, Brian, Vu, 02/14/2001, server, brianvu@gmail.com, 832-994-0972, 02/25/2023, 480.00
-3, Siddarth, Nair, 12/01/2001, server, sidnair@gmail.com, 713-009-2321, 02/25/2023, 480.00
-4, William, Hipp, 01/29/2001, server, williamhipp@gmail.com, 409-213-4919, 02/25/2023, 480.00
-5, Sid, Padala, 04/20/2001, server, sidpadala@gmail.com, 832-999-0101, 02/25/2023, 480.00
-6, Adam, Pinto, 10/31/2001, server, adampinto@gmail.com, 832-914-0149, 02/25/2023, 480.00
-7, Robert, Lightfoot, 02/01/1960, manager, robertlightfoot@gmail.com, 412-041-4014, 02/25/2023, 2000.00
+employee_id,first_name,last_name,dob,position,email,phone_number,date_started,salary,password
+1,Austin,Veselka,08/03/2001,manager,austinveselka@gmail.com,281-449-0329,02/25/2023,2000.00,man_pass
+2,Brian,Vu,02/14/2001,server,brianvu@gmail.com,832-994-0972,02/25/2023,480.00,serv_pass
+3,Siddarth,Nair,12/01/2001,server,sidnair@gmail.com,713-009-2321,02/25/2023,480.00,serv_pass
+4,William,Hipp,01/29/2001,server,williamhipp@gmail.com,409-213-4919,02/25/2023,480.00,serv_pass
+5,Sid,Padala,04/20/2001,server,sidpadala@gmail.com,832-999-0101,02/25/2023,480.00,serv_pass
+6,Adam,Pinto,10/31/2001,server,adampinto@gmail.com,832-914-0149,02/25/2023,480.00,serv_pass
+7,Robert,Lightfoot,02/01/1960,manager,robertlightfoot@gmail.com,412-041-4014,02/25/2023,2000.00,serv_pass
