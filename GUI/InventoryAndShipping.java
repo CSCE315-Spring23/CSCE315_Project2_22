@@ -28,9 +28,11 @@ public class InventoryAndShipping extends JFrame {
     private int currentProductId = 0;
     private int beforeUpdateId = 0;
     private Vector<String> removedIds = new Vector<String>();
- 
-    public InventoryAndShipping() {
 
+    private FrameHandler fh;
+ 
+    public InventoryAndShipping(FrameHandler fh) {
+        this.fh = fh;
         
         try{
             //make connection:
@@ -156,6 +158,10 @@ public class InventoryAndShipping extends JFrame {
 
             JPanel buttonPanel = new JPanel();
 
+            JButton home = new JButton("Home");
+            home.addActionListener(fh);
+            buttonPanel.add(home);
+            
             JButton addRowButton = new JButton("Add Row");
             addRowButton.addActionListener(new ActionListener(){
                 @Override

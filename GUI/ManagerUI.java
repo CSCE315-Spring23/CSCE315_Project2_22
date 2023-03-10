@@ -25,8 +25,9 @@ public class ManagerUI extends JPanel{
         //JPanel panel3 = new JPanel();
 
         OrderHistory orderHistory = new OrderHistory();
-        InventoryAndShipping inventory = new InventoryAndShipping();
+        InventoryAndShipping inventory = new InventoryAndShipping(fh);
         Menu menu = new Menu();
+        Reports reports = new Reports();
 
         JTabbedPane tabbed_pane = new JTabbedPane();
         //tabbed_pane.setBounds(50,50,400,400);
@@ -36,6 +37,7 @@ public class ManagerUI extends JPanel{
         //tabbed_pane.add("Order History",panel3);
         tabbed_pane.addTab("Order History", orderHistory.getContentPane());
         tabbed_pane.addTab("Menu", menu.getContentPane());
+        tabbed_pane.addTab("Reports", reports.getContentPane());
 
 
         this.add(tabbed_pane);

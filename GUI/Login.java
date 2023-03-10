@@ -34,7 +34,7 @@ public class Login extends JPanel  {  //implements ActionListener
      * It loads employee data from the database and creates a login interface.
      *
      * @param frame The JFrame containing the Login panel.
-     * @param fh The FrameHandler that handles button clicks on the Login panel.
+     * @param fh The FrameHandler that handles button clicks on the Login panel and redirection to new frames after a successful login.
      */
     Login(JFrame frame, FrameHandler fh) {
         this.frame = frame;
@@ -76,13 +76,13 @@ public class Login extends JPanel  {  //implements ActionListener
 
     /**
 
-    This method loads employee data from a PostgreSQL database by establishing a connection
-    with the database using the provided database name and team number. The database is queried
-    to retrieve employee data, including their first name, email address, and password. The retrieved
-    data is stored in an ArrayList of ArrayLists of strings, where each sub-array represents an employee
-    and contains their first name, email address, and password.
-    @throws SQLException if an error occurs while connecting to or querying the database.
-    @throws Exception if an error occurs while retrieving or storing employee data.
+    * This method loads employee data from a PostgreSQL database by establishing a connection
+    * with the database using the provided database name and team number. The database is queried
+    * to retrieve employee data, including their first name, email address, and password. The retrieved
+    * data is stored in an ArrayList of ArrayLists of strings, where each sub-array represents an employee
+    * and contains their first name, email address, and password. This data is used to check login attempts.
+    * 
+    * Catches all exceptions and outputs to console.
     */
     private void loadEmployees() {
         Connection conn = null;
@@ -96,7 +96,6 @@ public class Login extends JPanel  {  //implements ActionListener
         catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
-            System.exit(0);
         }
 
         try {
@@ -117,7 +116,6 @@ public class Login extends JPanel  {  //implements ActionListener
         catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
-            System.exit(0);
         }
         try {
             conn.close();
@@ -129,10 +127,10 @@ public class Login extends JPanel  {  //implements ActionListener
 
     /**
 
-    This method creates a login panel for the GUI by setting the layout to null and positioning
-    username and password labels and text fields, and a submit button on the panel. The position
-    of these components is determined by the size of the frame and a set of calculated values.
-    @throws NullPointerException if the frame object is null.
+    * This method creates a login panel for the GUI by setting the layout to null and positioning
+    * username and password labels and text fields, and a submit button on the panel. The position
+    * of these components is determined by the size of the frame and a set of calculated values.
+    * @throws NullPointerException if the frame object is null.
     */
     private void loadLogin() {
         // panel = new JPanel();  // default flow layout

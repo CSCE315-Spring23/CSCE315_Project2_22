@@ -140,6 +140,12 @@ public class Server extends JPanel {
         pay_now = new JButton("Pay Now");
         left_panel.add(pay_now);
 
+        JButton home = new JButton("Home");
+        home.addActionListener(fh);
+
+        left_panel.add(Box.createRigidArea(new Dimension(25, 500)));
+        left_panel.add(home);
+
         
 
         for (String category : categories) {
@@ -165,7 +171,7 @@ public class Server extends JPanel {
                           //OrderItem order_item = new OrderItem(items.get(1),items.get(2));
                           //order_items.add(order_item); 
 
-                          String order_item = items.get(1) + " " + items.get(2); //creates item to add to order list
+                          String order_item = items.get(1); // + " " + items.get(2); //creates item to add to order list
                           //OrderItem singular_item = new OrderItem(items.get(1), items.get(2));
                           order_items.add(order_item);
                           item_solo.add(items.get(1));
@@ -270,7 +276,7 @@ public class Server extends JPanel {
                             {
                                 ex.printStackTrace();
                             }
-
+                        }
                         try {
                             Connection conn = null;
                             conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
@@ -300,7 +306,6 @@ public class Server extends JPanel {
                         catch (SQLException ex) 
                         {
                             ex.printStackTrace();
-                        }
                         }
                         
                     }

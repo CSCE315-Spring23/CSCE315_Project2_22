@@ -8,6 +8,10 @@ import java.util.*;
 //Windows: java -cp ".;postgresql-42.2.8.jar" jdbcpostgreSQL
 //Mac/Linux: java -cp ".:postgresql-42.2.8.jar" jdbcpostgreSQL
 
+
+/**
+ * Creates a redirect screen for the manager, which allows the manager, upon loggin in, to go to either a server view or a manager view.
+ */
 public class RedirectScreen extends JPanel  {  //implements ActionListener
     // load the employees table for checking passwords
     // add two password fields
@@ -22,6 +26,11 @@ public class RedirectScreen extends JPanel  {  //implements ActionListener
 
     private static ArrayList<ArrayList<String>> employee_data;
 
+    /**
+     * Sets the given frame and frame handler and then initializes the redirect screen.
+     * @param frame The main JFrame housing the GUI.
+     * @param fh The FrameHandler, which handles redirects to different frames in the GUI.
+     */
     RedirectScreen(JFrame frame, FrameHandler fh) {
         this.frame = frame;
         this.fh = fh;
@@ -33,6 +42,9 @@ public class RedirectScreen extends JPanel  {  //implements ActionListener
         }
     }
 
+    /**
+     * Initialize two buttons, which either redirect the manager to the server view or the manager view.
+     */
     private void initialize() {
         // panel = new JPanel();  // default flow layout
         this.setLayout(null);

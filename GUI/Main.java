@@ -8,11 +8,13 @@ import java.util.*;
 
 public class Main {
     /**
-    The Main class contains the main method that creates an instance of FrameHandler
-    to handle the different panels that will be displayed in the JFrame. It creates
-    and sets up the JFrame with a specified size and location, and adds four different
-    panels - Login, RedirectScreen, ManagerUI, and Server. It also sets the content pane
-    of the JFrame to the Login panel and sets the JFrame to be visible.
+    * The Main class contains the main method that creates an instance of FrameHandler
+    * to handle the different panels that will be displayed in the JFrame. It creates
+    * and sets up the JFrame with a specified size and location, and adds four different
+    * panels - Login, RedirectScreen, ManagerUI, and Server. The content pane is initialized
+    * to the login screen, where if a manager logs in, they will go to the RedirectScreen and 
+    * if a server logs in, they will go directly to the server panel. The FrameHandler handles
+    * switching between frames in the overall GUI.
     */
     public static void main(String[] args) {
         FrameHandler frame_handler = new FrameHandler();

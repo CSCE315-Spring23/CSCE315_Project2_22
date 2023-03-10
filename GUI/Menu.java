@@ -11,7 +11,9 @@ import javax.swing.table.TableModel;
 import java.util.*;
 
 
-
+/**
+ * Menu panel for the ManagerUI, which lets the manager view, edit, add and remove menu items and their ingredients.
+ */
 public class Menu extends JFrame implements TableModelListener {
 
     private JTable table;
@@ -19,10 +21,23 @@ public class Menu extends JFrame implements TableModelListener {
     private PreparedStatement update_row;
     private ArrayList<ArrayList<Object>> menu_arr;
 
+    /**
+     * Function which checks whether a cell is editable. Returns true all the time.
+     * @param row The cell's row.
+     * @param column The cell's column.
+     * @return boolean true indicating the cell at row, column is editable.
+     */
     public boolean isCellEditable(int row, int column) { 
         return true; 
     }
 
+    /**
+     * Listens to changes made to cells in the table. These actions allow a manager to add a new value to the menu
+     * if they enter a value in the empty cell at the bottom of the table, to remove a value by setting its name to an empty
+     * string "", and to update any other cell's values. This includes changing the name of an item, the price and the
+     * ingredients and their associated quantities for each item. 
+     * @param e The table model event that triggered the listener. This is the updated cell.
+     */
     public void tableChanged(TableModelEvent e) {
         int row = e.getFirstRow();
         int column = e.getColumn();
@@ -48,6 +63,8 @@ public class Menu extends JFrame implements TableModelListener {
                 else model.setValueAt((String) model.getValueAt(row, column), row, column);
 
             }
+            // If the user is modifying the quantities or ingredients, reset the menu_item_ingredients associated with the item to the updated
+            // values
             if (columnName.equals("product_id:quantity")) {
                 // totally replace all ingredients and their quantities if they're edited
                 update_row = conn.prepareStatement("DELETE FROM menu_item_ingredients WHERE menu_item_id=?");
@@ -76,6 +93,7 @@ public class Menu extends JFrame implements TableModelListener {
                 model.addTableModelListener(this);
                 return;
             }   
+            // If they're updating an item, update the item
             if (!(menu_item_id = (String) model.getValueAt(row, 0)).equals("")) {
                 update_row = conn.prepareStatement("UPDATE menu SET " + columnName + "=? WHERE menu_item_id=?");
                 String updated_val = (String) model.getValueAt(row, column);
@@ -90,6 +108,7 @@ public class Menu extends JFrame implements TableModelListener {
                 }
                 update_row.executeUpdate();
             }
+            // If the user sets the menu_item_id to an empty string, delete the item from the menu and remove the associated menu item ingredients 
             else if (columnName.equals("menu_item_id") && (menu_item_id = (String) model.getValueAt(row, 0)).equals("")) {
                 update_row = conn.prepareStatement("DELETE FROM menu_item_ingredients WHERE menu_item_id=?");
                 update_row.setString(1, (String) menu_arr.get(row).get(0));
@@ -113,7 +132,14 @@ public class Menu extends JFrame implements TableModelListener {
         
     }
 
-   
+   /**
+    * Constructor for the Menu JFrame. First establishes a connection to the database and then loads the menu into a table to be displayed.
+    * The data is also added to a 2D array list which is used by the TableModelListener to access an old menu_item_id before it is updated.
+    * This allows the listener to query the databse for the correct row. The 2D array list is updated along with the current table data when
+    * a cell is edited. The constructor also loads data from menu_item_ingredients which specify the product_id's and quantities for each
+    * ingredient associated with a menu item.
+    * catches all exceptions and outputs to console.
+    */
     public Menu(){
         try{
             // Class.forName("org.postgresql.Driver");

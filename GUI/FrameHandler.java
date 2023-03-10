@@ -6,6 +6,10 @@ import java.lang.Math.*;
 import java.util.*;
 
 
+/**
+ * Handles actions for the GUI which switch between frames that are entirely separated from each other. For instance, from the login frame
+ * to the RedirectScreen.
+ */
 public class FrameHandler implements ActionListener {
 
     public JFrame frame;
@@ -16,21 +20,15 @@ public class FrameHandler implements ActionListener {
 
     /**
 
-    Handles the different actions that can be performed on the panels. It listens
-
-    for the action command from the event, and checks if the user is logging in
-
-    correctly. If the user is logging in correctly and is a manager, it sets the
-
-    content pane to the RedirectScreen panel. Otherwise, it sets the content pane
-
-    to the Server panel. If the action command is for the ManagerView or ServerView,
-
-    it sets the content pane to the corresponding panel. After the content pane is
-
-    set, it repaints and revalidates the JFrame to display the new panel.
-
-    @param e The ActionEvent object that contains the action command.
+    * Handles the different actions that can be performed on the panels. It listens
+    * for the action command from the event, and checks if the user is logging in
+    * correctly. If the user is logging in correctly and is a manager, it sets the
+    * content pane to the RedirectScreen panel. Otherwise, it sets the content pane
+    * to the Server panel. If the action command is for the ManagerView or ServerView,
+    * it sets the content pane to the corresponding panel. Also handles the Home buttons
+    * which take the user back to the login screen. After the content pane is
+    * set, it repaints and revalidates the JFrame to display the new panel.
+    * @param e The ActionEvent object that triggered the listener.
     */
     
     public void actionPerformed(ActionEvent e) {
@@ -49,6 +47,10 @@ public class FrameHandler implements ActionListener {
         }
         else if (action == "ServerView") {
             frame.setContentPane(server);
+        }
+        else if (action == "Home") {
+            frame.setContentPane(login);
+            frame.setSize(new Dimension(600, 600));
         }
 
         frame.repaint();
