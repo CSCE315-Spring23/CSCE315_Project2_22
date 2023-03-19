@@ -17,6 +17,8 @@ DROP TABLE shipment_products;
 
 DROP TABLE inventory_snapshot;
 
+DROP TABLE additives;
+
 
 /*Primary Tables*/
 DROP TABLE shipments;

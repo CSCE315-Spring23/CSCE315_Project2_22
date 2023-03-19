@@ -2,10 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
 import javax.swing.table.*;
-import java.awt.Container;
-import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 public class OrderHistory extends JFrame {
@@ -55,17 +52,11 @@ public class OrderHistory extends JFrame {
             this.add(scrollPane);
             //Config frame
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            //frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             this.setSize(800,600);
             this.setLocationRelativeTo(null);
-            //this.setVisible(true);
+
         } catch (Exception e){
             e.printStackTrace();
         }
     }
-    
-    // public static void main(String[] args){
-    //     new OrderHistory();
-    // }
-
 }

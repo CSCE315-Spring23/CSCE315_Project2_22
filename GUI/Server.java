@@ -1,24 +1,19 @@
 import java.sql.*;
-import java.text.Format;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
 public class Server extends JPanel {
-    // class to store an item in an order
+    
     private static class OrderItem {
-        // TODOs
         String order_name;
         String order_price;
 
         public OrderItem (String name, String price) {
             order_name = name;
             order_price = price;
-
         }
-
     }
 
     private JFrame frame;
@@ -31,8 +26,6 @@ public class Server extends JPanel {
         initialize();
     }
     
-
-    
     public void initialize() {
         // INFORMATION
         ArrayList<String> categories = new ArrayList<String>();
@@ -42,8 +35,6 @@ public class Server extends JPanel {
         ArrayList<String> item_solo = new ArrayList<String>();
 
         
-
-
         // ESTABLISH DATABASE CONNECTION
         Connection conn = null;
         try {
@@ -59,7 +50,7 @@ public class Server extends JPanel {
 
         // GET DATABASE INFORMATION
         try {
-            // category information
+            // CATEGORY INFORMATION
 			Statement stmt = conn.createStatement();
 			String sqlStatement = "SELECT category FROM menu GROUP BY category;";
 			ResultSet result = stmt.executeQuery(sqlStatement);
@@ -68,7 +59,7 @@ public class Server extends JPanel {
                 categories.add(result.getString("category"));
 			}
 
-            // menu information
+            // MENU INFORMATION
 			sqlStatement = "SELECT category, menu_item_id, price FROM menu;";
 			result = stmt.executeQuery(sqlStatement);
 
@@ -86,24 +77,15 @@ public class Server extends JPanel {
 		}
 
 
-        // CREATE MAIN FRAME, DEFAULT TO FULL SCREEN
-        // JFrame main_frame = new JFrame("MAIN FRAME");
-
-        // main_frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+        // SEST LAYOUT FOR MAIN FRAME
         this.setLayout(new GridBagLayout());;
-        // main_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // main_frame.setVisible(true);
 
 
         // INITIALIZE MAIN PANELS
         JPanel left_panel = new JPanel();
-        left_panel.setLayout(new BoxLayout(left_panel, BoxLayout.Y_AXIS)); // Set the layout manager to a vertical BoxLayout
-        left_panel.setBackground(Color.gray);      
-        left_panel.setPreferredSize(new Dimension(500, 190));
+        left_panel.setLayout(new BorderLayout()); // Set the layout manager to a vertical BoxLayout      
         
-
         JPanel right_panel = new JPanel(new GridLayout());      
-        right_panel.setBackground(Color.gray);
 
 
         // GRID STYLING
@@ -115,7 +97,6 @@ public class Server extends JPanel {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 0.3;
         gbc.weighty = 1;
-        gbc.insets = new Insets(10,10, 10, 5);
         this.add(left_panel, gbc);
 
         // right section
@@ -124,86 +105,73 @@ public class Server extends JPanel {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 0.7;
         gbc.weighty = 1;
-        gbc.insets = new Insets(10, 5, 10, 10);
         this.add(right_panel, gbc);
 
 
-        // INITIALIZE SUB PANELS
-        
+        // POPULATE SUB PANELS
         JTabbedPane menu_pane = new JTabbedPane();
-        JTabbedPane order_pane = new JTabbedPane();
 
-        JButton button_price = new JButton();
-        JButton pay_now = new JButton();
-        left_panel.add(button_price);
+        JPanel price_total_div = new JPanel(new GridLayout(2, 1));
 
-        pay_now = new JButton("Pay Now");
-        left_panel.add(pay_now);
+        JLabel price_label = new JLabel();
+        price_total_div.add(price_label);
+
+        JButton pay_now_button = new JButton("Pay Now");
+        price_total_div.add(pay_now_button);
+
+        left_panel.add(price_total_div, BorderLayout.SOUTH);
+
+        JPanel items_panel = new JPanel(new GridLayout(40, 1));
+        left_panel.add(items_panel, BorderLayout.NORTH);
 
         
+        // ADD MENU ITEMS TO RIGHT PANEL
+        DefaultListModel<String> order_list = new DefaultListModel<>();
+        JList<String> corder = new JList<>(order_list);
 
         for (String category : categories) {
             JPanel panel = new JPanel(new GridLayout(35, 1)); 
-            JPanel order_panel = new JPanel (new GridLayout(1, 1));
 
-            /*
-            for (String ctest : categories) {
-                JButton button = new JButton(ctest);
-                panel.add(button);
-            }  */
             menu_pane.add(category, panel); 
             for (ArrayList<String> items : menu_items) {
               	if (category.equals(items.get(0))) {
-                  JButton button = new JButton(items.get(1));
-                
-                  panel.add(button);
+                    JButton button = new JButton(items.get(1));
+                    panel.add(button);
 
+                    button.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            String order_item = items.get(1) + " " + items.get(2); //creates item to add to order list
 
-                  button.addActionListener(new ActionListener() {
+                            order_items.add(order_item);
+                            item_solo.add(items.get(1));
+                            order_list.addElement(order_item); //adds order to the list
+                            
+                            if (items_panel.getComponentCount() < 1) {
+                                items_panel.add(corder, BorderLayout.NORTH); //adds list to left panel
+                            }
+                            else {
+                                items_panel.remove(corder);
+                                items_panel.add(corder, BorderLayout.NORTH); //adds list to left panel
+                            }
+                            
+                            double single_price = Double.parseDouble(items.get(2));
+                            
+                            order_prices.add(single_price);
+                            double order_total = 0.0;
 
-                      public void actionPerformed(ActionEvent e) {
-                          //OrderItem order_item = new OrderItem(items.get(1),items.get(2));
-                          //order_items.add(order_item); 
-
-                          String order_item = items.get(1) + " " + items.get(2); //creates item to add to order list
-                          //OrderItem singular_item = new OrderItem(items.get(1), items.get(2));
-                          order_items.add(order_item);
-                          item_solo.add(items.get(1));
-                          DefaultListModel<String> order_list = new DefaultListModel<>();
-                          order_list.addElement(order_item); //adds order to the list
-
-                          JList<String> corder = new JList<>(order_list);  //creates displayed list 
-                          //corder.setSize(150,150); 
-                          left_panel.add(corder); //adds list to left panel
-
-                          //double order_total = 0;
-                          double single_price = Double.parseDouble(items.get(2));
-                          //order_total += single_price;
-
-                          order_prices.add(single_price);
-                          double order_total = 0.0;
-                          for (double prices : order_prices) {
-                              order_total += prices;
-                              String s_order_total = String.valueOf(order_total);
-                              button_price.setText(s_order_total);
-                          }
-
-                          //String s_order_total = String.valueOf(order_total);
-
-
-                          //JButton button_price = new JButton(String.valueOf(order_total));
-                          //order_panel.add(button_price);
-
-                      }
-                  });
+                            for (double prices : order_prices) {
+                                order_total += prices;
+                                String order_total_formatted = "Total: " + String.valueOf(order_total);
+                                price_label.setText(order_total_formatted);
+                            }
+                        }
+                    });
                 }
-                
-
-               
-                
             }
         }
-        pay_now.addActionListener(new ActionListener() {
+
+
+        pay_now_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 
                 JFrame payment_frame = new JFrame("Payment Information");
@@ -235,16 +203,13 @@ public class Server extends JPanel {
                 }
         
                 // add total label to order panel
-                JButton total_label = new JButton("Total: $" + String.format("%.2f", order_total));
+                JButton total_label = new JButton("Place Order: $" + String.format("%.2f", order_total));
                 order_panel.add(total_label);
                 payment_panel.add(order_panel, BorderLayout.CENTER);
                 payment_frame.add(payment_panel);
                 total_label.addActionListener(new ActionListener () {
-                    public void actionPerformed(ActionEvent e) 
-                    {
-                        
+                    public void actionPerformed(ActionEvent e) {
                         for (String item : item_solo) {
-                            System.out.println(item);
                             try {
                                 Connection conn = null;
                                 conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
@@ -252,25 +217,22 @@ public class Server extends JPanel {
                                 PreparedStatement selectStmt = conn.prepareStatement(selectQuery);
                                 selectStmt.setString(1, item);
                                 ResultSet resultSet = selectStmt.executeQuery();
+
                                 while (resultSet.next()) {
                                     int product_id = resultSet.getInt("product_id");
                                     Double quantity = resultSet.getDouble("quantity");
-                                    //System.out.println("Product ID: " + product_id + ", Quantity: " + quantity);
+
                                     String updateQuery = "UPDATE inventory SET quantity = quantity - ? WHERE product_id = ?";
                                     PreparedStatement updateStmt = conn.prepareStatement(updateQuery);
                                     updateStmt.setDouble(1, quantity);
                                     updateStmt.setInt(2, product_id);
                                     updateStmt.executeUpdate();
                                 }
-                                
-
-                                
                             } 
-                            catch (SQLException ex) 
-                            {
+                            catch (SQLException ex) {
                                 ex.printStackTrace();
                             }
-
+                        }
                         try {
                             Connection conn = null;
                             conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
@@ -278,6 +240,7 @@ public class Server extends JPanel {
                             PreparedStatement stmt = conn.prepareStatement(sqlStatement);
                             ResultSet result = stmt.executeQuery();
                             int order_id = -1;
+
                             while (result.next()) {
                                 order_id = result.getInt(1) + 1;
                             }
@@ -296,13 +259,12 @@ public class Server extends JPanel {
                             query_insert_summary.setTimestamp(3, timestamp);
                             query_insert_summary.setDouble(4, order_total);
                             query_insert_summary.executeUpdate();
+
+                            JOptionPane.showMessageDialog(null, "Order Placed Successfully!");
                         }
-                        catch (SQLException ex) 
-                        {
+                        catch (SQLException ex) {
                             ex.printStackTrace();
                         }
-                        }
-                        
                     }
                     
                 });
@@ -310,12 +272,6 @@ public class Server extends JPanel {
             }
         });
         
-
-        right_panel.add(menu_pane); 
-
+        right_panel.add(menu_pane);
     }
-    
-
-    
-    
 }

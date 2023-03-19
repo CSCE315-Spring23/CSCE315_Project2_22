@@ -4,10 +4,7 @@ import java.sql.*;
 import javax.swing.table.*;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
-import java.util.Vector;
-import java.math.*;
 import javax.swing.event.*;
-import javax.swing.table.TableModel;
 import java.util.*;
 
 
@@ -116,11 +113,9 @@ public class Menu extends JFrame implements TableModelListener {
    
     public Menu(){
         try{
-            // Class.forName("org.postgresql.Driver");
             menu_arr = new ArrayList<ArrayList<Object>>();
             try {
                 conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22", "csce315331_team_22_master", "0000");   
-                // conn = DriverManager.getConnection(dbConnectionString, "csce315331_veselka", "729009874");
             } 
             catch (Exception e) {
                 e.printStackTrace();
@@ -177,7 +172,6 @@ public class Menu extends JFrame implements TableModelListener {
             }
             model.addRow(new Object[4]);
 
-            //table.setValueAt(menu_name_prev, columnCount, columnCount);
            
             
             table.setModel(model);
@@ -203,15 +197,9 @@ public class Menu extends JFrame implements TableModelListener {
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.setSize(800,600);
             this.setLocationRelativeTo(null);
-            // this.setVisible(true);
 
         } catch (Exception e){
             e.printStackTrace();
         }
     }
-    
-    // public static void main(String[] args){
-    //     new Menu();
-    // }
-
 }

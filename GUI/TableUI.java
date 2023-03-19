@@ -2,10 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
 import javax.swing.table.*;
-import java.awt.Container;
-import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 public class TableUI extends JPanel{
@@ -61,7 +58,6 @@ public class TableUI extends JPanel{
                 
 
                 //Add table to tab
-                //JScrollPane scrollPane = new JScrollPane(table);
                 tabbedPane.addTab(tableName, scrollPane);
 
                 //Close connection

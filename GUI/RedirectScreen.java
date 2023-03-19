@@ -1,12 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.sql.*;
-import java.lang.Math.*;
 import java.util.*;
 
-//Windows: java -cp ".;postgresql-42.2.8.jar" jdbcpostgreSQL
-//Mac/Linux: java -cp ".:postgresql-42.2.8.jar" jdbcpostgreSQL
 
 public class RedirectScreen extends JPanel  {  //implements ActionListener
     // load the employees table for checking passwords

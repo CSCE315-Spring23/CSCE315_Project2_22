@@ -13,7 +13,8 @@ CREATE TABLE employees (
     email VARCHAR(50) NOT NULL,
     phone_number VARCHAR(20) NOT NULL,
     date_started DATE NOT NULL,
-    salary NUMERIC NOT NULL
+    salary NUMERIC NOT NULL,
+    password VARCHAR(60) NOT NULL
 );
 
 CREATE TABLE shipments (
@@ -87,5 +88,11 @@ CREATE TABLE item_additives (
     additive_quantity NUMERIC NOT NULL,
     PRIMARY KEY (item_id, product_id),
     FOREIGN KEY (item_id) REFERENCES orders_by_item(item_id),
+    FOREIGN KEY (product_id) REFERENCES inventory(product_id)
+);
+
+CREATE TABLE additives (
+    product_id BIGSERIAL NOT NULL PRIMARY KEY,
+    product_name VARCHAR(60),
     FOREIGN KEY (product_id) REFERENCES inventory(product_id)
 );

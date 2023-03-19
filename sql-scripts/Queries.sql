@@ -96,4 +96,3 @@ SELECT * FROM inventory;
 --Display First and Last Orders (52 weeks of order history)
 SELECT * FROM orders_summary ORDER BY order_date LIMIT 1;
 SELECT * FROM orders_summary ORDER BY order_date DESC LIMIT 1;
-

@@ -1,28 +1,21 @@
 import java.awt.*;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.*;
 import java.util.*;
 
 import javax.swing.*;
-import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
 import java.math.BigDecimal;
-import javax.swing.event.*;
-import javax.swing.table.TableModel;
 
 import java.sql.*;
+
 
 public class InventoryAndShipping extends JFrame {
     private int currentProductId = 0;
@@ -78,17 +71,8 @@ public class InventoryAndShipping extends JFrame {
             for(int i = 1; i <= columnCount; i++){
                 model.addColumn(rsmd.getColumnName(i));
             }
-            //model.addColumn("Button");
-            //BigDecimal currentProductId = BigDecimal.Zero;
-            //int currentProductId = 0;
+            
             while (rs.next()){
-                /*
-                Object[] row = new Object[columnCount];//Object[columnCount+1];
-                for (int i = 1; i <= columnCount; i++ ){
-                    //if(columnCount == 3)
-                    row[i-1] = rs.getObject(i);
-                }
-                */
                 Object[] row = new Object[columnCount];
                 for(int i = 1; i <= columnCount; i++){
                     switch(1){
@@ -118,30 +102,9 @@ public class InventoryAndShipping extends JFrame {
 
             beforeUpdateId = currentProductId;
             
-            //DefaultTableModel model1 = new DefaultTableModel(data1, columnNames1);
             JTable table1 = new JTable(model) {
-                
-                @Override
-                /*
-                public Component prepareRenderer(TableCellRenderer renderer, int rowIndex, int columnIndex) {
-                    
-                    Component component = super.prepareRenderer(renderer, rowIndex, columnIndex);
-                    if (columnIndex == 2) {
-                        BigDecimal value = (BigDecimal)getValueAt(rowIndex, columnIndex);
-                        
-                        if (value != null && value.compareTo(new BigDecimal("30")) < 0) {
-                            component.setBackground(Color.RED);
-                        } else {
-                            component.setBackground(getBackground());
-                        }
-                    } else {
-                        component.setBackground(getBackground());
-                    }
-                    return component;
-                
-                }
-                */
 
+                @Override
                 public boolean isCellEditable(int row, int col){
                     switch(col){
                         case 0:
@@ -151,7 +114,6 @@ public class InventoryAndShipping extends JFrame {
                     }
                 }
             };
-            //table1.setEnabled(false);
             JScrollPane scrollPane1 = new JScrollPane(table1);
 
             JPanel buttonPanel = new JPanel();
@@ -197,8 +159,6 @@ public class InventoryAndShipping extends JFrame {
                         conn.setAutoCommit(false);
                         PreparedStatement updateStmt = conn.prepareStatement("UPDATE inventory SET product_name = ?, quantity = ? WHERE product_id = ?");
                         PreparedStatement insertStmt = conn.prepareStatement("INSERT INTO inventory (product_id, product_name, quantity) VALUES(?, ?, ?)");
-                        //PreparedStatement checkStmt = conn.prepareStatement("SELECT COUNT(*) FROM inventory WHERE product_id = ?");
-                        //PreparedStatement updateOldStmt = conn.prepareStatement("UPDATE inventory SET quantity = ? WHERE product_id = ?");
                         PreparedStatement deleteStmt = conn.prepareStatement("UPDATE inventory SET quantity = -1 WHERE product_id = ?");
 
                         // update existing rows
@@ -220,7 +180,6 @@ public class InventoryAndShipping extends JFrame {
                         
                         for(int i = 0; i < model.getRowCount(); i++){
                             String productId = (String)model.getValueAt(i,0);
-                            //int productId = tempproductId
                             if(Integer.parseInt(productId) > beforeUpdateId){
                                 
                                 String productName = (String)model.getValueAt(i,1);
@@ -231,21 +190,14 @@ public class InventoryAndShipping extends JFrame {
                                     insertStmt.setBigDecimal(3, new BigDecimal(quan));
                                     insertStmt.executeUpdate();
                                     beforeUpdateId++;
-                                }
-                                
-                                
+                                }  
                             }
-
-                            //beforeUpdateId++;
                         }
                         
-                        
-                        // update existing rows with product_id < beforeUpdateId that have quantity = -1
-                        //deleteStmt.setInt(1, beforeUpdateId);
-                        //deleteStmt.executeUpdate();
+    
                         
                         conn.commit();
-                        //stmt.executeQuery("SELECT * FROM inventory ORDER BY product_id ASC");
+
                         
                         JOptionPane.showMessageDialog(InventoryAndShipping.this, "Database updated successfully.");
                     }catch(SQLException ex){
@@ -281,26 +233,15 @@ public class InventoryAndShipping extends JFrame {
             // Add the panel to the frame
             getContentPane().add(panel); // add the panel directly to the frame's content pane
 
-            //Close connection
-            /*
-            rs.close();
-            stmt.close();
-            conn.close();
-            */
-
             // Set the frame properties
             setTitle("InventoryAndShipping");
             setSize(500, 300);
             setLocationRelativeTo(null);
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            //setVisible(true);
+
         
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-
-    // public static void main(String[] args) {
-    //     new InventoryAndShipping();
-    // }
 }
