@@ -252,28 +252,7 @@ public class Server {
                                     updateStmt.setInt(2, product_id);
                                     updateStmt.executeUpdate();
                                 }
-                                String sqlStatement = "SELECT order_id FROM orders_summary ORDER BY order_id DESC LIMIT 1;";
-                                PreparedStatement stmt = conn.prepareStatement(sqlStatement);
-                                ResultSet result = stmt.executeQuery();
-                                int order_id = -1;
-                                while (result.next()) {
-                                    order_id = result.getInt(1) + 1;
-                                }
-    
-                                double order_total = 0.0;
-                                for (double price : order_prices) {
-                                    order_total += price;
-                                }
-    
-                                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-    
-                                String insert_orders_summary = "INSERT INTO orders_summary (order_id, employee_id, order_date, total_price) " + "VALUES (?, ?, ?, ?);";
-                                PreparedStatement query_insert_summary = conn.prepareStatement(insert_orders_summary);
-                                query_insert_summary.setInt(1, order_id);
-                                query_insert_summary.setInt(2, ((int) Math.random() * 6) + 1);
-                                query_insert_summary.setTimestamp(3, timestamp);
-                                query_insert_summary.setDouble(4, order_total);
-                                query_insert_summary.executeUpdate();
+                                
 
                                 
                             } 
@@ -281,6 +260,84 @@ public class Server {
                             {
                                 ex.printStackTrace();
                             }
+                        }
+                        try {
+                            Connection conn = null;
+                            conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
+                            String sqlStatement = "SELECT order_id FROM orders_summary ORDER BY order_id DESC LIMIT 1;";
+                            PreparedStatement stmt = conn.prepareStatement(sqlStatement);
+                            ResultSet result = stmt.executeQuery();
+                            int order_id = -1;
+                            while (result.next()) {
+                                order_id = result.getInt(1) + 1;
+                            }
+
+                            double order_total = 0.0;
+                            for (double price : order_prices) {
+                                order_total += price;
+                            }
+
+                            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
+                            String insert_orders_summary = "INSERT INTO orders_summary (order_id, employee_id, order_date, total_price) " + "VALUES (?, ?, ?, ?);";
+                            PreparedStatement query_insert_summary = conn.prepareStatement(insert_orders_summary);
+                            query_insert_summary.setInt(1, order_id);
+                            query_insert_summary.setInt(2, ((int) Math.random() * 6) + 1);
+                            query_insert_summary.setTimestamp(3, timestamp);
+                            query_insert_summary.setDouble(4, order_total);
+                            query_insert_summary.executeUpdate();
+                        }
+                        catch (SQLException ex) 
+                        {
+                            ex.printStackTrace();
+                        }
+                        try {
+                            Connection conn = null;
+                            conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
+                            String sqlStatement = "SELECT * FROM orders_by_item ORDER BY order_id DESC LIMIT 1;";
+                            PreparedStatement stmt = conn.prepareStatement(sqlStatement);
+                            ResultSet result = stmt.executeQuery();
+
+                            int order_id = -1;
+                            int item_id = -1;
+                            while (result.next()) {
+                                order_id = result.getInt(2) + 1;
+                                item_id = result.getInt(1) + 1;
+                            }
+
+                            for (int i = 0; i < item_solo.size(); i++) {
+
+
+                                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
+                                String insert_orders_summary = "INSERT INTO orders_by_item (item_id, order_id, menu_item_id, item_date, item_price) " + "VALUES (?, ?, ?, ?, ?);";
+                                PreparedStatement query_insert_summary = conn.prepareStatement(insert_orders_summary);
+                                query_insert_summary.setInt(1, item_id);
+                                query_insert_summary.setInt(2, order_id);
+                                query_insert_summary.setString(3, item_solo.get(i));
+                                query_insert_summary.setTimestamp(4, timestamp);
+                                query_insert_summary.setDouble(5, order_prices.get(i));
+                                query_insert_summary.executeUpdate();
+
+                                item_id++;
+                            }
+
+                            
+
+                            /*
+                            String insert_orders_summary = "INSERT INTO orders_by_item (item_id, order_id, menu_item_id, item_date, item_price) " + "VALUES (?, ?, ?, ?, ?);";
+                            PreparedStatement query_insert_summary = conn.prepareStatement(insert_orders_summary);
+                            query_insert_summary.setInt(1, item_id);
+                            query_insert_summary.setInt(2, order_id);
+                            query_insert_summary.setTimestamp(3, );
+                            query_insert_summary.setDouble(4, timestamp);
+                            query_insert_summary.setDouble(5, item_price);
+                            query_insert_summary.executeUpdate();
+                            */
+                        }
+                        catch (SQLException ex) 
+                        {
+                            ex.printStackTrace();
                         }
                         
                     }
