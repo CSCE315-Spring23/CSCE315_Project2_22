@@ -17,6 +17,7 @@ public class FrameHandler implements ActionListener {
     public RedirectScreen redirect;
     public ManagerUI manager;
     public Server server;
+    public int active_employee;
 
     /**
 
@@ -35,6 +36,7 @@ public class FrameHandler implements ActionListener {
         String action = e.getActionCommand();
         ArrayList<Boolean> login_result = null;  // {correct login, is manager}
         if (action == "Login" && (login_result = login.checkLogin()).get(0)) {
+            active_employee = login.active_employee;
             if (login_result.get(1)) {
                 frame.setContentPane(redirect);
             }

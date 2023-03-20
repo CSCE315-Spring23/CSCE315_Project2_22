@@ -25,6 +25,7 @@ public class Login extends JPanel  {  //implements ActionListener
     private static JButton submit;
     private static JPasswordField password;
     private static JLabel username_label, password_label;
+    public int active_employee;
 
 
     private static ArrayList<ArrayList<String>> employee_data;
@@ -39,6 +40,7 @@ public class Login extends JPanel  {  //implements ActionListener
     Login(JFrame frame, FrameHandler fh) {
         this.frame = frame;
         this.fh = fh;
+        active_employee = 0;
         try {
             loadEmployees();
             loadLogin();
@@ -63,10 +65,11 @@ public class Login extends JPanel  {  //implements ActionListener
         login.add(false);
         
         for (ArrayList<String> entry : employee_data) {
-            if (entry.get(1).equals(un) && entry.get(2).equals(pw)) {
-                JOptionPane.showMessageDialog(null, "Logged in as " + entry.get(0));
+            if (entry.get(2).equals(un) && entry.get(3).equals(pw)) {
+                JOptionPane.showMessageDialog(null, "Logged in as " + entry.get(1));
                 if (pw.equals("man_pass")) login.set(1, true);
                 login.set(0, true);
+                active_employee = Integer.parseInt(entry.get(0));
                 return login;
             }
         }
@@ -100,13 +103,14 @@ public class Login extends JPanel  {  //implements ActionListener
 
         try {
             Statement stmt = conn.createStatement();
-            String sqlStatement = "SELECT first_name, email, password FROM employees";
+            String sqlStatement = "SELECT employee_id, first_name, email, password FROM employees";
 
             ResultSet result = stmt.executeQuery(sqlStatement);
 
             employee_data = new ArrayList<ArrayList<String>>();
             while (result.next()) {
                 ArrayList<String> entry = new ArrayList<String>();
+                entry.add(result.getString("employee_id").trim());
                 entry.add(result.getString("first_name").trim());
                 entry.add(result.getString("email").trim());
                 entry.add(result.getString("password").trim());
