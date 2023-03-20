@@ -89,3 +89,8 @@ CREATE TABLE item_additives (
     FOREIGN KEY (item_id) REFERENCES orders_by_item(item_id),
     FOREIGN KEY (product_id) REFERENCES inventory(product_id)
 );
+
+CREATE TABLE z_reports (
+    PRIMARY KEY report_date DATE NOT NULL, 
+    daily_sales NUMERIC NOT NULL
+);
