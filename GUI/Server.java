@@ -237,12 +237,14 @@ public class Server extends JPanel {
 
                     Object item_name = order_items_table.getValueAt(i, 0);
                     JLabel order_item_label = new JLabel((String) item_name);
-                    order_item_label.setHorizontalAlignment(JLabel.CENTER);
+                    order_item_label.setHorizontalAlignment(JLabel.LEFT);
+                    order_item_label.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
                     item_panel.add(order_item_label);
 
                     Object item_price = order_items_table.getValueAt(i, 1);
                     JLabel price_label = new JLabel("$" + (String) item_price);
-                    price_label.setHorizontalAlignment(JLabel.CENTER);
+                    price_label.setHorizontalAlignment(JLabel.RIGHT);
+                    price_label.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
                     item_panel.add(price_label);
         
                     order_panel.add(item_panel);
