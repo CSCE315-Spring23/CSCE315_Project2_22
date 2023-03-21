@@ -32,6 +32,7 @@ public class XZ extends JFrame{
                 String[] splitted = order_summary.getString(3).split(" ");
                 Object[] row = new Object[2];
                 LocalTime myobj = LocalTime.now();
+                //handles old z reports
                 if(splitted[0] != prev_splitted[0] && myobj.getHour() > 12 && myobj.getHour()-12 > 5) {
                     
                     update_row = conn.prepareStatement("INSERT INTO z_reports VALUES (?, ?)");
@@ -46,6 +47,7 @@ public class XZ extends JFrame{
                     total_sales = 0; 
                     prev_splitted=splitted;
                 }
+                //handles old x reports if they're needed 
                 else if(splitted[0] != prev_splitted[0] && myobj.getHour()-12 < 5) {
                     row[0] = prev_splitted[0];
                     row[1] = total_sales;
@@ -54,6 +56,7 @@ public class XZ extends JFrame{
                 else {
                     total_sales += order_summary.getDouble(4);
                     prev_splitted = splitted;
+                    //handles new z reports
                     if(myobj.getHour() > 12 && myobj.getHour()-12 > 5) {
                         update_row = conn.prepareStatement("INSERT INTO z_reports VALUES (?, ?)");
                         update_row.setString(1, prev_splitted[0]);
@@ -66,6 +69,7 @@ public class XZ extends JFrame{
 
                         total_sales = 0; 
                     }
+                    //handles x reports
                     else{
                         row[0] = prev_splitted[0];
                         row[1] = total_sales;
@@ -74,6 +78,7 @@ public class XZ extends JFrame{
                 }
                 
             }
+            
             table.setModel(model);
             table.setRowHeight(30);
             JTableHeader header = table.getTableHeader();
