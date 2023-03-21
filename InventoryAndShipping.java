@@ -28,9 +28,11 @@ public class InventoryAndShipping extends JFrame {
     private int currentProductId = 0;
     private int beforeUpdateId = 0;
     private Vector<String> removedIds = new Vector<String>();
- 
-    public InventoryAndShipping() {
 
+    private FrameHandler fh;
+ 
+    public InventoryAndShipping(FrameHandler fh) {
+        this.fh = fh;
         
         try{
             //make connection:
@@ -156,6 +158,10 @@ public class InventoryAndShipping extends JFrame {
 
             JPanel buttonPanel = new JPanel();
 
+            JButton home = new JButton("Home");
+            home.addActionListener(fh);
+            buttonPanel.add(home);
+            
             JButton addRowButton = new JButton("Add Row");
             addRowButton.addActionListener(new ActionListener(){
                 @Override
@@ -260,7 +266,7 @@ public class InventoryAndShipping extends JFrame {
             });
 
             buttonPanel.add(updateDatabaseButton);
-
+            /*
             // Create the second table
             String[] columnNames2 = {"product_id", "quantity", "subtotal"};
             Object[][] data2 = {
@@ -270,12 +276,12 @@ public class InventoryAndShipping extends JFrame {
             DefaultTableModel model2 = new DefaultTableModel(data2, columnNames2);
             JTable table2 = new JTable(model2);
             JScrollPane scrollPane2 = new JScrollPane(table2);
-
+            */
             // Create a panel to hold the tables
             JPanel panel = new JPanel(new GridLayout(2, 1, 10, 10));
             panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // add a 10 pixel margin around the panel
             panel.add(scrollPane1);
-            panel.add(scrollPane2);
+            //panel.add(scrollPane2);
             panel.add(buttonPanel);
 
             // Add the panel to the frame
@@ -300,7 +306,7 @@ public class InventoryAndShipping extends JFrame {
         }
     }
 
-    public static void main(String[] args) {
-        new InventoryAndShipping();
-    }
+    // public static void main(String[] args) {
+    //     new InventoryAndShipping();
+    // }
 }
