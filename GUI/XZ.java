@@ -31,8 +31,9 @@ public class XZ extends JFrame{
             while(order_summary.next()) {
                 String[] splitted = order_summary.getString(3).split(" ");
                 Object[] row = new Object[2];
-                if(splitted[0] != prev_splitted[0]) {
-
+                LocalTime myobj = LocalTime.now();
+                if(splitted[0] != prev_splitted[0] && myobj.getHour() > 12 && myobj.getHour()-12 > 5) {
+                    
                     update_row = conn.prepareStatement("INSERT INTO z_reports VALUES (?, ?)");
                     update_row.setString(1, prev_splitted[0]);
                     update_row.setDouble(2, total_sales);
@@ -45,10 +46,14 @@ public class XZ extends JFrame{
                     total_sales = 0; 
                     prev_splitted=splitted;
                 }
+                else if(splitted[0] != prev_splitted[0] && myobj.getHour()-12 < 5) {
+                    row[0] = prev_splitted[0];
+                    row[1] = total_sales;
+                    model.addRow(row);
+                }
                 else {
                     total_sales += order_summary.getDouble(4);
                     prev_splitted = splitted;
-                    LocalTime myobj = LocalTime.now();
                     if(myobj.getHour() > 12 && myobj.getHour()-12 > 5) {
                         update_row = conn.prepareStatement("INSERT INTO z_reports VALUES (?, ?)");
                         update_row.setString(1, prev_splitted[0]);
