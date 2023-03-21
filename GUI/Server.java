@@ -70,6 +70,7 @@ public class Server extends JPanel {
         Font font = new Font(order_summary_label.getFont().getName(), Font.PLAIN, 20);
         order_summary_label.setFont(font);
         order_summary_label.setHorizontalAlignment(JLabel.CENTER);
+        order_summary_label.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
         left_panel.add(order_summary_label, BorderLayout.NORTH);
 
         // table storing order items
@@ -104,7 +105,7 @@ public class Server extends JPanel {
                     oi_table_model.removeRow(row_count - 1);
                 }
                 else {
-                    JOptionPane.showMessageDialog(null, "Items Already Empty");
+                    JOptionPane.showMessageDialog(null, "Items already empty.");
                 }
 
                 // update total price
@@ -123,8 +124,13 @@ public class Server extends JPanel {
         JButton clear_button = new JButton("Clear");
         clear_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                oi_table_model.setRowCount(0);
-                price_label.setText("Total: $0.00");
+                if (oi_table_model.getRowCount() > 0) {
+                    oi_table_model.setRowCount(0);
+                    price_label.setText("Total: $0.00");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Items already empty.");
+                }
             }
         });
         clear_and_delete_panel.add(clear_button);
@@ -215,6 +221,12 @@ public class Server extends JPanel {
         
         pay_now_button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                // check if there are actually items in the order
+                if (oi_table_model.getRowCount() <= 0) {
+                    JOptionPane.showMessageDialog(null, "No items in order.");
+                    return;
+                }
+
                 // create new frame to display order confirmation
                 JFrame payment_frame = new JFrame("Confirm Order");
                 payment_frame.setSize(400, 300);
