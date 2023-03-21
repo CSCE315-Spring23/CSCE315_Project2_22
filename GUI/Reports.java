@@ -63,6 +63,10 @@ public class Reports extends JFrame {
         load_sales(sales_report);
         load_xz(xz_report);
         load_sells_together(sells_together_report);
+<<<<<<< HEAD
+=======
+        load_excess(excess_report);
+>>>>>>> finished the excess report and updated brian's code for load_sells_together
 
         // add the reports panel, which holds the buttons, to the frame
         this.add(reports_panel);
@@ -114,25 +118,82 @@ public class Reports extends JFrame {
         
     } 
     private void load_excess(JButton excess_report) {
+
         excess_report.setSize(110, 40);
         excess_report.setAlignmentX((float) 0.5);
         excess_report.setForeground(Color.WHITE);
         excess_report.setBackground(Color.BLACK);
         reports_panel.add(excess_report);
         reports_panel.add(Box.createRigidArea(new Dimension(25, 25)));
-
+    
         excess_report.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                
                 JFrame report_frame = new JFrame("Excess Report");
                 report_frame.setSize(600, 800);
                 report_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 report_frame.setVisible(true);
+                
+                
+                String userDateInput = JOptionPane.showInputDialog(null, "Please enter a date (YYYY-MM-DD):");
+            
+                try {
+                    Connection conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
+                    
+                    // Get inventory snapshot data for the user input date
+                    String timestampQuery = "SELECT * FROM inventory_snapshot WHERE snapshot_date = ?::timestamp";
+                    PreparedStatement timestampStmt = conn.prepareStatement(timestampQuery);
+                    timestampStmt.setString(1, userDateInput);
+                    ResultSet timestampRs = timestampStmt.executeQuery();
+                    
 
-                // Fill in generating your report and adding to the report frame
+                    String currentSnapshotQuery = "SELECT * FROM inventory_snapshot WHERE snapshot_date = '2023-01-01'";
+                    PreparedStatement currentSnapshotStmt = conn.prepareStatement(currentSnapshotQuery);
+                    ResultSet currentRs = currentSnapshotStmt.executeQuery();
+                    Map<Integer, Integer> inventoryMap = new HashMap<Integer, Integer>();
+                    while(currentRs.next()) {
+                        inventoryMap.put(currentRs.getInt("product_id"), currentRs.getInt("quantity"));
+                    }
+            
+                    Vector<String> columnName = new Vector<String>();
+                    columnName.add("Product ID");
+                    columnName.add("Product Name");
+                    columnName.add("Timestamp Quantity");
+                    columnName.add("Current Quantity");
+                    //columnName.add("test");
+                    //columnName.add("test1");
+                    Vector<Vector<Object>> excess_data = new Vector<Vector<Object>>();
+                    while(timestampRs.next()) {
+                        int productId = timestampRs.getInt("product_id");
+                        String productName = timestampRs.getString("product_name");
+                        int quantity = timestampRs.getInt("quantity");
+                        if (inventoryMap.containsKey(productId)) {
+                            int currentQuantity = inventoryMap.get(productId);
+                            if ((((quantity - currentQuantity) > 0) && (quantity - currentQuantity) < .1 * quantity) || quantity - currentQuantity == 0) {
+                                Vector<Object> row = new Vector<Object>();
+                                row.add(productId);
+                                row.add(productName);
+                                row.add(quantity);
+                                row.add(currentQuantity);
+                                //row.add(quantity - currentQuantity);
+                                //row.add(.1 * quantity);
+                                excess_data.add(row);
+                            }
+                        }
+                    }
+            
+                    DefaultTableModel model = new DefaultTableModel(excess_data, columnName);
+                    JTable table = new JTable(model);
+                    JScrollPane scrollPane = new JScrollPane(table);
+            
+                    report_frame.add(scrollPane);
+            
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
-    } 
+    }
+    
     private void load_restock(JButton restock_report) {
         restock_report.setSize(110, 40);
         restock_report.setAlignmentX((float) 0.5);
@@ -181,6 +242,7 @@ public class Reports extends JFrame {
                 String curr_item = "";
 
                 try {  //The Query
+<<<<<<< HEAD
 
                     //Time stamp to get date range 
                     Timestamp from = new Timestamp(System.currentTimeMillis());
@@ -227,6 +289,72 @@ public class Reports extends JFrame {
                 //Collections.sort(order_pairs, OrderPair.SortPopular);
 
                 JPanel sells_panel = new JPanel(new GridLayout(10,1));
+=======
+
+                    //Time stamp to get date range 
+                    Timestamp from = new Timestamp(System.currentTimeMillis());
+                    Timestamp to = new Timestamp(System.currentTimeMillis());
+
+                    //Connection to database and query to get orders within a time frame
+                    Connection conn = null;
+                    conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
+                    String selectQuery = "SELECT * FROM orders_by_item WHERE item_date between '?' and '?'";
+                    PreparedStatement selectStmt = conn.prepareStatement(selectQuery);
+                    selectStmt.setTimestamp(1, from);
+                    selectStmt.setTimestamp(2, to);
+                    ResultSet resultSet = selectStmt.executeQuery();
+
+                    
+                    //iterates through the rows of the query 
+                    while (resultSet.next()) {
+                        curr_order_id = resultSet.getInt("order_id");
+                        curr_item = resultSet.getString("menu_item_id");
+                        boolean existing = false;
+
+                        for (OrderPair pairs : order_pairs) {  //if pair exists, count will increment
+                            if ((prev_item == pairs.item1 || prev_item == pairs.item2) && (curr_item == pairs.item1 || curr_item == pairs.item2)) {
+                                pairs.count++;
+                                existing = true;
+                                break;
+                            }
+                        }
+
+                        if (existing == false) {  //creates a new pair
+                            OrderPair new_pair = new OrderPair(prev_item, curr_item);
+                        }
+                        
+                        //makes the current row into the previous row so the next row is current
+                        prev_item = curr_item;
+                        prev_order_id = curr_order_id;
+                    }
+                } 
+                catch (SQLException ex) 
+                {
+                    ex.printStackTrace();
+                }
+>>>>>>> finished the excess report and updated brian's code for load_sells_together
+
+                //Collections.sort(order_pairs, OrderPair.SortPopular);
+
+<<<<<<< HEAD
+                if (order_pairs.size() >= 10) {
+                    for (int i = 0; i < 10; i++) {
+                        JTextField text_pair = new JTextField("HI");
+                        text_pair.setEditable(false);
+                        sells_panel.add(text_pair);
+                    }
+                }
+                else if (order_pairs.size() > 0 && order_pairs.size() < 10) {
+                    for (int i = 0; i < order_pairs.size(); i++) {
+                        JTextField text_pair = new JTextField("HI");
+                        text_pair.setEditable(false);
+                        sells_panel.add(text_pair);
+                    }
+                }
+                //order_pairs.get(i).item1 + " " + order_pairs.get(i).item2
+
+=======
+                JPanel sells_panel = new JPanel(new GridLayout(10,1));
 
 
                 if (order_pairs.size() >= 10) {
@@ -245,6 +373,7 @@ public class Reports extends JFrame {
                 }
                 //order_pairs.get(i).item1 + " " + order_pairs.get(i).item2
 
+>>>>>>> finished the excess report and updated brian's code for load_sells_together
                 else if (order_pairs.size() == 0) {
                     JTextField text_pair = new JTextField("No Pairs");
                     text_pair.setEditable(false);
