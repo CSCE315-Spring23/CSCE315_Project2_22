@@ -25,6 +25,7 @@ public class Server extends JPanel {
         
         initialize();
     }
+
     
     public void initialize() {
         // INFORMATION
@@ -233,6 +234,7 @@ public class Server extends JPanel {
                                 ex.printStackTrace();
                             }
                         }
+
                         try {
                             Connection conn = null;
                             conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
@@ -261,6 +263,45 @@ public class Server extends JPanel {
                             query_insert_summary.executeUpdate();
 
                             JOptionPane.showMessageDialog(null, "Order Placed Successfully!");
+                        }
+                        catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+
+                        try {
+                            Connection conn = null;
+                            conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
+                            String sqlStatement = "SELECT * FROM orders_by_item ORDER BY order_id DESC LIMIT 1;";
+                            PreparedStatement stmt = conn.prepareStatement(sqlStatement);
+                            ResultSet result = stmt.executeQuery();
+
+                            int order_id = -1;
+                            while (result.next()) {
+                                order_id = result.getInt(2) + 1;
+                            }
+
+                            for (int i = 0; i < item_solo.size(); i++) {
+                                sqlStatement = "SELECT * FROM orders_by_item ORDER BY item_id DESC LIMIT 1;";
+                                stmt = conn.prepareStatement(sqlStatement);
+                                result = stmt.executeQuery();
+                                int item_id = -1;
+                                while (result.next()) {
+                                    item_id = result.getInt(1) + 1;
+                                }
+
+                                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
+                                String insert_orders_summary = "INSERT INTO orders_by_item (item_id, order_id, menu_item_id, item_date, item_price) " + "VALUES (?, ?, ?, ?, ?);";
+                                PreparedStatement query_insert_summary = conn.prepareStatement(insert_orders_summary);
+                                query_insert_summary.setInt(1, item_id);
+                                query_insert_summary.setInt(2, order_id);
+                                query_insert_summary.setString(3, item_solo.get(i));
+                                query_insert_summary.setTimestamp(4, timestamp);
+                                query_insert_summary.setDouble(5, order_prices.get(i));
+                                query_insert_summary.executeUpdate();
+
+                                System.out.println("TEST");
+                            }
                         }
                         catch (SQLException ex) {
                             ex.printStackTrace();

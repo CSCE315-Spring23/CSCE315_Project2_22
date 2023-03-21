@@ -260,7 +260,7 @@ public class Reports extends JFrame {
 
                     // daily sales
                     Statement stmt = conn.createStatement();
-                    String sqlStatement = "SELECT menu_item_id, COUNT(menu_item_id) FROM orders_by_item WHERE item_date = CURRENT_DATE - 1 GROUP BY menu_item_id;";
+                    String sqlStatement = "SELECT menu_item_id, COUNT(menu_item_id) FROM orders_by_item WHERE item_date::DATE = CURRENT_DATE GROUP BY menu_item_id;";
                     ResultSet result = stmt.executeQuery(sqlStatement);
 
                     while (result.next()) {
@@ -268,7 +268,7 @@ public class Reports extends JFrame {
                     }
 
                     // weekly sales
-                    sqlStatement = "SELECT menu_item_id, COUNT(menu_item_id) FROM orders_by_item WHERE item_date = (CURRENT_DATE - INTERVAL '1 week') GROUP BY menu_item_id;";
+                    sqlStatement = "SELECT menu_item_id, COUNT(menu_item_id) FROM orders_by_item WHERE item_date::DATE BETWEEN CURRENT_DATE - INTERVAL '1 week' AND CURRENT_DATE GROUP BY menu_item_id;";
                     result = stmt.executeQuery(sqlStatement);
 
                     while (result.next()) {
@@ -276,7 +276,7 @@ public class Reports extends JFrame {
                     }
 
                     // monthly sales
-                    sqlStatement = "SELECT menu_item_id, COUNT(menu_item_id) FROM orders_by_item WHERE item_date = (CURRENT_DATE - INTERVAL '1 month') GROUP BY menu_item_id;";
+                    sqlStatement = "SELECT menu_item_id, COUNT(menu_item_id) FROM orders_by_item WHERE item_date::DATE BETWEEN CURRENT_DATE - INTERVAL '1 month' AND CURRENT_DATE GROUP BY menu_item_id;";
                     result = stmt.executeQuery(sqlStatement);
 
                     while (result.next()) {

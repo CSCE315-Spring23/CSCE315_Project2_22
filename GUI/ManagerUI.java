@@ -18,6 +18,7 @@ public class ManagerUI extends JPanel{
         OrderHistory orderHistory = new OrderHistory();
         InventoryAndShipping inventory = new InventoryAndShipping();
         Menu menu = new Menu();
+        Reports reports = new Reports();
 
         JTabbedPane tabbed_pane = new JTabbedPane();
 
@@ -25,6 +26,7 @@ public class ManagerUI extends JPanel{
         tabbed_pane.add("Order Trends",panel2);
         tabbed_pane.addTab("Order History", orderHistory.getContentPane());
         tabbed_pane.addTab("Menu", menu.getContentPane());
+        tabbed_pane.addTab("Reports", reports.getContentPane());
 
 
         this.add(tabbed_pane);
