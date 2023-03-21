@@ -3,6 +3,7 @@ import java.awt.*;
 import java.sql.*;
 import javax.swing.table.*;
 import javax.swing.table.DefaultTableModel;
+import java.time.LocalTime;
 
 public class XZ extends JFrame{
     //from what I can tell, x report is sales from last EOD till point of the current day x report is requested
@@ -47,6 +48,24 @@ public class XZ extends JFrame{
                 else {
                     total_sales += order_summary.getDouble(4);
                     prev_splitted = splitted;
+                    LocalTime myobj = LocalTime.now();
+                    if(myobj.getHour() > 12 && myobj.getHour()-12 > 5) {
+                        update_row = conn.prepareStatement("INSERT INTO z_reports VALUES (?, ?)");
+                        update_row.setString(1, prev_splitted[0]);
+                        update_row.setDouble(2, total_sales);
+                        update_row.executeUpdate();  
+
+                        row[0] = prev_splitted[0];
+                        row[1] = total_sales;
+                        model.addRow(row);
+
+                        total_sales = 0; 
+                    }
+                    else{
+                        row[0] = prev_splitted[0];
+                        row[1] = total_sales;
+                        model.addRow(row);
+                    }
                 }
                 
             }
