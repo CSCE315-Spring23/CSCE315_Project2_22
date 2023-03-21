@@ -170,8 +170,6 @@ public class Server extends JPanel {
 			JOptionPane.showMessageDialog(null,"Error accessing Database.");
 		}
 
-        /*DefaultListModel<String> order_list = new DefaultListModel<>();
-        JList<String> corder = new JList<>(order_list);*/
 
         // create panel for each category and add menu items to the proper category
         for (String category : categories) {
@@ -271,6 +269,22 @@ public class Server extends JPanel {
                                 while (resultSet.next()) {
                                     int product_id = resultSet.getInt("product_id");
                                     Double quantity = resultSet.getDouble("quantity");
+
+                                    // check to see if there is enough quantity in the inventory
+                                    PreparedStatement invStmt = conn.prepareStatement("SELECT * FROM inventory WHERE product_id = ?");
+                                    invStmt.setInt(1, product_id);
+
+                                    ResultSet inv_results = invStmt.executeQuery();
+                                    while (inv_results.next()) {
+                                        Double remaining_quantity = inv_results.getDouble("quantity");
+                                        if (remaining_quantity - quantity < 0) {
+                                            JOptionPane.showMessageDialog(null, "Not enough '" + inv_results.getString("product_name") + "'.\nRemaining quantity = " + remaining_quantity + " oz.\nCan't place order.");
+                                            payment_frame.dispose();
+                                            oi_table_model.setRowCount(0);
+                                            price_label.setText("Total: $0.00");
+                                            return;
+                                        }
+                                    }
 
                                     // update inventory
                                     PreparedStatement updateStmt = conn.prepareStatement("UPDATE inventory SET quantity = quantity - ? WHERE product_id = ?");
