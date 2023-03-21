@@ -12,12 +12,35 @@ import javax.swing.table.TableModel;
 import java.util.*;
 
 
+
+    
+/*
+    public static Comparator<OrderPair> SortPopular = new Comparator<OrderPair>() {
+        public int compare (int count1, int count2) {
+            return count1 - count2;
+        }
+    }; */
+
+
+
 /**
  * Used to add a Reports panel to the ManagerUI. This houses buttons to generate various reports.
  */
 public class Reports extends JFrame {
 
     private JPanel reports_panel;
+
+    private static class OrderPair {
+        String item1;
+        String item2;
+        int count;
+
+        public OrderPair (String name1, String name2) {
+            item1 = name1;
+            item2 = name2;
+            count = 0;
+        }
+    }
 
 
     /**
@@ -39,6 +62,7 @@ public class Reports extends JFrame {
         // call load for all the reports
         load_sales(sales_report);
         load_xz(xz_report);
+        load_sells_together(sells_together_report);
 
         // add the reports panel, which holds the buttons, to the frame
         this.add(reports_panel);
@@ -146,16 +170,89 @@ public class Reports extends JFrame {
                 report_frame.setVisible(true);
 
                 // Fill in generating your report and adding to the report frame
+
+                //Initialize an Array of Pairs
+                ArrayList<OrderPair> order_pairs = new ArrayList<OrderPair>();  
+
+                //Initialize variables to iterate through the rows of query
+                int prev_order_id = 0;
+                int curr_order_id = 0;
+                String prev_item = "";
+                String curr_item = "";
+
+                try {  //The Query
+
+                    //Time stamp to get date range 
+                    Timestamp from = new Timestamp(System.currentTimeMillis());
+                    Timestamp to = new Timestamp(System.currentTimeMillis());
+
+                    //Connection to database and query to get orders within a time frame
+                    Connection conn = null;
+                    conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
+                    String selectQuery = "SELECT * FROM orders_by_item WHERE item_date between '?' and '?'";
+                    PreparedStatement selectStmt = conn.prepareStatement(selectQuery);
+                    selectStmt.setTimestamp(1, from);
+                    selectStmt.setTimestamp(2, to);
+                    ResultSet resultSet = selectStmt.executeQuery();
+
+                    
+                    //iterates through the rows of the query 
+                    while (resultSet.next()) {
+                        curr_order_id = resultSet.getInt("order_id");
+                        curr_item = resultSet.getString("menu_item_id");
+                        boolean existing = false;
+
+                        for (OrderPair pairs : order_pairs) {  //if pair exists, count will increment
+                            if ((prev_item == pairs.item1 || prev_item == pairs.item2) && (curr_item == pairs.item1 || curr_item == pairs.item2)) {
+                                pairs.count++;
+                                existing = true;
+                                break;
+                            }
+                        }
+
+                        if (existing == false) {  //creates a new pair
+                            OrderPair new_pair = new OrderPair(prev_item, curr_item);
+                        }
+                        
+                        //makes the current row into the previous row so the next row is current
+                        prev_item = curr_item;
+                        prev_order_id = curr_order_id;
+                    }
+                } 
+                catch (SQLException ex) 
+                {
+                    ex.printStackTrace();
+                }
+
+                //Collections.sort(order_pairs, OrderPair.SortPopular);
+
+                JPanel sells_panel = new JPanel(new GridLayout(10,1));
+
+
+                if (order_pairs.size() >= 10) {
+                    for (int i = 0; i < 10; i++) {
+                        JTextField text_pair = new JTextField("HI");
+                        text_pair.setEditable(false);
+                        sells_panel.add(text_pair);
+                    }
+                }
+                else if (order_pairs.size() > 0 && order_pairs.size() < 10) {
+                    for (int i = 0; i < order_pairs.size(); i++) {
+                        JTextField text_pair = new JTextField("HI");
+                        text_pair.setEditable(false);
+                        sells_panel.add(text_pair);
+                    }
+                }
+                //order_pairs.get(i).item1 + " " + order_pairs.get(i).item2
+
+                else if (order_pairs.size() == 0) {
+                    JTextField text_pair = new JTextField("No Pairs");
+                    text_pair.setEditable(false);
+                    sells_panel.add(text_pair);
+                }
+
+                report_frame.add(sells_panel);
             }
         });
     } 
 }
-
-
-
-
-
-
-
-
-
