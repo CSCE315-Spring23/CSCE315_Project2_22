@@ -15,18 +15,20 @@ public class XZ extends JFrame{
     
     public XZ(){
         try {
-            conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22", "csce315331_nair", "428008776");
+            conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22", "csce315331_team_22_master", "0000");
             table = new JTable();
             table.getTableHeader().setReorderingAllowed(false);
 
-            Statement stmt = conn.createStatement();
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet order_summary = stmt.executeQuery("SELECT * FROM orders_summary");
             DefaultTableModel model = new DefaultTableModel();
             model.addColumn("date");
             model.addColumn("total_sales");
 
             double total_sales = 0;
+            order_summary.next();
             String[] prev_splitted = order_summary.getString(3).split(" ");
+            order_summary.previous();
 
             while(order_summary.next()) {
                 String[] splitted = order_summary.getString(3).split(" ");
