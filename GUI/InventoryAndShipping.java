@@ -55,8 +55,6 @@ public class InventoryAndShipping extends JFrame {
     Initializes a connection to the PostgreSQL database and populates the JTable with data from the "inventory" table.
     Adds a WindowListener to the JFrame that closes the connection and exits the application when the window is closed.
     @param fh the FrameHandler instance that will handle user events.
-    @throws ClassNotFoundException if the PostgreSQL driver class cannot be found.
-    @throws SQLException if a database access error occurs.
     @see FrameHandler
     */
 

@@ -19,8 +19,6 @@ public class OrderHistory extends JFrame {
     /** 
      * This method opens a connection to the database and queries the information from the orders_summary data table.
      * It will then create a new table, creating the columns associated with the table and populating it with the information.
-     * @param table The JTable that houses the information from the data table.
-     * @param rsmd Handles getting the data from the data table and contains them.
      */
     public OrderHistory(){
         try{
