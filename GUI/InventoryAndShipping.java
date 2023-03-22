@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@FurtherAI 
-CSCE315-Spring23
-/
-CSCE315_Project2_22
-Public
-Fork your own copy of CSCE315-Spring23/CSCE315_Project2_22
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-CSCE315_Project2_22/InventoryAndShipping.java /
-@Gpile99
-Gpile99 InventoryAndShipping and ManagerUI comments
-…
-Latest commit bc7afe7 19 minutes ago
- History
- 1 contributor
-295 lines (228 sloc)  11 KB
 
 /**
 The InventoryAndShipping class extends JFrame and represents a GUI application

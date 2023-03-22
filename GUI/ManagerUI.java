@@ -42,7 +42,6 @@ public class ManagerUI extends JPanel{
         
 
         tabbed_pane.addTab("InventoryAndShipments", inventory.getContentPane());
-        tabbed_pane.add("Order Trends",panel2);
         tabbed_pane.addTab("Order History", orderHistory.getContentPane());
         tabbed_pane.addTab("Menu", menu.getContentPane());
         tabbed_pane.addTab("Reports", reports.getContentPane());

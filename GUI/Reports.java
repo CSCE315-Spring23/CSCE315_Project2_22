@@ -71,10 +71,11 @@ public class Reports extends JFrame {
         load_xz(xz_report);
         load_sells_together(sells_together_report);
         load_excess(excess_report);
+        load_restock(restock_report);
 
         // add the reports panel, which holds the buttons, to the frame
         this.add(reports_panel);
-
+w
         this.setSize(500, 300);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -281,8 +282,10 @@ public class Reports extends JFrame {
                     }
 
                     
-            
+                    System.out.println(model.getRowCount());
                     conn.close();
+                    report_frame.setVisible(true);
+
             
                 } catch (SQLException ex1) {
                     ex1.printStackTrace();
