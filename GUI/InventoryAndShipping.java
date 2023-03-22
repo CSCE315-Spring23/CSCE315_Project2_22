@@ -1,3 +1,48 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@FurtherAI 
+CSCE315-Spring23
+/
+CSCE315_Project2_22
+Public
+Fork your own copy of CSCE315-Spring23/CSCE315_Project2_22
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+CSCE315_Project2_22/InventoryAndShipping.java /
+@Gpile99
+Gpile99 InventoryAndShipping and ManagerUI comments
+…
+Latest commit bc7afe7 19 minutes ago
+ History
+ 1 contributor
+295 lines (228 sloc)  11 KB
+
+/**
+The InventoryAndShipping class extends JFrame and represents a GUI application
+that displays and updates the inventory of products available for shipping.
+The class makes a connection to a PostgreSQL database hosted on a remote server,
+and populates a JTable with data from the "inventory" table.
+Users can add, modify and delete rows from the JTable, and when they click
+on the "Update" button, the changes are committed to the database.
+@author William C. Hipp
+@version 1.0
+@since 3/21/2023
+@see javax.swing.JFrame
+*/
+
 import java.awt.*;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -30,7 +75,17 @@ public class InventoryAndShipping extends JFrame {
     private Vector<String> removedIds = new Vector<String>();
 
     private FrameHandler fh;
- 
+
+    /**
+    Creates a new instance of InventoryAndShipping with the specified FrameHandler.
+    Initializes a connection to the PostgreSQL database and populates the JTable with data from the "inventory" table.
+    Adds a WindowListener to the JFrame that closes the connection and exits the application when the window is closed.
+    @param fh the FrameHandler instance that will handle user events.
+    @throws ClassNotFoundException if the PostgreSQL driver class cannot be found.
+    @throws SQLException if a database access error occurs.
+    @see FrameHandler
+    */
+
     public InventoryAndShipping(FrameHandler fh) {
         this.fh = fh;
         
@@ -61,6 +116,8 @@ public class InventoryAndShipping extends JFrame {
                     System.exit(0);
                 }
             });
+            
+            // Create a DefaultTableModel and populate it with data from the "inventory" table
 
             DefaultTableModel model = new DefaultTableModel(){
                 @Override
@@ -80,17 +137,8 @@ public class InventoryAndShipping extends JFrame {
             for(int i = 1; i <= columnCount; i++){
                 model.addColumn(rsmd.getColumnName(i));
             }
-            //model.addColumn("Button");
-            //BigDecimal currentProductId = BigDecimal.Zero;
-            //int currentProductId = 0;
+            
             while (rs.next()){
-                /*
-                Object[] row = new Object[columnCount];//Object[columnCount+1];
-                for (int i = 1; i <= columnCount; i++ ){
-                    //if(columnCount == 3)
-                    row[i-1] = rs.getObject(i);
-                }
-                */
                 Object[] row = new Object[columnCount];
                 for(int i = 1; i <= columnCount; i++){
                     switch(1){
@@ -98,7 +146,6 @@ public class InventoryAndShipping extends JFrame {
                             row[i-1] = rs.getString(i);
                             break;
                         case 2:
-                            //row[i-1] = rs.getInt(i);
                             row[i-1] = rs.getString(i);
                             break;
                         default:
@@ -106,13 +153,13 @@ public class InventoryAndShipping extends JFrame {
                             break;
                     }
                 }
-                //row[columnCount] = "auto fill";
+                
                 
                 if(!row[2].equals("-1")){
                     model.addRow(row);
                 }
                 
-                //model.addRow(row);
+                
                 currentProductId++;
                 
 
@@ -120,30 +167,10 @@ public class InventoryAndShipping extends JFrame {
 
             beforeUpdateId = currentProductId;
             
-            //DefaultTableModel model1 = new DefaultTableModel(data1, columnNames1);
+            
             JTable table1 = new JTable(model) {
                 
                 @Override
-                /*
-                public Component prepareRenderer(TableCellRenderer renderer, int rowIndex, int columnIndex) {
-                    
-                    Component component = super.prepareRenderer(renderer, rowIndex, columnIndex);
-                    if (columnIndex == 2) {
-                        BigDecimal value = (BigDecimal)getValueAt(rowIndex, columnIndex);
-                        
-                        if (value != null && value.compareTo(new BigDecimal("30")) < 0) {
-                            component.setBackground(Color.RED);
-                        } else {
-                            component.setBackground(getBackground());
-                        }
-                    } else {
-                        component.setBackground(getBackground());
-                    }
-                    return component;
-                
-                }
-                */
-
                 public boolean isCellEditable(int row, int col){
                     switch(col){
                         case 0:
@@ -153,7 +180,6 @@ public class InventoryAndShipping extends JFrame {
                     }
                 }
             };
-            //table1.setEnabled(false);
             JScrollPane scrollPane1 = new JScrollPane(table1);
 
             JPanel buttonPanel = new JPanel();
@@ -166,7 +192,6 @@ public class InventoryAndShipping extends JFrame {
             addRowButton.addActionListener(new ActionListener(){
                 @Override
                 public void actionPerformed(ActionEvent e){
-                    //model.addRow(new Object[columnCount]);
                     Object[] row1 = new Object[columnCount];
                     for(int i = 0; i < columnCount; i++){
                         if(i == 0){
@@ -203,8 +228,6 @@ public class InventoryAndShipping extends JFrame {
                         conn.setAutoCommit(false);
                         PreparedStatement updateStmt = conn.prepareStatement("UPDATE inventory SET product_name = ?, quantity = ? WHERE product_id = ?");
                         PreparedStatement insertStmt = conn.prepareStatement("INSERT INTO inventory (product_id, product_name, quantity) VALUES(?, ?, ?)");
-                        //PreparedStatement checkStmt = conn.prepareStatement("SELECT COUNT(*) FROM inventory WHERE product_id = ?");
-                        //PreparedStatement updateOldStmt = conn.prepareStatement("UPDATE inventory SET quantity = ? WHERE product_id = ?");
                         PreparedStatement deleteStmt = conn.prepareStatement("UPDATE inventory SET quantity = -1 WHERE product_id = ?");
 
                         // update existing rows
@@ -242,16 +265,13 @@ public class InventoryAndShipping extends JFrame {
                                 
                             }
 
-                            //beforeUpdateId++;
+                            
                         }
                         
                         
-                        // update existing rows with product_id < beforeUpdateId that have quantity = -1
-                        //deleteStmt.setInt(1, beforeUpdateId);
-                        //deleteStmt.executeUpdate();
                         
                         conn.commit();
-                        //stmt.executeQuery("SELECT * FROM inventory ORDER BY product_id ASC");
+                        
                         
                         JOptionPane.showMessageDialog(InventoryAndShipping.this, "Database updated successfully.");
                     }catch(SQLException ex){
@@ -266,47 +286,26 @@ public class InventoryAndShipping extends JFrame {
             });
 
             buttonPanel.add(updateDatabaseButton);
-
-            // Create the second table
-            String[] columnNames2 = {"product_id", "quantity", "subtotal"};
-            Object[][] data2 = {
-                    {"New York", "USA", 8623000},
-                    {"","",}
-            };
-            DefaultTableModel model2 = new DefaultTableModel(data2, columnNames2);
-            JTable table2 = new JTable(model2);
-            JScrollPane scrollPane2 = new JScrollPane(table2);
-
+            
             // Create a panel to hold the tables
             JPanel panel = new JPanel(new GridLayout(2, 1, 10, 10));
             panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // add a 10 pixel margin around the panel
             panel.add(scrollPane1);
-            panel.add(scrollPane2);
+            //panel.add(scrollPane2);
             panel.add(buttonPanel);
 
             // Add the panel to the frame
             getContentPane().add(panel); // add the panel directly to the frame's content pane
-
-            //Close connection
-            /*
-            rs.close();
-            stmt.close();
-            conn.close();
-            */
 
             // Set the frame properties
             setTitle("InventoryAndShipping");
             setSize(500, 300);
             setLocationRelativeTo(null);
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            //setVisible(true);
+           
         
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-
-    // public static void main(String[] args) {
-    //     new InventoryAndShipping();
-    // }
 }

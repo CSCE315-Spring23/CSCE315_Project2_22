@@ -198,6 +198,10 @@ public class Reports extends JFrame {
         });
     }
     
+    /**
+    *Loads the Restock Report on click of the Restock Report button
+    *@param restock_report JButton to load Restock Report
+    */
     private void load_restock(JButton restock_report) {
         restock_report.setSize(110, 40);
         restock_report.setAlignmentX((float) 0.5);
@@ -207,6 +211,11 @@ public class Reports extends JFrame {
         reports_panel.add(Box.createRigidArea(new Dimension(25, 25)));
 
         restock_report.addActionListener(new ActionListener() {
+            /**
+            * Action listener for Restock Report button, generates Restock Report
+            * @param e ActionEvent object
+            */
+
             public void actionPerformed(ActionEvent e) {
                 
                 JFrame report_frame = new JFrame("Restock Report");
@@ -215,6 +224,69 @@ public class Reports extends JFrame {
                 report_frame.setVisible(true);
 
                 // Fill in generating your report and adding to the report frame
+
+                setTitle("Recomended Restock Report");
+                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+                DefaultTableModel model = new DefaultTableModel();
+                model.addColumn("Product ID");
+                model.addColumn("Product Name");
+                model.addColumn("Minimum Quantity");
+                model.addColumn("Current Quantity");
+        
+                JTable table = new JTable(model);
+                JScrollPane scrollPane = new JScrollPane(table);
+                report_frame.add(scrollPane);
+                try {
+                    // Connect to PostgreSQL database
+                    Connection conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
+            
+                    // Execute the query to get inventory snapshot
+                    PreparedStatement statement = conn.prepareStatement(
+                        "SELECT product_id, product_name, 0.25 * MAX(quantity) AS quarter_max_quantity " +
+                        "FROM inventory_snapshot " +
+                        /* The WHERE Statment should be replaced with:
+                            "WHERE snapshot_date >= NOW() - INTERVAL '30 days' " +
+                         In the case of a currently operational GUI
+                        */
+                        "WHERE snapshot_date >= '2022-12-02' AND snapshot_date <= '2023-01-01' " + 
+                        "GROUP BY product_id, product_name");
+                    ResultSet resultSet = statement.executeQuery();
+            
+                    while (resultSet.next()) {
+                        int productId = resultSet.getInt("product_id");
+                        String productName = resultSet.getString("product_name");
+                        double quarterMaxQuantity = resultSet.getDouble("quarter_max_quantity");
+                
+                        // Find the current quantity from inventory table
+                        PreparedStatement currQuantityStatement = conn.prepareStatement(
+                            "SELECT quantity FROM inventory WHERE product_id = ?");
+                        currQuantityStatement.setInt(1, productId);
+                        ResultSet currQuantityResultSet = currQuantityStatement.executeQuery();
+                
+                        double currQuantity = 0.0;
+                        if (currQuantityResultSet.next()) {
+                            currQuantity = currQuantityResultSet.getDouble("quantity");
+                        }
+                
+                        // Add the row to the table only if the current quantity is less than or equal to the 25% of max quantity
+                        if (currQuantity <= quarterMaxQuantity) {
+                            Vector<Object> row = new Vector<Object>();
+                            row.add(productId);
+                            row.add(productName);
+                            row.add(quarterMaxQuantity);
+                            row.add(currQuantity);
+                            model.addRow(row);
+                        }
+                    }
+
+                    
+            
+                    conn.close();
+            
+                } catch (SQLException ex1) {
+                    ex1.printStackTrace();
+                }
             }
         });
     } 
