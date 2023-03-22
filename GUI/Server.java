@@ -6,12 +6,29 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+/**
+ * This class creates the user interface on the server side. It operates so that it can
+ * function with the frame handler so that it can be accessed from a different window.
+ * It creates the panels and frames to support a window with a left side displaying the 
+ * items in an order, a delete button to delete the last item in an order, a clear button
+ * delete all the items in an order, a total value, and a pay now button. The right side of
+ * the screen shows the menu, displaying items by their category. By creating an order, users can
+ * automatically update the database, updating the orders that are tracker, items that are sold,
+ * and decrementing the ingredients that correspond to an item. If an item requries inventory
+ * that is not in stock, the order will not be created.
+ */
 public class Server extends JPanel {
     // HANDLER FOR MULTIPLE FRAMES
     private JFrame frame;
     private FrameHandler fh;
 
-
+    /**
+     * This constructor sets the frame and frame handler for the particular instance of the 
+     * server class. It initializes the frame and frame handler, then calls the initialize()
+     * function which handles the rest of the user interface and database interaction.
+     * @param frame
+     * @param fh
+     */
     Server (JFrame frame, FrameHandler fh) {
         this.frame = frame;
         this.fh = fh;
@@ -20,7 +37,11 @@ public class Server extends JPanel {
     }
 
 
-    // FUNCTION TO SUPPORT MULTIPLE FRAMES FUNCTIONALITY
+    /**
+     * This function initializes all key components of the server class. It creates all the necessary 
+     * Java Swing components, puts them together, and handles action events. It also handles database
+     * interaction for placing orders.
+     */
     public void initialize() {
         // ESTABLISH DATABASE CONNECTION
         Connection conn = null;
