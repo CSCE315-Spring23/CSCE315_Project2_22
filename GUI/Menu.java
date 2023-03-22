@@ -110,6 +110,10 @@ public class Menu extends JFrame implements TableModelListener {
             }
             // If the user sets the menu_item_id to an empty string, delete the item from the menu and remove the associated menu item ingredients 
             else if (columnName.equals("menu_item_id") && (menu_item_id = (String) model.getValueAt(row, 0)).equals("")) {
+                update_row = conn.prepareStatement("DELETE FROM orders_by_item WHERE menu_item_id=?");
+                update_row.setString(1, (String) menu_arr.get(row).get(0));
+                update_row.executeUpdate();
+
                 update_row = conn.prepareStatement("DELETE FROM menu_item_ingredients WHERE menu_item_id=?");
                 update_row.setString(1, (String) menu_arr.get(row).get(0));
                 update_row.executeUpdate();

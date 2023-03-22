@@ -376,7 +376,7 @@ public class Reports extends JFrame {
                         String[] splitted = order_summary.getString(3).split(" ");
                         Object[] row = new Object[3];
                         LocalTime myobj = LocalTime.now();
-                        ZoneId zonedId = ZoneId.of( "America/Montreal" );
+                        ZoneId zonedId = ZoneId.of( "America/Chicago" );
                         LocalDate today = LocalDate.now( zonedId );
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                         String formattedString = today.format(formatter); 
