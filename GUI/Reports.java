@@ -70,14 +70,7 @@ public class Reports extends JFrame {
         load_sales(sales_report);
         load_xz(xz_report);
         load_sells_together(sells_together_report);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         load_excess(excess_report);
->>>>>>> finished the excess report and updated brian's code for load_sells_together
-=======
-        load_excess(excess_report);
->>>>>>> Updated Reports.java from merge conflicts.
 
         // add the reports panel, which holds the buttons, to the frame
         this.add(reports_panel);
@@ -259,7 +252,6 @@ public class Reports extends JFrame {
                 String curr_item = "";
 
                 try {  //The Query
-<<<<<<< HEAD
 
                     //Time stamp to get date range 
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -313,7 +305,6 @@ public class Reports extends JFrame {
                                 }
                             }
                         }
-<<<<<<< HEAD
                     }
                     // convert hash map to array list for sorting by frequency (count)
                     ArrayList<OrderPair> final_pairs = new ArrayList<OrderPair>(pairs.values());
@@ -330,112 +321,6 @@ public class Reports extends JFrame {
 
                 table.setModel(model);
 
-<<<<<<< HEAD
-                JPanel sells_panel = new JPanel(new GridLayout(10,1));
-=======
-
-                    //Time stamp to get date range 
-                    Timestamp from = new Timestamp(System.currentTimeMillis());
-                    Timestamp to = new Timestamp(System.currentTimeMillis());
-
-                    //Connection to database and query to get orders within a time frame
-                    Connection conn = null;
-                    conn = DriverManager.getConnection("jdbc:postgresql://csce-315-db.engr.tamu.edu/csce315331_team_22","csce315331_team_22_master", "0000");
-                    String selectQuery = "SELECT * FROM orders_by_item WHERE item_date between '?' and '?'";
-                    PreparedStatement selectStmt = conn.prepareStatement(selectQuery);
-                    selectStmt.setTimestamp(1, from);
-                    selectStmt.setTimestamp(2, to);
-                    ResultSet resultSet = selectStmt.executeQuery();
-
-                    
-                    //iterates through the rows of the query 
-                    while (resultSet.next()) {
-                        curr_order_id = resultSet.getInt("order_id");
-                        curr_item = resultSet.getString("menu_item_id");
-                        boolean existing = false;
-
-                        for (OrderPair pairs : order_pairs) {  //if pair exists, count will increment
-                            if ((prev_item == pairs.item1 || prev_item == pairs.item2) && (curr_item == pairs.item1 || curr_item == pairs.item2)) {
-                                pairs.count++;
-                                existing = true;
-                                break;
-                            }
-                        }
-
-                        if (existing == false) {  //creates a new pair
-                            OrderPair new_pair = new OrderPair(prev_item, curr_item);
-                        }
-                        
-                        //makes the current row into the previous row so the next row is current
-                        prev_item = curr_item;
-                        prev_order_id = curr_order_id;
-                    }
-                } 
-                catch (SQLException ex) 
-                {
-                    ex.printStackTrace();
-                }
->>>>>>> finished the excess report and updated brian's code for load_sells_together
-
-                //Collections.sort(order_pairs, OrderPair.SortPopular);
-
-<<<<<<< HEAD
-                if (order_pairs.size() >= 10) {
-                    for (int i = 0; i < 10; i++) {
-                        JTextField text_pair = new JTextField("HI");
-                        text_pair.setEditable(false);
-                        sells_panel.add(text_pair);
-=======
->>>>>>> Updated Reports.java from merge conflicts.
-                    }
-                }
-                else if (order_pairs.size() > 0 && order_pairs.size() < 10) {
-                    for (int i = 0; i < order_pairs.size(); i++) {
-                        JTextField text_pair = new JTextField("HI");
-                        text_pair.setEditable(false);
-                        sells_panel.add(text_pair);
-                    }
-<<<<<<< HEAD
-=======
-
-                } 
-                catch (Exception ex) 
-                {
-                    ex.printStackTrace();
->>>>>>> Updated Reports.java from merge conflicts.
-                }
-                //order_pairs.get(i).item1 + " " + order_pairs.get(i).item2
-
-=======
-                JPanel sells_panel = new JPanel(new GridLayout(10,1));
-
-
-<<<<<<< HEAD
-                if (order_pairs.size() >= 10) {
-                    for (int i = 0; i < 10; i++) {
-                        JTextField text_pair = new JTextField("HI");
-                        text_pair.setEditable(false);
-                        sells_panel.add(text_pair);
-                    }
-                }
-                else if (order_pairs.size() > 0 && order_pairs.size() < 10) {
-                    for (int i = 0; i < order_pairs.size(); i++) {
-                        JTextField text_pair = new JTextField("HI");
-                        text_pair.setEditable(false);
-                        sells_panel.add(text_pair);
-                    }
-                }
-                //order_pairs.get(i).item1 + " " + order_pairs.get(i).item2
-
->>>>>>> finished the excess report and updated brian's code for load_sells_together
-                else if (order_pairs.size() == 0) {
-                    JTextField text_pair = new JTextField("No Pairs");
-                    text_pair.setEditable(false);
-                    sells_panel.add(text_pair);
-                }
-
-                report_frame.add(sells_panel);
-=======
                 table.setRowHeight(30);
                 JTableHeader header = table.getTableHeader();
                 header.setBackground(Color.gray);
@@ -446,12 +331,6 @@ public class Reports extends JFrame {
                 report_frame.add(scrollPane);
                 // report_frame.setLocationRelativeTo(null);
                 report_frame.setVisible(true);
->>>>>>> Reworked the sells together report. Working correctly now.
-=======
-                report_frame.add(scrollPane);
-                // report_frame.setLocationRelativeTo(null);
-                report_frame.setVisible(true);
->>>>>>> Updated Reports.java from merge conflicts.
             }
         });
     } 
