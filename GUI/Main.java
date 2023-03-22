@@ -25,6 +25,13 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocation(new Point(500, 300));
 
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setSize(screenSize.width, screenSize.height);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        Image icon = Toolkit.getDefaultToolkit().getImage("../misc/smoothie_king.jpg");
+        frame.setIconImage(icon);
+
         Login login_panel = new Login(frame, frame_handler);
         RedirectScreen redirect_panel = new RedirectScreen(frame, frame_handler);
         ManagerUI manager_panel = new ManagerUI(frame, frame_handler);

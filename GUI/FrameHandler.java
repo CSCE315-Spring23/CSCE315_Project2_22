@@ -52,7 +52,6 @@ public class FrameHandler implements ActionListener {
         }
         else if (action == "Home") {
             frame.setContentPane(login);
-            frame.setSize(new Dimension(600, 600));
         }
 
         frame.repaint();
