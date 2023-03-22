@@ -36,10 +36,9 @@ public class XZ extends JFrame{
                 LocalTime myobj = LocalTime.now();
                 //handles old z reports
                 if(splitted[0] != prev_splitted[0] && myobj.getHour() > 12 && myobj.getHour()-12 > 5) {
-                    
                     update_row = conn.prepareStatement("INSERT INTO z_reports VALUES (?, ?)");
-                    update_row.setString(1, prev_splitted[0]);
-                    update_row.setDouble(2, total_sales);
+                    update_row.setDate(2, java.sql.Date.valueOf(prev_splitted[0]));
+                    update_row.setDouble(1, total_sales);
                     update_row.executeUpdate();  
 
                     row[0] = prev_splitted[0];
