@@ -76,6 +76,7 @@ public class Reports extends JFrame {
 
         // add the reports panel, which holds the buttons, to the frame
         this.add(reports_panel);
+
         this.setSize(500, 300);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -241,16 +242,22 @@ public class Reports extends JFrame {
                     timestampStmt.setString(1, userDateInput);
                     ResultSet timestampRs = timestampStmt.executeQuery();
                     
-
                     // String currentSnapshotQuery = "SELECT * FROM inventory_snapshot WHERE snapshot_date = '2023-01-01'";
                     String currentSnapshotQuery = "SELECT * FROM inventory";
                     PreparedStatement currentSnapshotStmt = conn.prepareStatement(currentSnapshotQuery);
+                    
+                    // Execute the current snapshot query and retrieve the result set
                     ResultSet currentRs = currentSnapshotStmt.executeQuery();
+                    
+                    // Create a map to hold the current inventory levels of each product
                     Map<Integer, Integer> inventoryMap = new HashMap<Integer, Integer>();
-                    while(currentRs.next()) {
+                    
+                    // Populate the inventory map with the current inventory levels from the result set
+                    while (currentRs.next()) {
                         inventoryMap.put(currentRs.getInt("product_id"), currentRs.getInt("quantity"));
                     }
-            
+                    
+                    // Create a vector to hold the column names for the table
                     Vector<String> columnName = new Vector<String>();
                     columnName.add("Product ID");
                     columnName.add("Product Name");
@@ -258,13 +265,22 @@ public class Reports extends JFrame {
                     columnName.add("Current Quantity");
                     //columnName.add("test");
                     //columnName.add("test1");
+                    
+                    // Create a vector to hold the data for the table
                     Vector<Vector<Object>> excess_data = new Vector<Vector<Object>>();
-                    while(timestampRs.next()) {
+                    
+                    // Iterate over the timestamp result set and compare the timestamp quantity with the current quantity
+                    while (timestampRs.next()) {
                         int productId = timestampRs.getInt("product_id");
                         String productName = timestampRs.getString("product_name");
                         int quantity = timestampRs.getInt("quantity");
+                        
+                        // Compare the timestamp quantity with the current quantity, if the product is in the inventory map
                         if (inventoryMap.containsKey(productId)) {
                             int currentQuantity = inventoryMap.get(productId);
+                            
+                
+                            // Populate the excess data vector with the list of all items that are under 10%
                             if ((((quantity - currentQuantity) > 0) && (quantity - currentQuantity) < .1 * quantity) || quantity - currentQuantity == 0) {
                                 Vector<Object> row = new Vector<Object>();
                                 row.add(productId);
