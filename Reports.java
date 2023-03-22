@@ -109,7 +109,11 @@ public class Reports extends JFrame {
                 // Fill in generating your report and adding to the report frame
             }
         });
-    } 
+    }
+    /**
+    *Loads the Restock Report on click of the Restock Report button
+    *@param restock_report JButton to load Restock Report
+    */
     private void load_restock(JButton restock_report) {
         restock_report.setSize(110, 40);
         restock_report.setAlignmentX((float) 0.5);
@@ -119,6 +123,11 @@ public class Reports extends JFrame {
         reports_panel.add(Box.createRigidArea(new Dimension(25, 25)));
 
         restock_report.addActionListener(new ActionListener() {
+            /**
+            * Action listener for Restock Report button, generates Restock Report
+            * @param e ActionEvent object
+            */
+
             public void actionPerformed(ActionEvent e) {
                 
                 JFrame report_frame = new JFrame("Restock Report");
@@ -139,7 +148,6 @@ public class Reports extends JFrame {
         
                 JTable table = new JTable(model);
                 JScrollPane scrollPane = new JScrollPane(table);
-                //add(scrollPane);
                 report_frame.add(scrollPane);
                 try {
                     // Connect to PostgreSQL database
@@ -173,7 +181,7 @@ public class Reports extends JFrame {
                             currQuantity = currQuantityResultSet.getDouble("quantity");
                         }
                 
-                        // Add the row to the table only if the current quantity is less than or equal to the quarter max quantity
+                        // Add the row to the table only if the current quantity is less than or equal to the 25% of max quantity
                         if (currQuantity <= quarterMaxQuantity) {
                             Vector<Object> row = new Vector<Object>();
                             row.add(productId);
