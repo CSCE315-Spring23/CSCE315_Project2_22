@@ -62,7 +62,7 @@ public class Server extends JPanel {
 
         // INITIALIZE LEFT AND RIGHT CONTAINER PANELS (LEFT HOLDS ORDER INFORMATION, RIGHT HOLDS MENU INFORMATION)
         JPanel left_panel = new JPanel(new BorderLayout());     
-        JPanel right_panel = new JPanel(new GridLayout());      
+        JPanel right_panel = new JPanel(new BorderLayout());      
 
 
         // GRID BAG STYLING FOR LEFT AND RIGHT PANELS
@@ -91,26 +91,31 @@ public class Server extends JPanel {
         Font font = new Font(order_summary_label.getFont().getName(), Font.PLAIN, 20);
         order_summary_label.setFont(font);
         order_summary_label.setHorizontalAlignment(JLabel.CENTER);
-        order_summary_label.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+        order_summary_label.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEtchedBorder(), BorderFactory.createEmptyBorder(10, 0, 10, 0)));
         left_panel.add(order_summary_label, BorderLayout.NORTH);
 
         // table storing order items
         JTable order_items_table = new JTable();
-        
+        order_items_table.setRowSelectionAllowed(false);
+        order_items_table.setColumnSelectionAllowed(false);
+        order_items_table.setCellSelectionEnabled(false);
+        order_items_table.setDefaultEditor(Object.class, null);
+
         DefaultTableModel oi_table_model = new DefaultTableModel();
         oi_table_model.addColumn("Item");
         oi_table_model.addColumn("Price");
         order_items_table.setModel(oi_table_model);
 
         JScrollPane oi_scroll_pane = new JScrollPane(order_items_table);
+        oi_scroll_pane.setBorder(BorderFactory.createEtchedBorder());
         left_panel.add(oi_scroll_pane, BorderLayout.CENTER);
-
 
         // total price, pay now, and clear/delete functionality
         JPanel left_panel_south_container = new JPanel(new GridLayout(3, 1));
         left_panel.add(left_panel_south_container, BorderLayout.SOUTH);
 
         JLabel price_label = new JLabel("Total: $0.00");
+        price_label.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEtchedBorder(), BorderFactory.createEmptyBorder(10, 10, 10, 10)));
         left_panel_south_container.add(price_label);
 
         JPanel clear_and_delete_panel = new JPanel(new GridLayout(1, 2));
@@ -159,10 +164,26 @@ public class Server extends JPanel {
         JButton pay_now_button = new JButton("Pay Now");
         left_panel_south_container.add(pay_now_button);
 
+
+        // CREATE SIGN IN INFORMATION AND SIGN OUT BUTTON CONTAINER
+        JPanel credential_panel = new JPanel(new BorderLayout());
+        //credential_panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        credential_panel.setBorder(BorderFactory.createEtchedBorder());
+        right_panel.add(credential_panel, BorderLayout.NORTH);
+
+        JLabel server_sign_in = new JLabel("Server");
+        server_sign_in.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        server_sign_in.setFont(font);
+        credential_panel.add(server_sign_in, BorderLayout.WEST);
+
+        JButton sign_out_button = new JButton("Sign Out");
+        credential_panel.add(sign_out_button, BorderLayout.EAST);
+
         
         // CREATE TABBED PANE FOR MENU ITEMS, MAIN ITEM IN THE RIGHT PANEL
         JTabbedPane menu_pane = new JTabbedPane();
-        right_panel.add(menu_pane);
+        menu_pane.setBorder(BorderFactory.createEtchedBorder());
+        right_panel.add(menu_pane, BorderLayout.CENTER);
 
 
         // ADD SMOOTHIE KING MENU ITEMS TO THE TABBED MENU PANE
