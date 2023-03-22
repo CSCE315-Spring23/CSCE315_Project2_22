@@ -8,10 +8,20 @@ import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
+/** 
+ * Creates a JFrame that contains a table holding the order history.
+ * It loads the information from the orders_summary data table and displays them on the screen for the manager to view.
+ */
 public class OrderHistory extends JFrame {
 
     private JTable table;
 
+    /** 
+     * This method opens a connection to the database and queries the information from the orders_summary data table.
+     * It will then create a new table, creating the columns associated with the table and populating it with the information.
+     * @param table The JTable that houses the information from the data table.
+     * @param rsmd Handles getting the data from the data table and contains them.
+     */
     public OrderHistory(){
         try{
             Class.forName("org.postgresql.Driver");
@@ -63,9 +73,5 @@ public class OrderHistory extends JFrame {
             e.printStackTrace();
         }
     }
-    
-    // public static void main(String[] args){
-    //     new OrderHistory();
-    // }
 
 }

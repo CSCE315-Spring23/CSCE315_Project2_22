@@ -5,9 +5,7 @@ import java.sql.*;
 import java.lang.Math.*;
 import java.util.*;
 
-
-public class Main {
-    /**
+/**
     * The Main class contains the main method that creates an instance of FrameHandler
     * to handle the different panels that will be displayed in the JFrame. It creates
     * and sets up the JFrame with a specified size and location, and adds four different
@@ -16,6 +14,8 @@ public class Main {
     * if a server logs in, they will go directly to the server panel. The FrameHandler handles
     * switching between frames in the overall GUI.
     */
+public class Main {
+
     public static void main(String[] args) {
         FrameHandler frame_handler = new FrameHandler();
         

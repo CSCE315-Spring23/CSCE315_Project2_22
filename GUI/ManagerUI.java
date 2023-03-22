@@ -9,6 +9,12 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Holds all managerUI panels, including inventory, order history, the menu and the reports tab.
+ * These allow the manager to interact with the database in a number of ways. They can edit the inventory, view and edit the menu
+ * and view reports to understand the activity of the business.
+ */
+
 public class ManagerUI extends JPanel{
 
     /** The JFrame that contains the ManagerUI JPanel */
@@ -27,10 +33,6 @@ public class ManagerUI extends JPanel{
     public ManagerUI(JFrame frame, FrameHandler fh){
         this.frame = frame;
         this.fh = fh;
-
-        // Placeholder panels
-        //JPanel panel1 = new JPanel();
-        //JPanel panel2 = new JPanel();
         
 
         OrderHistory orderHistory = new OrderHistory();
@@ -41,7 +43,7 @@ public class ManagerUI extends JPanel{
         JTabbedPane tabbed_pane = new JTabbedPane();
         
 
-        tabbed_pane.addTab("InventoryAndShipments", inventory.getContentPane());
+        tabbed_pane.addTab("Inventory", inventory.getContentPane());
         tabbed_pane.addTab("Order History", orderHistory.getContentPane());
         tabbed_pane.addTab("Menu", menu.getContentPane());
         tabbed_pane.addTab("Reports", reports.getContentPane());

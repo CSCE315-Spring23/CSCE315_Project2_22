@@ -59,7 +59,4 @@ public class FrameHandler implements ActionListener {
 
     }
 
-    // public void addPanel(JPanel panel) {
-    //     panels.add(panel);
-    // }
 }

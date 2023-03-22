@@ -38,6 +38,11 @@ import javax.swing.table.TableModel;
 
 import java.sql.*;
 
+
+/**
+ * Frame that handles the inventory. Allows the manager to update items in any way necessary. Add items, remove items, change quantities and so on.
+ * Shipments handled by manually changing inventory quantities.
+ */
 public class InventoryAndShipping extends JFrame {
     private int currentProductId = 0;
     private int beforeUpdateId = 0;

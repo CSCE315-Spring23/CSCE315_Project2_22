@@ -172,15 +172,6 @@ public class Login extends JPanel  {  //implements ActionListener
         this.setSize(frame.getSize());
     }
 
-    // public static void main(String[] args) {
-    //     try {
-    //         loadEmployees();
-    //         showLogin();
-    //     }
-    //     catch (Exception e) {
-    //         e.printStackTrace();
-    //     }
-    // }
 }
 
 

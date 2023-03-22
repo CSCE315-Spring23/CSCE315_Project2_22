@@ -18,17 +18,6 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 
-
-    
-/*
-    public static Comparator<OrderPair> SortPopular = new Comparator<OrderPair>() {
-        public int compare (int count1, int count2) {
-            return count1 - count2;
-        }
-    }; */
-
-
-
 /**
  * Used to add a Reports panel to the ManagerUI. This houses buttons to generate various reports.
  */
@@ -86,6 +75,13 @@ public class Reports extends JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    /**
+     * Generates a sales report to show sales per drink for the last day,
+     * week, month, and a custom time interval. The custom time interval allows
+     * you to select a date window to generate the report for, and sorting
+     * alphabetically or by sales.
+     * @param sales_report
+     */
     private void load_sales(JButton sales_report) {
         sales_report.setSize(110, 40);
         sales_report.setAlignmentX((float) 0.5);
@@ -335,6 +331,10 @@ public class Reports extends JFrame {
             }
         });
     } 
+    /**
+     * Generate x and z reports. X report shows sales for the day and Z report shows sales per day.
+     * @param xz_report
+     */
     private void load_xz(JButton xz_report) {
         xz_report.setSize(110, 40);
         xz_report.setAlignmentX((float) 0.5);
@@ -385,10 +385,6 @@ public class Reports extends JFrame {
                         //myobj.getHour() > 12 && myobj.getHour()-12 > 5
                         total_sales += order_summary.getDouble(4);
                         if(prev_splitted[0].equals(splitted[0]) == false) {
-                            // update_row = conn.prepareStatement("INSERT INTO z_reports VALUES (?, ?)");
-                            // update_row.setString(1, prev_splitted[0]);
-                            // update_row.setDouble(2, total_sales);
-                            // update_row.executeUpdate();  
                             if(splitted[0].equals(formattedString)) {
                                 row[0] = "x report";
                                 row[1] = splitted[0];
@@ -407,30 +403,6 @@ public class Reports extends JFrame {
                             }
                         }
                         //handles old x reports if they're needed 
-                    
-                        
-                        // else {
-                            
-                        //     prev_splitted = splitted;
-                        //     //handles new z reports
-                        //     // update_row = conn.prepareStatement("INSERT INTO z_reports VALUES (?, ?)");
-                        //     // update_row.setString(1, prev_splitted[0]);
-                        //     // update_row.setDouble(2, total_sales);
-                        //     // update_row.executeUpdate();  
-                        //     row[0] = "x report";
-                        //     row[1] = prev_splitted[0];
-                        //     row[2] = total_sales;
-                        //     model.addRow(row);
-
-                        //     total_sales = 0; 
-                        //     }
-                            //handles x reports
-                            // else{
-                            //     row[0] = "x report";
-                            //     row[1] = prev_splitted[0];
-                            //     row[2] = total_sales;
-                            //     model.addRow(row);  
-                            // }
                         }
 
                     table.setModel(model);
@@ -442,10 +414,6 @@ public class Reports extends JFrame {
                     scrollPane.setColumnHeaderView(header);
 
                     report_frame.add(scrollPane);
-                    //Config frame
-                    // report_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    // report_frame.setSize(800,600);
-                    // report_frame.setLocationRelativeTo(null);
                     report_frame.setVisible(true);
                 }
                 catch (Exception exc) {
@@ -455,6 +423,12 @@ public class Reports extends JFrame {
         });
         
     } 
+    /**
+     * Generates the excess report. This report shows inventory items that sold less
+     * than 10% of inventory for specified time window. This would assume no restocks
+     * have occured during that time window.
+     * @param excess_report
+     */
     private void load_excess(JButton excess_report) {
 
         excess_report.setSize(110, 40);
@@ -504,8 +478,6 @@ public class Reports extends JFrame {
                     columnName.add("Product Name");
                     columnName.add("Timestamp Quantity");
                     columnName.add("Current Quantity");
-                    //columnName.add("test");
-                    //columnName.add("test1");
                     
                     // Create a vector to hold the data for the table
                     Vector<Vector<Object>> excess_data = new Vector<Vector<Object>>();
@@ -528,8 +500,6 @@ public class Reports extends JFrame {
                                 row.add(productName);
                                 row.add(quantity);
                                 row.add(currentQuantity);
-                                //row.add(quantity - currentQuantity);
-                                //row.add(.1 * quantity);
                                 excess_data.add(row);
                             }
                         }
@@ -643,6 +613,11 @@ public class Reports extends JFrame {
             }
         });
     } 
+    /**
+     * Generates report that shows which items sell together. It shows a list of menu
+     * items that are most frequently sold together in a specified time window.
+     * @param sells_together_report
+     */
     private void load_sells_together(JButton sells_together_report) {
         sells_together_report.setSize(110, 40);
         sells_together_report.setAlignmentX((float) 0.5);
@@ -754,7 +729,6 @@ public class Reports extends JFrame {
                 scrollPane.setColumnHeaderView(header);
 
                 report_frame.add(scrollPane);
-                // report_frame.setLocationRelativeTo(null);
                 report_frame.setVisible(true);
             }
         });
