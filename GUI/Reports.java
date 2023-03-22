@@ -71,9 +71,13 @@ public class Reports extends JFrame {
         load_xz(xz_report);
         load_sells_together(sells_together_report);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         load_excess(excess_report);
 >>>>>>> finished the excess report and updated brian's code for load_sells_together
+=======
+        load_excess(excess_report);
+>>>>>>> Updated Reports.java from merge conflicts.
 
         // add the reports panel, which holds the buttons, to the frame
         this.add(reports_panel);
@@ -309,6 +313,7 @@ public class Reports extends JFrame {
                                 }
                             }
                         }
+<<<<<<< HEAD
                     }
                     // convert hash map to array list for sorting by frequency (count)
                     ArrayList<OrderPair> final_pairs = new ArrayList<OrderPair>(pairs.values());
@@ -380,6 +385,8 @@ public class Reports extends JFrame {
                         JTextField text_pair = new JTextField("HI");
                         text_pair.setEditable(false);
                         sells_panel.add(text_pair);
+=======
+>>>>>>> Updated Reports.java from merge conflicts.
                     }
                 }
                 else if (order_pairs.size() > 0 && order_pairs.size() < 10) {
@@ -388,6 +395,14 @@ public class Reports extends JFrame {
                         text_pair.setEditable(false);
                         sells_panel.add(text_pair);
                     }
+<<<<<<< HEAD
+=======
+
+                } 
+                catch (Exception ex) 
+                {
+                    ex.printStackTrace();
+>>>>>>> Updated Reports.java from merge conflicts.
                 }
                 //order_pairs.get(i).item1 + " " + order_pairs.get(i).item2
 
@@ -395,6 +410,7 @@ public class Reports extends JFrame {
                 JPanel sells_panel = new JPanel(new GridLayout(10,1));
 
 
+<<<<<<< HEAD
                 if (order_pairs.size() >= 10) {
                     for (int i = 0; i < 10; i++) {
                         JTextField text_pair = new JTextField("HI");
@@ -431,6 +447,11 @@ public class Reports extends JFrame {
                 // report_frame.setLocationRelativeTo(null);
                 report_frame.setVisible(true);
 >>>>>>> Reworked the sells together report. Working correctly now.
+=======
+                report_frame.add(scrollPane);
+                // report_frame.setLocationRelativeTo(null);
+                report_frame.setVisible(true);
+>>>>>>> Updated Reports.java from merge conflicts.
             }
         });
     } 
