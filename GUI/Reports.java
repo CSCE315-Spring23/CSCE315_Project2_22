@@ -75,7 +75,7 @@ public class Reports extends JFrame {
 
         // add the reports panel, which holds the buttons, to the frame
         this.add(reports_panel);
-w
+
         this.setSize(500, 300);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
