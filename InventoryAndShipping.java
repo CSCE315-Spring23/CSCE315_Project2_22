@@ -1,14 +1,23 @@
-
 /**
+
 The InventoryAndShipping class extends JFrame and represents a GUI application
+
 that displays and updates the inventory of products available for shipping.
+
 The class makes a connection to a PostgreSQL database hosted on a remote server,
+
 and populates a JTable with data from the "inventory" table.
+
 Users can add, modify and delete rows from the JTable, and when they click
+
 on the "Update" button, the changes are committed to the database.
+
 @author William C. Hipp
+
 @version 1.0
+
 @since 3/21/2023
+
 @see javax.swing.JFrame
 */
 
@@ -47,11 +56,17 @@ public class InventoryAndShipping extends JFrame {
 
     /**
     Creates a new instance of InventoryAndShipping with the specified FrameHandler.
+
     Initializes a connection to the PostgreSQL database and populates the JTable with data from the "inventory" table.
+
     Adds a WindowListener to the JFrame that closes the connection and exits the application when the window is closed.
+
     @param fh the FrameHandler instance that will handle user events.
+
     @throws ClassNotFoundException if the PostgreSQL driver class cannot be found.
+
     @throws SQLException if a database access error occurs.
+
     @see FrameHandler
     */
 
